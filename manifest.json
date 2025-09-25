@@ -1,0 +1,153 @@
+{
+    "id": "com.wpenginepowered.quickfactsapp",
+    "name": "DLA Quick Facts",
+    "short_name": "DLAQF",
+    "description": "DLA Quick Facts",
+    "lang": "en-US",
+    "background_colorX": "#144774",
+    "theme_colorX": "#144774",
+    "background_color": "#152B48",
+    "theme_color": "#152B48",
+    "orientation": "portrait",
+    "display": "standalone",
+    "display_override": ["window-controls-overlay"],
+    "start_url": "/?utm_source=manifest.json&utm_medium=plugin&utm_campaign=iworks-pwa",
+    "gcm_sender_id": "103953800507",
+    "periodic_sync": {
+      "tag": "sync-content",
+      "min_interval": 86400
+    },
+    "prefer_related_applications": false,
+    "related_applications": [],
+    "launch_handler": {
+      "client_mode": "auto"
+    },
+    "edge_side_panel": {
+      "enabled": true,
+      "url": "/"
+    },
+    "file_handlers": [{
+      "action": "/",
+      "accept": {
+      "application/pdf": [".pdf"],
+      "image/png": [".png"]
+      }
+    }],
+    "handle_links": "scope",
+    "protocol_handlers": [{
+      "protocol": "web+yourapp",
+      "url": "/?q=%s"
+    }],
+    "background_sync": {
+      "tag": "sync-tag",
+      "min_interval": 60
+    },
+    "categories": ["business", "productivity"],
+    "dir": "ltr",
+    "iarc_rating_id": "e50b9816cf10111ee0cc197e7bf3536f",
+    "scope": "/",
+    "icons": [
+      {
+      "src": "/wp-content/themes/dlap/assets/app-icon/v2/1024.png",
+      "sizes": "1024x1024",
+      "type": "image/png"
+      },
+      {
+      "src": "/wp-content/themes/dlap/assets/app-icon/v2/512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+      },
+      {
+      "src": "/wp-content/themes/dlap/assets/app-icon/v2/192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+      },
+      {
+      "src": "/wp-content/themes/dlap/assets/app-icon/v2/144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+      },
+      {
+      "src": "/wp-content/themes/dlap/assets/app-icon/v2/96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "density": "2.0"
+      },
+      {
+      "src": "/wp-content/themes/dlap/assets/app-icon/v2/72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "density": "1.5"
+      },
+      {
+      "src": "/wp-content/themes/dlap/assets/app-icon/v2/48.png",
+      "sizes": "48x48",
+      "type": "image/png",
+      "density": "1.0"
+      },
+      {
+      "src": "/wp-content/themes/dlap/assets/app-icon/v2/36.png",
+      "sizes": "36x36",
+      "type": "image/png",
+      "density": "0.75"
+      }
+    ],
+    "screenshots": [
+      {
+      "src": "/wp-content/themes/dlap/assets/splash/launch-640x1136.png",
+      "sizes": "640x1136",
+      "type": "image/png",
+      "label": "DLAQF"
+      },
+      {
+      "src": "/wp-content/themes/dlap/assets/img/splash.png",
+      "sizes": "1366x656",
+      "sizesX": "640x307",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "DLAQF"
+      }
+    ],
+    "shortcuts": [
+    {
+      "name": "Business Card",
+      "url": "/business-card",
+      "icons": [{
+      "src": "/wp-content/themes/dlap/assets/app-icon/v2/96.png",
+      "sizes": "96x96",
+      "type": "image/svg+xml"
+      }]
+    }],
+    "scope_extensions": [
+    {
+      "origin": "https://quickfactsapp.wpenginepowered.com"
+    }
+  ],
+
+  "share_target": {
+    "action": "/wp-json/api/v1/data",
+    "method": "POST",
+    "enctype": "application/x-www-form-urlencoded",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  },
+  
+  "widgets": [
+    {
+      "name": "DLAQF Widget",
+      "description": "Welcome to DLA Quick Facts",
+      "tag": "DLA",
+      "ms_ac_template": "widget.json",
+      "screenshots": [
+        {
+          "src": "/wp-content/themes/dlap/assets/img/splash.png",
+          "sizes": "1366x656",
+          "label": "The DLA Quick Facts widget"
+        }
+      ]
+    }
+  ]
+}

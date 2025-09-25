@@ -1,0 +1,23 @@
+<IfModule mod_headers.c>
+    # Allow all origins
+    Header set Access-Control-Allow-Origin "*"
+    
+    # OR allow specific origins
+    # Header set Access-Control-Allow-Origin "https://example.com"
+    
+    Header set Access-Control-Allow-Methods "GET, POST, OPTIONS"
+    Header set Access-Control-Allow-Headers "Content-Type"
+</IfModule>
+
+
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+# END WordPress

@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import './icons.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html {
+    @apply font-noto text-white;
+}
+/*body {
+    background: url(/wp-content/themes/dlap/assets/img/waves.png) no-repeat bottom;
+    background-size: 100%;
+}*/
+
+/* icons default size */
+
+ul.list-disc li {
+    list-style-type: disc;
+    display: list-item;
+}
+
+.gradient {
+    background: transparent linear-gradient(180deg, #16253F 0%, #144774 100%) 0% 0% no-repeat padding-box;
+}
+
+.header-text {
+    @apply text-18px;
+}
+.tile-heading {
+    @apply text-3;
+}
+.tile-title {
+    @apply text-14px;
+}
+.tile-text {
+    @apply text-3;
+}
+.numbers-big {
+    @apply text-9 font-light whitespace-nowrap font-noto-serif;
+}
+.numbers-small {
+    @apply text-6 font-light font-noto-serif;
+}
+.symbols-big {
+    @apply text-4 font-light font-noto-serif;
+}
+.symbols-small {
+    @apply text-4 font-light font-noto-serif;
+}
+.currency {
+    @apply text-10px italic;
+}
+.section-heading {
+    @apply text-5 uppercase;
+}
+.tile-text-small {
+    @apply text-10px;
+}   
+
+.box {
+    @apply bg-white w-full px-4 py-2 min-h-20;
+    --tw-bg-opacity: 0.02;
+}
+
+/* HEADER */
+header {
+    height: 3.875rem;
+}
+header.inner-page {
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+header .btn-back {
+    transform: translateY(-50%);
+}
+
+/* graphs */
+/* progress bar */
+
+/* default */
+progress {
+    @apply h-4px rounded overflow-hidden w-full block;
+}
+
+progress::-webkit-progress-bar {
+    background-color: rgba(255,255,255,0.2);
+}
+
+/* progress custom colors */
+progress.green::-webkit-progress-value {
+    @apply bg-green;
+}
+progress.red::-webkit-progress-value {
+    @apply bg-red;
+}
+progress.yellow::-webkit-progress-value {
+    @apply bg-yellow;
+}
+progress.pink::-webkit-progress-value,
+progress.mid-red::-webkit-progress-value {
+    @apply bg-red-mid;
+}
+progress.blue::-webkit-progress-value,
+progress.mid-blue::-webkit-progress-value {
+    @apply bg-blue-mid;
+}
+
+
+
+
+/* progress custom colors */
+progress.green::-moz-progress-bar  {
+    @apply bg-green;
+}
+progress.red::-moz-progress-bar  {
+    @apply bg-red;
+}
+progress.yellow::-moz-progress-bar  {
+    @apply bg-yellow;
+}
+progress.mid-red::-moz-progress-bar  {
+    @apply bg-red-mid;
+}
+progress.mid-blue::-moz-progress-bar  {
+    @apply bg-blue-mid;
+}
+
+.circle-progress-text {
+    @apply text-30px font-light font-noto-serif;
+}
+
+.circle-progress {
+	max-width: 100%;
+	width: 100%;
+}
+.circle-progress-value {
+	stroke-width: 3px;
+	stroke: hsl(39, 100%, 50%);
+}
+.circle-progress-circle {
+	stroke-width: 3px;
+	stroke: rgba(255,255,255,0.2)
+}
+.circle-progress-text {
+	fill: #ffffff;
+}
+
+
+.green .circle-progress-value {
+	stroke: #D9DC42;
+	stroke-width: 3px;
+}
+.red .circle-progress-value {
+	stroke: #E62A4F;
+	stroke-width: 3px;
+}
+.yellow .circle-progress-value {
+	stroke: #FCBE04;
+	stroke-width: 3px;
+}
+
+
+
+/* dropdowns */
+.tile-dropdown .tile-dropdown-option {
+    -webkit-transition: max-height 0.3s ease-in-out;
+    -moz-transition: max-height 0.3s ease-in-out;
+    -o-transition: max-height 0.3s ease-in-out;
+    transition: max-height 0.3s ease-in-out;
+}
+.tile-dropdown .tile-dropdown-option > * {
+	border-top: 1px solid rgba(255,255,255,0.15);
+}
+.tile-dropdown.closed .tile-dropdown-option {
+	max-height: 0;
+}
+.tile-dropdown button.toggle {
+	width: 18px;
+	display: contents;
+}
+.tile-dropdown .caret {
+    -webkit-transition: transform 0.2s ease-in-out;
+    -moz-transition: transform 0.2s ease-in-out;
+    -o-transition: transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out;
+}
+.tile-dropdown.opened .caret {
+	transform: rotate(180deg);
+}
+.tile-dropdown.opened .tile-dropdown-option {
+	max-height: 10000px;
+}
+
+
+/* navigation */
+nav {
+    @apply fixed bottom-0 left-0 w-full;
+    backdrop-filter: blur(8px) saturate(100%);
+}
+nav ul.menus {
+    @apply justify-between;
+    background: rgba(255,255,255,0.2);
+}   
+nav ul.menus li {
+    @apply items-center text-center border-b-4px border-b-transparent h-full;
+}
+nav ul.menus li.active, nav ul.menus li.current-menu-item,.desktop nav ul.menus li:hover {
+    @apply border-b-green;
+}
+nav ul.menus li a {
+    @apply w-full h-full pt-2 cursor-pointer grid grid-rows-2 items-end;
+}
+nav ul.menus li i {
+    @apply opacity-50;
+}
+nav ul.menus li.active i,nav ul.menus li.current-menu-item i,.desktop nav ul.menus li:hover i {
+    @apply text-green opacity-100;
+}
+/* 
+
+.page-blocks .wp-block-columns {
+    column-gap: 1rem;
+    margin-bottom: 0.5rem!important;
+    display: grid;
+} */
+
+.page-blocks h2 {
+    @apply tile-heading w-full py-2;
+}
+
+/* columns responsiveness */
+/* .page-blocks .wp-block-columns {
+    @apply my-2 !inline-flex w-full;
+}
+
+.page-blocks .box:not(.wp-block-column > .box) { 
+    @apply my-2;
+} */
+
+
+
+/* ICONS OVERRIDE */
+.box .icon-arrow-right {
+    font-size: 9.49px;
+    right: 11px;
+    bottom: 13px;
+    position: absolute;
+}
+.box .icon-link-external {
+    font-size: 17px;
+}
+.box .caret {
+    font-size: 9.3px;
+}
+.box li::marker {
+font-size: 8px;
+line-height: 0;
+}
+
+
+form label, form input {
+    @apply w-full;
+}
+
+.border-white.border-opacity-70 {
+    border-color: rgba(255,255,255,0.7)
+}
+
+.error {
+    @apply text-12px text-red;
+}

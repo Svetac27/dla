@@ -1,0 +1,32 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.3",
+    "body": [
+        {
+            "type": "TextBlock",
+            "text": "Welcome to DLA Quick Facts",
+            "size": "Medium",
+            "weight": "Bolder"
+        },
+        {
+            "type": "Image",
+            "url": "/wp-content/themes/dlap/assets/img/splash.png",
+            "size": "Medium"
+        },
+        {
+            "type": "TextBlock",
+            "text": "Here's some quick information for you.",
+            "wrap": true
+        }
+    ],
+    "actions": [
+        {
+            "type": "Action.Submit",
+            "title": "Learn More",
+            "data": {
+                "action": "learnMore"
+            }
+        }
+    ]
+}
