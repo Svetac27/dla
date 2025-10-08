@@ -1254,6 +1254,107 @@ ul.list-disc li {
   font-size: 0.75rem;
 }
 
+.tile-block {
+  &.tile-campaign{
+    align-items: flex-start;
+  }
+  &.tile-campaign{
+    border-radius: 10px;
+  }
+  &.tile-campaign{
+    background-size: cover;
+  }
+  &.tile-campaign{
+    background-position: center;
+  }
+  &.tile-campaign{
+    background-repeat: no-repeat;
+  }
+  &.tile-campaign{
+    position: relative;
+  }
+  &.tile-campaign{
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  &.tile-campaign{
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+  &.tile-campaign::before{
+    position: absolute;
+  }
+  &.tile-campaign::before{
+    top: 0;
+  }
+  &.tile-campaign::before{
+    left: 0;
+  }
+  &.tile-campaign::before{
+    z-index: 0;
+  }
+  &.tile-campaign::before{
+    height: 100%;
+  }
+  &.tile-campaign::before{
+    width: 100%;
+  }
+  &.tile-campaign::before{
+    border-radius: 10px;
+  }
+  &.tile-campaign::before{
+    --tw-content: "";
+    content: var(--tw-content);
+  }
+  &.tile-campaign::before {
+    background: linear-gradient(to bottom, #16253F8F, #16253F8F);
+  }
+  .tile-content{
+    position: relative;
+  }
+  .tile-content{
+    z-index: 10;
+  }
+  .tile-content {
+    .tile-title{
+      font-family: "Noto Serif", serif;
+    }
+    .tile-title{
+      font-size: 24px;
+    }
+    .tile-title{
+      font-weight: 200;
+    }
+    .tile-title{
+      line-height: 28px;
+    }
+    .tile-description{
+      font-size: 12px;
+    }
+    .tile-description{
+      line-height: 18px;
+    }
+    .tile-link{
+      margin-top: 20px;
+    }
+    .tile-link{
+      display: flex;
+    }
+    .tile-link{
+      align-items: center;
+    }
+    .tile-link{
+      gap: 10px;
+    }
+    .tile-link{
+      font-size: 12px;
+    }
+    .tile-link{
+      line-height: 17px;
+    }
+  }
+}
+
 .numbers-big{
   white-space: nowrap;
   font-family: "Noto Serif", serif;
@@ -1310,8 +1411,17 @@ ul.list-disc li {
     .tile-icon img{
       margin-right: 20px;
     }
-    .tile-title {
-      opacity: 0.5;
+    .tile-title{
+      display: flex;
+    }
+    .tile-title{
+      height: 100%;
+    }
+    .tile-title{
+      align-items: center;
+    }
+    .tile-title{
+      opacity: 0.05;
     }
   }
   .tile-container{

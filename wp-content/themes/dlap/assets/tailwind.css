@@ -39,6 +39,31 @@ ul.list-disc li {
 .tile-text {
     @apply text-3;
 }
+
+.tile-block {
+    &.tile-campaign {
+        @apply bg-no-repeat bg-center bg-cover items-start rounded-[10px];
+        @apply py-[40px] px-[18px] relative;
+    }
+    &.tile-campaign::before {
+        @apply content-[""] absolute top-0 left-0 w-full h-full rounded-[10px] z-0;
+        background: linear-gradient(to bottom, #16253F8F, #16253F8F);
+    }
+    .tile-content {
+        @apply relative z-10;
+        .tile-title {
+            @apply text-[24px] leading-[28px] font-noto-serif font-light;
+        }
+        .tile-description {
+            @apply text-[12px] leading-[18px];
+        }
+        .tile-link {
+            @apply flex items-center gap-[10px] mt-[20px];
+            @apply text-[12px] leading-[17px];
+        }
+    }
+}
+
 .numbers-big {
     @apply text-9 font-light whitespace-nowrap font-noto-serif;
 }
@@ -70,7 +95,7 @@ ul.list-disc li {
             @apply mr-[20px];
         }
         .tile-title {
-            @apply h-[100%] flex items-center opacity-0.5;
+            @apply h-[100%] flex items-center opacity-5;
         }
     }
     .tile-container {
