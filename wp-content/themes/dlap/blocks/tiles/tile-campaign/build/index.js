@@ -10,8 +10,15 @@
           n = window.wp.components,
           o = JSON.parse('{"UU":"create-block/tile-campaign"}');
         (0, e.registerBlockType)(o.UU, {
+          attributes: {
+            title: { type: 'string', default: '' },
+            description: { type: 'string', default: '' },
+            link: { type: 'string', default: '' },
+            backgroundUrl: { type: 'string', default: '' },
+            backgroundId: { type: 'number', default: 0 }
+          },
           edit: function ({ attributes: e, setAttributes: o }) {
-            const { title: c, description: d, link: s, background: i } = e;
+            const { title: c, description: d, link: s, backgroundUrl: i, backgroundId: a } = e;
             return (0, t.createElement)(
               t.Fragment,
               null,
@@ -24,23 +31,72 @@
                   (0, t.createElement)(n.TextControl, {
                     label: (0, l.__)('Title', 'title'),
                     value: c,
-                    onChange: (e) => o({ title: e })
+                    onChange: (v) => o({ title: v })
                   }),
                   (0, t.createElement)(n.TextControl, {
                     label: (0, l.__)('Description', 'description'),
                     value: d,
-                    onChange: (e) => o({ description: e })
+                    onChange: (v) => o({ description: v })
                   }),
                   (0, t.createElement)(n.TextControl, {
                     label: (0, l.__)('Link', 'link'),
                     value: s,
-                    onChange: (e) => o({ link: e })
+                    onChange: (v) => o({ link: v })
                   }),
-                  (0, t.createElement)(n.TextControl, {
-                    label: (0, l.__)('Background image', 'background'),
-                    value: i,
-                    onChange: (e) => o({ background: e })
-                  })
+                  (0, t.createElement)(
+                    'div',
+                    null,
+                    (0, t.createElement)(
+                      'label',
+                      {
+                        style: {
+                          display: 'block',
+                          fontSize: '11px',
+                          fontWeight: '500',
+                          lineHeight: '1.4',
+                          textTransform: 'uppercase',
+                          marginBottom: '8px'
+                        }
+                      },
+                      (0, l.__)('Background image', 'background-image')
+                    ),
+                    (0, t.createElement)(
+                      r.MediaUploadCheck,
+                      null,
+                      (0, t.createElement)(r.MediaUpload, {
+                        onSelect: (media) => o({ backgroundUrl: media.url, backgroundId: media.id }),
+                        allowedTypes: ['image'],
+                        value: a,
+                        render: ({ open }) =>
+                          i
+                            ? (0, t.createElement)(
+                                'div',
+                                null,
+                                (0, t.createElement)('img', {
+                                  src: i,
+                                  style: { maxWidth: '100%', height: 'auto', marginBottom: '10px' }
+                                }),
+                                (0, t.createElement)(
+                                  n.Button,
+                                  {
+                                    onClick: () => o({ backgroundUrl: '', backgroundId: 0 }),
+                                    variant: 'link',
+                                    isDestructive: true
+                                  },
+                                  (0, l.__)('Remove Image', 'copyright-date-block')
+                                )
+                              )
+                            : (0, t.createElement)(
+                                n.Button,
+                                {
+                                  onClick: open,
+                                  variant: 'secondary'
+                                },
+                                (0, l.__)('Choose Background Image', 'copyright-date-block')
+                              )
+                      })
+                    )
+                  )
                 )
               ),
               (0, t.createElement)(
@@ -55,14 +111,18 @@
                       alignItems: 'flex-start',
                       padding: '1rem',
                       position: 'relative',
-                      gap: '10px'
+                      gap: '10px',
+                      backgroundImage: i ? `url(${i})` : undefined,
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center',
+                      minHeight: '200px'
                     }
                   },
                   (0, t.createElement)('h2', { style: { fontSize: '24px', opacity: c ? 1 : 0.5 } }, c || 'Lorem Ipsum'),
                   (0, t.createElement)(
                     'span',
                     { style: { fontSize: '12px', opacity: d ? 1 : 0.5 } },
-                    d || 'Lorem Ipsum'
+                    d || 'Description here'
                   ),
                   s
                     ? (0, t.createElement)(
@@ -77,11 +137,7 @@
                             gap: '10px'
                           }
                         },
-                        (0, t.createElement)(
-                          'span',
-                          { style: { fontSize: '12px', opacity: i ? 1 : 0.5 } },
-                          'Read more'
-                        ),
+                        (0, t.createElement)('span', { style: { fontSize: '12px' } }, 'Read more'),
                         (0, t.createElement)(
                           'svg',
                           { xmlns: 'http://www.w3.org/2000/svg', width: 19.28, height: 19.271 },
@@ -95,6 +151,61 @@
                     : ''
                 )
               )
+            );
+          },
+          save: function ({ attributes: e }) {
+            const { title: c, description: d, link: s, backgroundUrl: i } = e;
+            // Only use attributes, not any variables or components!
+            const bgStyle = {
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'flex-start',
+              padding: '1rem',
+              position: 'relative',
+              gap: '10px',
+              backgroundImage: i ? `url(${i})` : undefined,
+              backgroundSize: i ? 'cover' : undefined,
+              backgroundPosition: i ? 'center' : undefined,
+              minHeight: '200px'
+            };
+            return window.React.createElement(
+              'div',
+              { style: bgStyle },
+              window.React.createElement(
+                'h2',
+                { style: { fontSize: '24px', opacity: c ? 1 : 0.5 } },
+                c || 'Lorem Ipsum'
+              ),
+              window.React.createElement(
+                'span',
+                { style: { fontSize: '12px', opacity: d ? 1 : 0.5 } },
+                d || 'Description here'
+              ),
+              s
+                ? window.React.createElement(
+                    'a',
+                    {
+                      href: s,
+                      style: {
+                        color: 'white',
+                        textDecoration: 'none',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '10px'
+                      }
+                    },
+                    window.React.createElement('span', { style: { fontSize: '12px' } }, 'Read more'),
+                    window.React.createElement(
+                      'svg',
+                      { xmlns: 'http://www.w3.org/2000/svg', width: 19.28, height: 19.271 },
+                      window.React.createElement('path', {
+                        d: 'M0 9.624v9.624h19.248V10.54H17.77v7.262H1.478V1.478H8.74V0H0v9.624M11.439.739v.739H16.982l-4.868 4.868-4.868 4.868.522.523.522.522 4.74-4.74 4.74-4.739v5.061h1.478V0H11.439v.739',
+                        fill: 'currentColor',
+                        'fill-rule': 'evenodd'
+                      })
+                    )
+                  )
+                : null
             );
           }
         });
