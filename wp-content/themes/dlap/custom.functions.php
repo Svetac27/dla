@@ -24,7 +24,7 @@ function colorClasses ($color = null) {
     if (isset($color) && isset($colors[$color])) {
         return $colors[$color];
     } else if (isset($color)) {
-        return $color;  
+        return $color;
     } return $colors;
 }
 
@@ -44,7 +44,7 @@ function test_files() {
             $result['css'] = 'test.css';
             $result['js'] = 'test.js';
         }
-        
+
         return $result;
     }
     return false;
@@ -77,11 +77,13 @@ function smartwp_remove_wp_block_library_css(){
     wp_dequeue_style( 'wp-block-library' );
     wp_dequeue_style( 'wp-block-library-theme' );
     wp_dequeue_style( 'wc-blocks-style' ); // Remove WooCommerce block CSS
-} 
+}
 add_action( 'wp_enqueue_scripts', 'smartwp_remove_wp_block_library_css', 100 );
 
 
 function dlap_blocks() {
+    register_block_type( __DIR__ . '/blocks/tiles/tile-with-icon-and-list/build' );
+    register_block_type( __DIR__ . '/blocks/tiles/tile-campaign/build' );
 	register_block_type( __DIR__ . '/blocks/tiles/figure-with-text/build' );
 	register_block_type( __DIR__ . '/blocks/tiles/progress-bar-with-figure/build' );
 	register_block_type( __DIR__ . '/blocks/tiles/tile-with-circle-progress/build' );
@@ -129,9 +131,9 @@ add_filter( 'upload_mimes', 'cc_mime_types' );
 
 function fix_svg_thumb_display() {
     echo '<style>
-        td.media-icon img[src$=".svg"], img[src$=".svg"].attachment-post-thumbnail { 
-            width: 100% !important; 
-            height: auto !important; 
+        td.media-icon img[src$=".svg"], img[src$=".svg"].attachment-post-thumbnail {
+            width: 100% !important;
+            height: auto !important;
         }
     </style>';
 }
@@ -173,7 +175,7 @@ function add_testmode_to_links($content) {
             $url_parts = parse_url($url);
             $query = isset($url_parts['query']) ? $url_parts['query'] : '';
             $separator = empty($query) ? '?' : '&';
-            
+
             // Append 'testmode' to the URL
             $new_url = $url . $separator . 'testmode';
             return 'href="' . esc_url($new_url) . '"';
@@ -241,9 +243,9 @@ function custom_clear_sessions() {
         }
         session_destroy();
     }
-    
+
     wp_clear_auth_cookie();
-    
+
     $response = array(
         'message' => 'All sessions cleared successfully',
         'status' => 'success'

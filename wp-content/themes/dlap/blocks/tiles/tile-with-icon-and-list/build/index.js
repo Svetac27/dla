@@ -8,7 +8,7 @@
           l = window.wp.i18n,
           a = window.wp.blockEditor,
           n = window.wp.components,
-          r = JSON.parse('{"UU":"create-block/icon-with-text"}');
+          r = JSON.parse('{"UU":"create-block/tile-with-icon-and-list"}');
         (0, e.registerBlockType)(r.UU, {
           edit: function ({ attributes: e, setAttributes: r }) {
             const { title: i, items: o, image: s, media: c, text: m, is_small: p } = e,
@@ -217,6 +217,29 @@
                   )
                 )
               )
+              // (0, t.createElement)(
+              //   'label',
+              //   {
+              //     style: {
+              //       fontSize: '11px',
+              //       fontWeight: 500,
+              //       lineHeight: 1.4,
+              //       textTransform: 'uppercase',
+              //       display: 'inline-block',
+              //       marginBottom: 'calc(8px)',
+              //       padding: '0px'
+              //     }
+              //   },
+              //   'BULLET COLOR '
+              // ),
+              // (0, t.createElement)(o.ColorPalette, {
+              //   label: (0, l.__)('Progress Color', `progress_${r}_color`),
+              //   colors: g,
+              //   value: a && a[r] && a[r].progress_color ? a[r].progress_color : null,
+              //   onChange: (e) => {
+              //     v(r, 'progress_color', e);
+              //   }
+              // })
             );
           }
         });

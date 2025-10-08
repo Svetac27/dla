@@ -16,6 +16,30 @@
 <div class="text-white">
 	<div class="w-full grid grid-cols-1 lg:grid-cols-3 gap-x-14 gap-y-20">
         <div class="w-full">
+            <h2 class="header-text w-full">Tile M1</h2>
+            <div class="tile-heading w-full">Tile with Icon and List</div>
+
+            <?php
+                get_template_part( 'template-parts/tiles/tile-m1', null, [
+                    'number' => 215,
+                    'symbol' => 'K',
+                    'text' => 'Over 215,000 pro bono hours in 2022'
+                ]);
+            ?>
+        </div>
+        <div class="w-full">
+        <h2 class="header-text w-full">Tile M2</h2>
+        <div class="tile-heading w-full">Tile Campaign</div>
+
+        <?php
+            get_template_part( 'template-parts/tiles/tile-m1', null, [
+                'number' => 215,
+                'symbol' => 'K',
+                'text' => 'Over 215,000 pro bono hours in 2022'
+            ]);
+        ?>
+        </div>
+        <div class="w-full">
             <h2 class="header-text w-full">Tile 1</h2>
             <div class="tile-heading w-full">Figure with Text</div>
 
@@ -24,7 +48,7 @@
                     'number' => 215,
                     'symbol' => 'K',
                     'text' => 'Over 215,000 pro bono hours in 2022'
-                ]); 
+                ]);
             ?>
         </div>
 
@@ -46,8 +70,8 @@
         <div class="w-full">
             <h2 class="header-text w-full">Tile 3</h2>
             <div class="tile-heading w-full">Progress Bar with Figure</div>
-        
-            <?php 
+
+            <?php
             $value = rand(0, 100);
             get_template_part( 'template-parts/tiles/tile-3.table', null, [
                 'number' => '2.83',
@@ -62,7 +86,7 @@
         <div class="w-full">
             <h2 class="header-text w-full">Tile 4</h2>
             <div class="tile-heading w-full">Tile with Donut Graphs</div>
-            
+
             <?php get_template_part( 'template-parts/tiles/tile-4', null, [
                 'title' => 'FEMALE PARTNERS',
                 'items' => [
@@ -84,7 +108,7 @@
         <div class="w-full">
             <h2 class="header-text w-full">Tile 5</h2>
             <div class="tile-heading w-full">Tile with donut graphs and additional text</div>
-        
+
             <?php get_template_part( 'template-parts/tiles/tile-4', null, [
                 'title' => 'Reduction in Emissions',
                 'sub-title' => 'against our 2019 baseline year',
@@ -108,8 +132,8 @@
         <div class="w-full">
             <h2 class="header-text w-full">Tile 6</h2>
             <div class="tile-heading w-full">Icon with bullet points</div>
-        
-            <?php 
+
+            <?php
                 get_template_part( 'template-parts/tiles/tile-6', null, [
                     'image' => '/wp-content/uploads/2024/02/trophy_FILL0_wght100_GRAD0_opsz24.png',
                     'items' => [
@@ -122,7 +146,7 @@
         <div class="w-full">
             <h2 class="header-text w-full">Tile 7</h2>
             <div class="tile-heading w-full">Figure with title</div>
-        
+
             <div class="max-w-40">
                 <?php get_template_part( 'template-parts/tiles/tile-7', null, [
                     'figure' => '00',
@@ -135,7 +159,7 @@
         <div class="w-full">
             <h2 class="header-text w-full">Tile 8</h2>
             <div class="tile-heading w-full">Figure with title and link</div>
-            
+
             <div class="max-w-40">
                 <?php get_template_part( 'template-parts/tiles/tile-7', null, [
                     'figure' => '00',
@@ -145,12 +169,12 @@
                 ]); ?>
             </div>
         </div>
-        
+
 
         <div class="w-full">
             <h2 class="header-text w-full">Tile 9</h2>
             <div class="tile-heading w-full">Figure with title and collapsible</div>
-        
+
             <?php get_template_part( 'template-parts/tiles/tile-9.table', null, [
                     'figure' => '00',
                     'symbol' => '+',
@@ -165,11 +189,11 @@
             ]); ?>
         </div>
 
-        
+
         <div class="w-full">
             <h2 class="header-text w-full">Tile 10</h2>
             <div class="tile-heading w-full">Figure with text and collapsible</div>
-        
+
             <?php get_template_part( 'template-parts/tiles/tile-9.table', null, [
                     'figure' => '00',
                     'symbol' => '%',
@@ -183,11 +207,11 @@
                     ]
             ]); ?>
         </div>
-        
+
         <div class="w-full">
             <h2 class="header-text w-full">Tile 11</h2>
             <div class="tile-heading w-full">Open collapsible with figures and progress bars</div>
-            <?php 
+            <?php
                 $colors = availableColors();
                 $collapsibles = [];
                 $numberOfitems = 5;
@@ -195,7 +219,7 @@
                     $colorClass = $colors[rand(0, 4)];
                     $progress_color = $colorClass;
                     $figure = rand(1, 100);
-                    
+
                     $collapsibles[] = [
                         'figure' => $figure,
                         'text' => 'Lorem',
@@ -216,7 +240,7 @@
         <div class="w-full">
             <h2 class="header-text w-full">Tile 12</h2>
             <div class="tile-heading w-full">Open collapsible with progress bars and figures</div>
-            <?php 
+            <?php
                 $colors = availableColors();
                 $collapsibles = [];
                 $numberOfitems = 5;
@@ -224,7 +248,7 @@
                     $colorClass = $colors[rand(0, 4)];
                     $progress_color = $colorClass;
                     $figure = rand(1, 100);
-                    
+
                     $collapsibles[] = [
                         'figure' => $figure,
                         'figure_on_right' => true,
@@ -254,11 +278,11 @@
             <?php get_template_part( 'template-parts/tiles/tile-13', null, [
                 'title' => 'Africa',
                 'text' => '20 countries',
-                'link' => '/regions/africa' 
+                'link' => '/regions/africa'
             ]); ?>
         </div>
         </div>
-        
+
         <div class="w-full">
             <h2 class="header-text w-full">Tile 14</h2>
             <div class="tile-heading w-full">Title with external link</div>
@@ -273,7 +297,7 @@
         <div class="w-full">
             <h2 class="header-text w-full">Tile 15</h2>
             <div class="tile-heading w-full">Title with collapsible</div>
-        
+
             <?php get_template_part( 'template-parts/tiles/tile-9.table', null, [
                     'title' => 'Lorem',
                     'items' => [
@@ -285,11 +309,11 @@
                     ]
             ]); ?>
         </div>
-        
+
         <div class="w-full">
             <h2 class="header-text w-full">Tile 16</h2>
             <div class="tile-heading w-full">Open collapsible with bullet point list</div>
-        
+
             <?php get_template_part( 'template-parts/tiles/tile-9.table', null, [
                     'title' => 'Lorem',
                     'is_opened' => true,
@@ -302,8 +326,8 @@
                     ]
             ]); ?>
         </div>
-        
-        
+
+
         <div class="w-full">
             <h2 class="header-text w-full">Tile 17</h2>
             <div class="tile-heading w-full">Icon with Title and text</div>

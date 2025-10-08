@@ -62,9 +62,27 @@ ul.list-disc li {
 }
 
 .box {
-    @apply bg-white w-full px-4 py-2 min-h-20;
-    --tw-bg-opacity: 0.02;
+    @apply w-full;
+    @apply flex flex-col;
+    .tile-header {
+        @apply flex justify-start w-full;
+        .tile-icon img {
+            @apply mr-[20px];
+        }
+        .tile-title {
+            @apply h-[100%] flex items-center opacity-0.5;
+        }
+    }
+    .tile-container {
+        @apply bg-white rounded-[10px] px-4 py-2 min-h-20;
+        --tw-bg-opacity: 0.04;
+        li {
+            @apply py-2 ml-2;
+        }
+    }
 }
+
+
 
 /* HEADER */
 header {
