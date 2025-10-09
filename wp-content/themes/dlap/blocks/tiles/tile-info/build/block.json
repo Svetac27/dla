@@ -9,24 +9,22 @@
   "description": "Tile M1: Tile with Icon, title and description",
   "example": {},
   "attributes": {
-    "figure": {
+    "media": {
+      "type": "object",
+      "default": {}
+    },
+    "image": {
       "type": "string"
     },
-    "symbol": {
+    "is_small": {
+      "type": "boolean"
+    },
+    "title": {
       "type": "string"
     },
-    "text": {
-      "type": "string"
-    },
-    "progress": {
-      "type": "string"
-    },
-    "progress_color": {
+    "description": {
       "type": "string"
     }
-  },
-  "supports": {
-    "html": false
   },
   "textdomain": "tile-info",
   "editorScript": "file:./index.js",

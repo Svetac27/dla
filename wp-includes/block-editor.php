@@ -18,6 +18,11 @@
 function get_default_block_categories() {
 	return array(
 		array(
+			'slug'  => 'DLAP',
+			'title' => _x( 'DLAP', 'block category' ),
+			'icon'  => null,
+		),
+		array(
 			'slug'  => 'text',
 			'title' => _x( 'Text', 'block category' ),
 			'icon'  => null,

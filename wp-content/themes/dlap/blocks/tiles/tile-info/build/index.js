@@ -11,7 +11,7 @@
           r = JSON.parse('{"UU":"create-block/tile-info"}');
         (0, e.registerBlockType)(r.UU, {
           edit: function ({ attributes: e, setAttributes: r }) {
-            const { title: i, items: o, image: s, media: c, text: m, is_small: p } = e,
+            const { image: s, is_small: p, title: i, description: m, media: c } = e,
               [d, u] = (0, t.useState)(o ? o.length : 0),
               [g, y] = (0, t.useState)(o || []),
               [v, h] = (0, t.useState)(0),
@@ -32,7 +32,7 @@
                 null,
                 (0, t.createElement)(
                   n.PanelBody,
-                  { title: (0, l.__)('Tile 4: Icon with Text', 'tile-with-circle-progress') },
+                  { title: (0, l.__)('Tile M1: Tile with Icon, title and description') },
                   (0, t.createElement)(
                     a.MediaUploadCheck,
                     null,
@@ -72,7 +72,14 @@
                       : ''
                   ),
                   (0, t.createElement)(n.CheckboxControl, {
-                    label: 'Display Smaller Image',
+                    style: { marginTop: '0.5rem' },
+                    label: (0, t.createElement)(
+                      'span',
+                      {
+                        style: { fontSize: '11px', textTransform: 'uppercase', display: 'block', marginTop: '0.5rem' }
+                      },
+                      (0, l.__)('Smaller image', 'smaller-image')
+                    ),
                     checked: p,
                     onChange: (e) => r({ is_small: e })
                   }),
@@ -82,103 +89,10 @@
                     onChange: (e) => r({ title: e })
                   }),
                   (0, t.createElement)(n.TextareaControl, {
-                    label: (0, l.__)('Text', 'text'),
+                    label: (0, l.__)('Description', 'description'),
                     value: m,
-                    onChange: (e) => r({ text: e })
-                  }),
-                  (0, t.createElement)('hr', { style: { border: '2px solid gray' } }),
-                  (0, t.createElement)(
-                    'label',
-                    {
-                      style: {
-                        fontSize: '11px',
-                        fontWeight: 500,
-                        lineHeight: 1.4,
-                        textTransform: 'uppercase',
-                        display: 'inline-block',
-                        marginBottom: 'calc(8px)',
-                        padding: '0px'
-                      }
-                    },
-                    'LIST ITEMS '
-                  ),
-                  (0, t.createElement)(
-                    'div',
-                    { style: { display: 'flex', justifyContent: 'space-between' } },
-                    (0, t.createElement)(
-                      n.Button,
-                      {
-                        variant: 'secondary',
-                        onClick: () => {
-                          w('li');
-                        }
-                      },
-                      'Add List Item'
-                    )
-                  ),
-                  (0, t.createElement)(
-                    'table',
-                    { style: { width: '100%' } },
-                    g.length
-                      ? g.map((e, a) =>
-                          (0, t.createElement)(
-                            'tr',
-                            null,
-                            (0, t.createElement)(
-                              'td',
-                              null,
-                              'li' === e.type
-                                ? (0, t.createElement)(n.TextControl, {
-                                    label: (0, l.__)(`Item ${a + 1}`, 'text'),
-                                    value: e.value ? e.value : void 0,
-                                    onChange: (e) => f(a, { type: 'li', value: e }),
-                                    style: { width: '100%' }
-                                  })
-                                : (0, t.createElement)(n.TextareaControl, {
-                                    label: (0, l.__)(`Item ${a + 1}`, 'text'),
-                                    value: e.value ? e.value : void 0,
-                                    onChange: (e) => f(a, { type: 'p', value: e }),
-                                    style: { width: '100%' }
-                                  })
-                            ),
-                            (0, t.createElement)(
-                              'td',
-                              { style: { width: '10px' } },
-                              (0, t.createElement)(
-                                'a',
-                                {
-                                  onClick: () => {
-                                    ((e) => {
-                                      let t = [];
-                                      if (o && o.length) for (let l = 0; l < o.length; l++) e !== l && t.push(o[l]);
-                                      (y(t), r({ items: t }), u(d - 1));
-                                    })(a);
-                                  },
-                                  style: { color: 'red', cursor: 'pointer', padding: '0.5' }
-                                },
-                                'x'
-                              )
-                            )
-                          )
-                        )
-                      : ''
-                  ),
-                  d > 0
-                    ? (0, t.createElement)(
-                        'div',
-                        { style: { display: 'flex', justifyContent: 'space-between' } },
-                        (0, t.createElement)(
-                          n.Button,
-                          {
-                            variant: 'secondary',
-                            onClick: () => {
-                              w('li');
-                            }
-                          },
-                          'Add List Item'
-                        )
-                      )
-                    : ''
+                    onChange: (e) => r({ description: e })
+                  })
                 )
               ),
               (0, t.createElement)(
@@ -186,60 +100,12 @@
                 { ...(0, a.useBlockProps)() },
                 (0, t.createElement)(
                   'div',
-                  { style: { padding: '1rem', display: 'flex', alignItems: 'center' } },
+                  { style: { padding: '1rem', display: 'flex', flexDirection: 'column', alignItems: 'center' } },
                   c && c.url ? (0, t.createElement)('img', { style: { maxWidth: '4.5rem' }, src: c.url }) : '',
-                  (0, t.createElement)(
-                    'div',
-                    null,
-                    (0, t.createElement)(
-                      'div',
-                      null,
-                      (0, t.createElement)('strong', { style: { paddingLeft: '1.25rem' } }, i),
-                      (0, t.createElement)('p', { style: { paddingLeft: '1.25rem' } }, m),
-                      (0, t.createElement)(
-                        'ul',
-                        null,
-                        [...Array(d)].map((e, l) =>
-                          (0, t.createElement)(
-                            'li',
-                            {
-                              style: {
-                                lineHeight: !!(o && o[l] && o[l].type && 'p' === o[l].type) && '1.5',
-                                listStyle: !!(o && o[l] && o[l].type && 'p' === o[l].type) && 'none',
-                                marginLeft: !!(o && o[l] && o[l].type && 'p' === o[l].type) && '-1.25rem'
-                              }
-                            },
-                            o && o[l] && o[l].value ? o[l].value : ''
-                          )
-                        )
-                      )
-                    )
-                  )
+                  (0, t.createElement)('strong', { style: { fontSize: '16px' } }, i),
+                  (0, t.createElement)('p', { style: { fontSize: '12px', textAlign: 'center' } }, m)
                 )
               )
-              // (0, t.createElement)(
-              //   'label',
-              //   {
-              //     style: {
-              //       fontSize: '11px',
-              //       fontWeight: 500,
-              //       lineHeight: 1.4,
-              //       textTransform: 'uppercase',
-              //       display: 'inline-block',
-              //       marginBottom: 'calc(8px)',
-              //       padding: '0px'
-              //     }
-              //   },
-              //   'BULLET COLOR '
-              // ),
-              // (0, t.createElement)(o.ColorPalette, {
-              //   label: (0, l.__)('Progress Color', `progress_${r}_color`),
-              //   colors: g,
-              //   value: a && a[r] && a[r].progress_color ? a[r].progress_color : null,
-              //   onChange: (e) => {
-              //     v(r, 'progress_color', e);
-              //   }
-              // })
             );
           }
         });

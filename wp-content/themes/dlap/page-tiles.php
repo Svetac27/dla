@@ -20,7 +20,7 @@
             <div class="tile-heading w-full">Tile with Icon and List</div>
 
             <?php
-                get_template_part( 'template-parts/tiles/tile-m1', null, [
+                get_template_part( 'template-parts/tiles/tile-m1-info', null, [
                     'number' => 215,
                     'symbol' => 'K',
                     'text' => 'Over 215,000 pro bono hours in 2022'
@@ -32,7 +32,7 @@
         <div class="tile-heading w-full">Tile Campaign</div>
 
         <?php
-            get_template_part( 'template-parts/tiles/tile-m1', null, [
+            get_template_part( 'template-parts/tiles/tile-m1-info', null, [
                 'number' => 215,
                 'symbol' => 'K',
                 'text' => 'Over 215,000 pro bono hours in 2022'
