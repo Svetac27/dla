@@ -1,0 +1,40 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "create-block/icon-with-text",
+  "version": "0.1.0",
+  "title": "Tile 4: Icon with Text",
+  "category": "DLAP",
+  "icon": "smiley",
+  "description": "Tile 4: Icon with Text",
+  "example": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string"
+    },
+    "items": {
+      "type": "array"
+    },
+    "media": {
+      "type": "object"
+    },
+    "image": {
+      "type": "string"
+    },
+    "is_small": {
+      "type": "boolean"
+    }
+  },
+  "supports": {
+    "html": false
+  },
+  "textdomain": "icon-with-text",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php",
+  "viewScript": "file:./view.js"
+}

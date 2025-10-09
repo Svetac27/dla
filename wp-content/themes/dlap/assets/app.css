@@ -677,12 +677,20 @@ video {
   position: static;
 }
 
+.fixed{
+  position: fixed;
+}
+
 .absolute{
   position: absolute;
 }
 
 .relative{
   position: relative;
+}
+
+.sticky{
+  position: sticky;
 }
 
 .bottom-0{
@@ -772,6 +780,11 @@ video {
 
 .hidden{
   display: none;
+}
+
+.size-full{
+  width: 100%;
+  height: 100%;
 }
 
 .h-full{
@@ -962,6 +975,10 @@ video {
 
 .rounded-\[5px\]{
   border-radius: 5px;
+}
+
+.border{
+  border-width: 1px;
 }
 
 .border-1px{
@@ -1183,6 +1200,10 @@ video {
   font-weight: 400;
 }
 
+.uppercase{
+  text-transform: uppercase;
+}
+
 .italic{
   font-style: italic;
 }
@@ -1206,6 +1227,10 @@ video {
 .text-white{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.underline{
+  text-decoration-line: underline;
 }
 
 .opacity-50{

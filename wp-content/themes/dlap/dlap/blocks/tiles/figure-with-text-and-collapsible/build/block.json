@@ -1,0 +1,40 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "create-block/figure-with-text-and-collapsible",
+  "version": "0.1.0",
+  "title": "Tile 6: Collapsibles",
+  "category": "DLAP",
+  "icon": "smiley",
+  "description": "Tile 6: Collapsibles",
+  "example": {},
+  "attributes": {
+    "figure": {
+      "type": "string"
+    },
+    "symbol": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string"
+    },
+    "collapsible": {
+      "type": "array"
+    },
+    "items": {
+      "type": "array"
+    }
+  },
+  "supports": {
+    "html": false
+  },
+  "textdomain": "figure-with-title",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php",
+  "viewScript": "file:./view.js"
+}
