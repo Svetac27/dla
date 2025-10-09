@@ -1,0 +1,1 @@
+rsync -av --exclude='node_modules' "/Users/monochrome/Projects/dla-piper/dla-piper-quick-facts-app-v2/www/wp-content/themes/" "/Users/monochrome/Local Sites/dla-piper/app/public/wp-content/themes/dlap"
