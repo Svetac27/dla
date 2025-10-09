@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "title": "Tile M2: Tile Campaign",
   "category": "DLAP",
-  "icon": "smiley",
+  "icon": "star-empty",
   "description": "Tile M2: Tile Campaign",
   "example": {},
   "attributes": {
@@ -17,6 +17,9 @@
     },
     "link": {
       "type": "string"
+    },
+    "external": {
+      "type": "boolean"
     },
     "background": {
       "type": "string"

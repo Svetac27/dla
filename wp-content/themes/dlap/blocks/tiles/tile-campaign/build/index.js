@@ -14,11 +14,12 @@
             title: { type: 'string', default: '' },
             description: { type: 'string', default: '' },
             link: { type: 'string', default: '' },
+            external: { type: 'boolean', default: false },
             backgroundUrl: { type: 'string', default: '' },
             backgroundId: { type: 'number', default: 0 }
           },
           edit: function ({ attributes: e, setAttributes: o }) {
-            const { title: c, description: d, link: s, backgroundUrl: i, backgroundId: a } = e;
+            const { title: c, description: d, link: s, external: x, backgroundUrl: i, backgroundId: a } = e;
             return (0, t.createElement)(
               t.Fragment,
               null,
@@ -42,6 +43,11 @@
                     label: (0, l.__)('Link', 'link'),
                     value: s,
                     onChange: (v) => o({ link: v })
+                  }),
+                  (0, t.createElement)(n.CheckboxControl, {
+                    label: (0, l.__)('EXTERNAL LINK', 'external'),
+                    checked: !!x,
+                    onChange: (v) => o({ external: v })
                   }),
                   (0, t.createElement)(
                     'div',
@@ -154,7 +160,7 @@
             );
           },
           save: function ({ attributes: e }) {
-            const { title: c, description: d, link: s, backgroundUrl: i } = e;
+            const { title: c, description: d, link: s, external: x, backgroundUrl: i } = e;
             // Only use attributes, not any variables or components!
             const bgStyle = {
               display: 'flex',

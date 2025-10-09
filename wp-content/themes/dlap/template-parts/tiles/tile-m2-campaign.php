@@ -5,9 +5,26 @@
     <div class="tile-content">
         <h2 class="tile-title"><?php echo $args['title'] ?? ''; ?></h2>
         <span class="tile-description"><?php echo $args['description'] ?? ''; ?></span>
-        <a href="<?php echo $args['link'] ?? ''; ?>" class="tile-link">
-            Read more
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/link-external.png" alt="read more" />
-        </a>
+        <?php
+            $link = '/' . ($args['link'] ?? '');
+            $is_external = (isset($args['external']) && ($args['external'] === true || $args['external'] === 'true' || $args['external'] === 1 || $args['external'] === '1'));
+
+            if ($is_external && $link && !preg_match('#^https?://#', $link)) {
+                $link = 'https://' . ltrim($link, '/');
+            }
+        ?>
+            <a href="<?php echo esc_url($link); ?>"
+                class="tile-link"
+                <?php if ( $is_external ) : ?>
+                    target="_blank" rel="noopener"
+                <?php endif; ?>
+            >
+                Read more
+                <?php if ( $is_external ) : ?>
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/link-external.png" alt="external read more" />
+                <?php else : ?>
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/arrow-right.png" alt="internal read more" />
+                <?php endif; ?>
+            </a>
     </div>
 </div>
