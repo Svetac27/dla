@@ -14,7 +14,7 @@
 <?php if ($footnote): ?>
     <div style="    font-style: italic;
     font-size: 0.75rem;
-    text-align: right;
+    text-align: left;
     opacity: 0.6;
     color: white;"><?php echo $footnote; ?></div>
 <?php endif; ?>
