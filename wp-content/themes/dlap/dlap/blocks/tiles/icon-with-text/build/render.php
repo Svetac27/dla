@@ -1,1 +1,0 @@
-<?php get_template_part( 'template-parts/tiles/tile-6', null, $attributes); ?>
