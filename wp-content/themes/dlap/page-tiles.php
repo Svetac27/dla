@@ -21,9 +21,10 @@
 
             <?php
                 get_template_part( 'template-parts/tiles/tile-m1-info', null, [
-                    'number' => 215,
-                    'symbol' => 'K',
-                    'text' => 'Over 215,000 pro bono hours in 2022'
+                    'title' => 'Bold',
+                    'description' => 'We are fearless and inquisitive, challenging ourselves to think big and find creative new solutions',
+                    'image' => 'https://quickfactsapp.wpenginepowered.com/wp-content/uploads/2024/02/BE-BOLD.png',
+                    'smallerImage' => true,
                 ]);
             ?>
         </div>
@@ -32,10 +33,11 @@
         <div class="tile-heading w-full">Tile Campaign</div>
 
         <?php
-            get_template_part( 'template-parts/tiles/tile-m1-info', null, [
-                'number' => 215,
-                'symbol' => 'K',
-                'text' => 'Over 215,000 pro bono hours in 2022'
+            get_template_part( 'template-parts/tiles/tile-m2-campaign', null, [
+                'title' => 'DLA Piper and UN AI for Good',
+                'description' => 'DLA Piper is proud to be the founding law firm of the United Nations’ AI for Good Law Track',
+                'link' => 'https://aiforgood.unglobalpulse.org/law-track/',
+                'backgroundUrl' => '../wp-content/uploads/2025/10/image.jpg'
             ]);
         ?>
         </div>

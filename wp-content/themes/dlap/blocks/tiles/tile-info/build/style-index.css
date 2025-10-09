@@ -5,7 +5,7 @@
 }
 
 .wp-block-group.is-layout-grid:has(.tile-info) {
-  margin: 0.5rem 0;
+  margin-top: 0.5rem;
 }
 
 .page-blocks .box.tile-info {
@@ -15,7 +15,6 @@
 
 .tile-info {
   position: relative;
-  height: 100%;
   .tile-content {
     position: relative;
     z-index: 1;
