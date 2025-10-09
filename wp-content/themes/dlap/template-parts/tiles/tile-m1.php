@@ -1,4 +1,4 @@
-<div class="box flex items-center <?php echo isset($args['progress']) ? 'tile-with-icon-and-list' : 'figure-with-text-and-progress-bar'; ?>">
+<div class="box flex items-center <?php echo isset($args['progress']) ? 'tile-info' : 'figure-with-text-and-progress-bar'; ?>">
     <table class="w-full">
         <tr class="items-center gap-6 <?php echo isset($args['progress']) ? 'mb-2' : ''; ?>" >
             <td colspan="2" class="w-4/5 text-left">

@@ -8,7 +8,7 @@
           l = window.wp.i18n,
           a = window.wp.blockEditor,
           n = window.wp.components,
-          r = JSON.parse('{"UU":"create-block/tile-with-icon-and-list"}');
+          r = JSON.parse('{"UU":"create-block/tile-info"}');
         (0, e.registerBlockType)(r.UU, {
           edit: function ({ attributes: e, setAttributes: r }) {
             const { title: i, items: o, image: s, media: c, text: m, is_small: p } = e,
