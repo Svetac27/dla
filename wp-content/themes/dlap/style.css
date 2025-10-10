@@ -39,3 +39,23 @@
     background-size: 100%;
     z-index: -1;
 }
+
+.tile-background {
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        background-color: #FFFFFF0D;
+        -webkit-backdrop-filter: blur(2px);
+        backdrop-filter: blur(2px);
+        z-index: 0;
+    }
+    .tile-content {
+        position: relative;
+    }
+}

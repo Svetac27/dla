@@ -84,6 +84,7 @@ add_action( 'wp_enqueue_scripts', 'smartwp_remove_wp_block_library_css', 100 );
 function dlap_blocks() {
     register_block_type( __DIR__ . '/blocks/tiles/tile-info/build' );
     register_block_type( __DIR__ . '/blocks/tiles/tile-campaign/build' );
+    register_block_type( __DIR__ . '/blocks/tiles/tile-list/build' );
 	register_block_type( __DIR__ . '/blocks/tiles/figure-with-text/build' );
 	register_block_type( __DIR__ . '/blocks/tiles/progress-bar-with-figure/build' );
 	register_block_type( __DIR__ . '/blocks/tiles/tile-with-circle-progress/build' );

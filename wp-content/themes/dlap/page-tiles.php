@@ -42,6 +42,23 @@
         ?>
         </div>
         <div class="w-full">
+            <h2 class="header-text w-full">Tile M3</h2>
+            <div class="tile-heading w-full">Tile with Icon, Title and List</div>
+
+            <?php
+                get_template_part( 'template-parts/tiles/tile-m3-list', null, [
+                    'title' => 'STRATEGIC AMBITIONS',
+                    'image' => '/wp-content/uploads/2024/09/groups_24dp_FCBE04_FILL1_wght200_GRAD0_opsz24.png',
+                    'bullet-color' => '#D9DC42',
+                    'items' => [
+                        'Empower our people to excel',
+                        'Elevate our client base',
+                        'Unlock the potential of our global platform and brand'
+                    ],
+                ]);
+            ?>
+        </div>
+        <div class="w-full">
             <h2 class="header-text w-full">Tile 1</h2>
             <div class="tile-heading w-full">Figure with Text</div>
 
