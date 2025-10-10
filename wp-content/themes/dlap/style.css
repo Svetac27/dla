@@ -42,6 +42,7 @@
 
 .tile-background {
     position: relative;
+    width: 100%;
     &::before {
         content: '';
         position: absolute;
