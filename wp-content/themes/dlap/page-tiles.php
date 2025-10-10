@@ -49,8 +49,8 @@
                 get_template_part( 'template-parts/tiles/tile-m3-list', null, [
                     'title' => 'STRATEGIC AMBITIONS',
                     'image' => '/wp-content/uploads/2024/09/groups_24dp_FCBE04_FILL1_wght200_GRAD0_opsz24.png',
-                    'bullet-color' => '#D9DC42',
-                    'items' => [
+                    'bulletColor' => '#fcbe04',
+                    'list' => [
                         'Empower our people to excel',
                         'Elevate our client base',
                         'Unlock the potential of our global platform and brand'
