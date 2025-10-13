@@ -1,0 +1,1 @@
+<?php get_template_part( 'template-parts/tiles/tile-m4-rich-text', null, $attributes); ?>

@@ -59,6 +59,36 @@
             ?>
         </div>
         <div class="w-full">
+            <h2 class="header-text w-full">Tile M4</h2>
+            <div class="tile-heading w-full">Tile with Rich Text</div>
+
+            <?php
+                get_template_part( 'template-parts/tiles/tile-m4-rich-text', null, [
+                    'title' => 'LAW&, PEOPLE, TECHNOLOGY, INNOVATION',
+                    'image' => '/wp-content/uploads/2024/09/groups_24dp_FCBE04_FILL1_wght200_GRAD0_opsz24.png',
+                    'bulletColor' => '#fcbe04',
+                    'richText' => '
+                    <h3>This is a heading</h3>
+                    <p>This is some placeholder body text lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <a href="#">This is a link</a>
+                    <bold>This is bold text</bold>
+                    <italic>This is italic text</italic>
+                    <ol>
+                        <li>This is an order list item</li>
+                        <li>This is an order list item</li>
+                        <li>This is an order list item</li>
+                    </ol>
+                    <ul>
+                        <li>This is an unordered list item</li>
+                        <li>This is an unordered list item</li>
+                        <li>This is an unordered list item</li>
+                        <li>This is an unordered list item</li>
+                    </ul>
+                    ',
+                ]);
+            ?>
+        </div>
+        <div class="w-full">
             <h2 class="header-text w-full">Tile 1</h2>
             <div class="tile-heading w-full">Figure with Text</div>
 
