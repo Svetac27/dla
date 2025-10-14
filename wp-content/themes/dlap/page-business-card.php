@@ -5,9 +5,9 @@
 <?php get_header(); ?>
     <div class="business-card-page">
         <section class="business-card-section py-2 form-fields hidden">
-            <div class="font-noto <?php echo isV2() ? 'text-12px' : 'text-12px'; ?> leading-[20px] pt-20px">
+            <!-- <div class="font-noto <?php echo isV2() ? 'text-12px' : 'text-12px'; ?> leading-[20px] pt-20px">
                 Please fill in the form below to generate your virtual business card
-            </div>
+            </div> -->
             <?php get_template_part( 'template-parts/business-card/form', null); ?>
         </section>
 
