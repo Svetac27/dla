@@ -6,8 +6,8 @@
         <img class="tile-icon <?php echo $args['smallerImage'] ?? false ? 'smaller-image' : ''; ?>" src="<?php echo $args['image'] ?? ''; ?>" alt="info-icon" />
         <h3 class="tile-title"><?php echo $args['title'] ?? ''; ?></h3>
     </div>
-    <div class="tile-background px-4 py-5">
-        <ul class="tile-content">
+    <div class="blured-background px-4 py-5">
+        <ul class="blured-content">
             <?php
                 if( !empty($args['list']) ){
                     foreach( $args['list'] as $item ){

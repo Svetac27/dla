@@ -88,7 +88,7 @@
     }
   }
 
-  .tile-content {
+  .blured-content {
     display: flex;
     flex-direction: column;
     gap: 10px;

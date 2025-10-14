@@ -26,7 +26,7 @@
     width: 100%;
     border-radius: 10px;
   }
-  .tile-content {
+  .blured-content {
     position: relative;
     z-index: 10;
     .tile-title {

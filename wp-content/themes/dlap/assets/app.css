@@ -754,6 +754,14 @@ video {
   margin-top: 5px;
 }
 
+.mb-2px{
+  margin-bottom: 2px;
+}
+
+.mr-10px{
+  margin-right: 10px;
+}
+
 .block{
   display: block;
 }
@@ -981,6 +989,10 @@ video {
   border-radius: 5px;
 }
 
+.rounded-\[10px\]{
+  border-radius: 10px;
+}
+
 .border{
   border-width: 1px;
 }
@@ -1023,6 +1035,10 @@ video {
 
 .p-15px{
   padding: 15px;
+}
+
+.p-20px{
+  padding: 20px;
 }
 
 .\!py-26px{
@@ -1164,6 +1180,10 @@ video {
   text-align: right;
 }
 
+.align-middle{
+  vertical-align: middle;
+}
+
 .font-noto{
   font-family: "Noto Sans", sans-serif;
 }
@@ -1198,6 +1218,10 @@ video {
 
 .text-\[0\.8rem\]{
   font-size: 0.8rem;
+}
+
+.text-\[14px\]{
+  font-size: 14px;
 }
 
 .font-\[400\]{

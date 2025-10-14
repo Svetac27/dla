@@ -12,11 +12,11 @@
         <?php endif; ?>
         <h3 class="tile-title"><?php echo $args['title'] ?? ''; ?></h3>
     </div>
-    <div class="tile-background px-4 py-5">
-        <div class="tile-content">
+    <div class="blured-background px-4 py-5">
+        <div class="blured-content">
             <?php if (!empty($args['bulletColor'])): ?>
                 <style>
-                    .tile-content ul li::before {
+                    .blured-content ul li::before {
                     color: <?php echo esc_attr($args['bulletColor']); ?>;
                     }
                 </style>

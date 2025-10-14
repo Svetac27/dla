@@ -40,10 +40,10 @@
     z-index: -1;
 }
 
-.tile-background {
+.blured-background {
     position: relative;
     width: 100%;
-    &::before {
+    &::after {
         content: '';
         position: absolute;
         top: 0;
@@ -56,7 +56,24 @@
         backdrop-filter: blur(2px);
         z-index: 0;
     }
-    .tile-content {
+    .blured-content {
         position: relative;
+        z-index: 1;
+    }
+}
+
+
+.business-card-page {
+    .blured-background {
+        margin-bottom: 12px;
+    }
+    .blured-content {
+        > div:last-child > div {
+            padding-bottom: 0;
+        }
+    }
+    #qrcode {
+        max-width: 200px;
+        max-height: 200px;
     }
 }

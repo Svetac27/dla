@@ -18,7 +18,7 @@
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
 	<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/assets/app-icon/v2/36.png">
-    
+
     <!-- Add to home screen for Android -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="DLA Quick Facts">
@@ -99,7 +99,7 @@
 	<?php wp_head(); ?>
 	<!--<script src="https://cdn.jsdelivr.net/npm/js-circle-progress/dist/circle-progress.min.js" type="module"></script>-->
 	<script src="https://tigrr.github.io/circle-progress/js/circle-progress.js"></script>
-	
+
 
 	<style>
 		/* remove this after development */
@@ -127,13 +127,13 @@
 				<h1 class="<?php echo $slug; ?> header-text w-full px-6 text-center font-noto-serif"><?php the_title(); ?></h1>
 			</div>
 		<?php else: ?>
-			<?php 
+			<?php
 				$custom_logo_id = (int)get_theme_mod( 'custom_logo' );
 				?>
 			<a href="/" <?php echo $custom_logo_id > 0 ? '' : 'style="height:12px;"'; ?>>
 				<?php
 
-				if ($custom_logo_id > 0): 
+				if ($custom_logo_id > 0):
 					$logo_url = wp_get_attachment_image_url( $custom_logo_id , 'full' ); // Get the logo URL
 					?>
 					<img class="max-h-10 w-auto" src="<?php echo $logo_url; ?>" />

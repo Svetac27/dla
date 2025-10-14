@@ -15,7 +15,7 @@
 
 .tile-info {
   position: relative;
-  .tile-content {
+  .blured-content {
     display: flex;
     flex-direction: column;
     align-items: center;
