@@ -36,7 +36,7 @@
             get_template_part( 'template-parts/tiles/tile-m2-campaign', null, [
                 'title' => 'DLA Piper and UN AI for Good',
                 'description' => 'DLA Piper is proud to be the founding law firm of the United Nations’ AI for Good Law Track',
-                'link' => 'https://aiforgood.unglobalpulse.org/law-track/',
+                'link' => '/dla-piper-and-un',
                 'backgroundUrl' => '../wp-content/uploads/2025/10/image.jpg'
             ]);
         ?>
