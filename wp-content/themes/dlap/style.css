@@ -77,3 +77,10 @@
         max-height: 200px;
     }
 }
+
+.tile-notification.box .tile-notification-link {
+    position: relative;
+    bottom: 0;
+    right: 0;
+    transform: scale(1.5);
+}

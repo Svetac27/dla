@@ -100,6 +100,20 @@
             ?>
         </div>
         <div class="w-full">
+            <h2 class="header-text w-full">Tile M6</h2>
+            <div class="tile-heading w-full">Tile with Notification</div>
+
+            <?php
+                get_template_part( 'template-parts/tiles/tile-m6-notification', null, [
+                    'title' => 'Recent Updates',
+                    'message' => 'DLA Piper continues to share timely insights and updates for clients, colleagues, and partners across industries. Recent announcements highlight the firm’s work in supporting businesses navigating evolving regulations, market shifts, and global challenges.\n\nThe firm has been active in publishing quick analyses of policy changes, providing practical takeaways for businesses operating in complex legal landscapes. These updates are designed to be concise, accessible, and directly relevant to decision makers.\n\nIn addition, DLA Piper regularly announces upcoming events, client alerts, and thought leadership pieces. These resources aim to help clients anticipate and respond to developments that could impact their operations.\n\nBy using this app, readers can stay connected to the latest news and announcements in one convenient place. Each notification provides a quick entry point into the broader set of insights available through DLA Piper’s global platform.\n',
+                    'created_at' => '5 hours ago',
+                    'slug' => '/notifications',
+                    'readed' => false,
+                ]);
+            ?>
+        </div>
+        <div class="w-full">
             <h2 class="header-text w-full">Tile 1</h2>
             <div class="tile-heading w-full">Figure with Text</div>
 
