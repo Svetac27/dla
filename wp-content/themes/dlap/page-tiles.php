@@ -89,6 +89,17 @@
             ?>
         </div>
         <div class="w-full">
+            <h2 class="header-text w-full">Tile M5</h2>
+            <div class="tile-heading w-full">Tile with Text</div>
+
+            <?php
+                get_template_part( 'template-parts/tiles/tile-m5-simple', null, [
+                    'title' => 'LAW&, PEOPLE, TECHNOLOGY, INNOVATION',
+                    'text' => 'This is some placeholder body text lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                ]);
+            ?>
+        </div>
+        <div class="w-full">
             <h2 class="header-text w-full">Tile 1</h2>
             <div class="tile-heading w-full">Figure with Text</div>
 
