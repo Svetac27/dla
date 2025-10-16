@@ -1079,6 +1079,14 @@ video {
   row-gap: 1rem;
 }
 
+.gap-y-2{
+  row-gap: 0.5rem;
+}
+
+.gap-y-3{
+  row-gap: 0.75rem;
+}
+
 .overflow-hidden{
   overflow: hidden;
 }
@@ -1111,6 +1119,14 @@ video {
   border-width: 1px;
 }
 
+.border-t-\[1px\]{
+  border-top-width: 1px;
+}
+
+.border-b-\[1px\]{
+  border-bottom-width: 1px;
+}
+
 .border-red{
   --tw-border-opacity: 1;
   border-color: rgb(230 42 79 / var(--tw-border-opacity));
@@ -1123,6 +1139,10 @@ video {
 
 .border-opacity-30{
   --tw-border-opacity: 0.30;
+}
+
+.border-opacity-10{
+  --tw-border-opacity: 0.10;
 }
 
 .bg-red{

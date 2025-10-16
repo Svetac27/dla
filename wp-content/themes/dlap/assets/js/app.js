@@ -593,10 +593,51 @@ function detectDeviceAndAddClass() {
 // Call the function when the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', detectDeviceAndAddClass);
 
+function renderNotificationTile(args) {
+  return `
+		<div class="tile-block tile-notification blured-background box px-5 py-5 items-center">
+			<div class="blured-content flex items-center justify-between w-full">
+				<div class="tile-content-info w-[calc(100%-30px)]">
+					<div class="tile-title-wrapper pb-2 flex items-center gap-[10px]">
+						${!args.readed ? `<div class="tile-unread-indicator bg-[#FAB400] w-2 h-2 rounded-[50%]"></div>` : ''}
+						<h3 class="tile-title leading-[20px] ">${args.title ?? ''}</h3>
+					</div>
+					<span class="tile-message block text-[12px] leading-[18px] whitespace-nowrap overflow-hidden text-ellipsis">${args.message ?? ''}</span>
+					<span class="tile-created-at text-[12px] leading-[18px] opacity-70">${args.created_at ?? ''}</span>
+				</div>
+				<a href="${args.link ?? '#'}" class="tile-content-link text-[12px] leading-[18px] w-[100px] h-full flex items-center justify-end">
+					<i class="tile-notification-link icon-arrow-right relative opacity-50"></i>
+				</a>
+			</div>
+		</div>
+  `;
+}
+
 const fetchNotifications = async () => {
   const module = await import('./notifications.js');
   const notifications = module.default;
-  console.log('fetchNotifications called', notifications);
+  const container = document.getElementById('js-notifications-list');
+  if (!container) return;
+
+  console.log('notifications', notifications);
+
+  container.innerHTML = notifications
+    .map((notification) =>
+      renderNotificationTile({
+        title: notification.title,
+        message: notification.message,
+        created_at: new Date(notification.created_at).toLocaleDateString('en-US', {
+          year: 'numeric',
+          month: 'short',
+          day: 'numeric',
+          hour: '2-digit',
+          minute: '2-digit'
+        }),
+        readed: notification.readed,
+        link: `/notifications/${notification.slug}`
+      })
+    )
+    .join('');
 };
 
 fetchNotifications();
