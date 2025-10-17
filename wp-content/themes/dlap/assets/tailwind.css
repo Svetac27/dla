@@ -27,9 +27,6 @@ ul.list-disc li {
     background: transparent linear-gradient(180deg, #16253F 0%, #144774 100%) 0% 0% no-repeat padding-box;
 }
 
-.header-text {
-    @apply text-18px;
-}
 .tile-heading {
     @apply text-3;
 }

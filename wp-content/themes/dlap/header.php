@@ -118,13 +118,13 @@
 
 	<div class="waves gradient"></div>
 	<div class="waves"></div>
-	<header class="px-page flex items-center justify-between mt-[10px] border-b-[1px] border-white border-opacity-10 <?php echo wp_get_post_parent_id() > 0 || $slug == 'business-card' ? 'inner-page mb-2' : ''; ?>">
+	<header class="px-page flex items-center justify-between mt-2 border-b-[1px] border-white border-opacity-10 <?php echo wp_get_post_parent_id() > 0 || $slug == 'business-card' ? 'inner-page mb-2' : ''; ?>">
 		<?php if (wp_get_post_parent_id() > 0 || $slug == 'business-card'): ?>
 			<div class="relative w-full">
 				<a class="btn-back absolute left-0 top-1/2 opacity-50 hover:opacity-100" href="<?php echo wp_get_post_parent_id() == 0 ? '/' : get_permalink(wp_get_post_parent_id()); ?>">
 					<i class="text-12px icon-arrow-left"></i>
 				</a>
-				<h1 class="<?php echo $slug; ?> header-text w-full px-6 text-center font-noto-serif"><?php the_title(); ?></h1>
+				<h1 class="<?php echo $slug; ?> header-text text-[16px] w-full px-6 text-center font-noto-serif"><?php the_title(); ?></h1>
 			</div>
 		<?php else: ?>
 			<?php

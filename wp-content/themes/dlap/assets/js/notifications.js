@@ -87,10 +87,46 @@ function fetchNotifications() {
         message: notification.message,
         created_at: passedTime(notification.created_at),
         readed: notification.readed,
-        link: `/notification`
+        link: `/overview/notifications/${notification.slug}`
       })
     )
     .join('');
 }
 
 document.addEventListener('DOMContentLoaded', fetchNotifications);
+
+function renderNotificationDetail(slug) {
+  const detailContainer = document.getElementById('notification-detail');
+  if (!detailContainer) {
+    console.warn('notification-detail container not found!');
+    return;
+  }
+  const notification = notifications.find((n) => n.slug === slug);
+  detailContainer.innerHTML = `
+    <div class="notification-header">
+      <a href="/notifications" class="notifications-link">
+        <i class="icon-arrow-left notification-back-icon"></i>
+      </a>
+      <h1 class="notification-header-title">${notification ? notification.title : 'Notification Not Found'}</h1>
+    </div>
+    <div class="notification-wrapper">
+      <p class="notification-time" >${passedTime(notification ? notification.created_at : '')}</p>
+      <p class="notification-content">${notification ? notification.message.replace(/\n/g, '<br>') : 'The requested notification could not be found.'}</p>
+    </div>
+  `;
+}
+
+const observer = new MutationObserver(function (_mutationsList, observer) {
+  const detail = document.getElementById('notification-detail');
+  if (detail) {
+    const path = window.location.pathname;
+
+    const parts = path.split('/');
+    const slug = parts[parts.length - 1] || parts[parts.length - 2];
+
+    renderNotificationDetail(slug);
+    observer.disconnect();
+  }
+});
+
+observer.observe(document.body, { childList: true, subtree: true });

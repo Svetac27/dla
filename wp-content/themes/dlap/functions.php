@@ -208,3 +208,26 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 
 include 'custom.functions.php';
 
+
+function notifications_rewrite_rule() {
+    add_rewrite_rule(
+        '^overview/notifications/([^/]*)/?$',
+        'index.php?notification_slug=$matches[1]',
+        'top'
+    );
+}
+add_action('init', 'notifications_rewrite_rule');
+
+function notifications_query_vars($vars) {
+    $vars[] = 'notification_slug';
+    return $vars;
+}
+add_filter('query_vars', 'notifications_query_vars');
+
+function notifications_template_include($template) {
+    if (get_query_var('notification_slug')) {
+        return get_template_directory() . '/notification-detail.php';
+    }
+    return $template;
+}
+add_filter('template_include', 'notifications_template_include');
