@@ -124,6 +124,19 @@ function register_service_worker() {
   add_action('wp_head', 'register_service_worker');
 
 
+// Notifications JS
+function mytheme_enqueue_notifications_script() {
+    if (!is_admin()) {
+        wp_enqueue_script(
+            'notifications-js', // handle
+            get_template_directory_uri() . '/assets/js/notifications.js', // path to JS file
+            array(), // dependencies (e.g., array('jquery'))
+            null, // version (you can use filemtime for cache busting)
+            true // load in footer
+        );
+    }
+}
+add_action('wp_enqueue_scripts', 'mytheme_enqueue_notifications_script');
 
 //Allow SVG in upload
 function cc_mime_types( $mimes ){

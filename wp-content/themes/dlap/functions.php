@@ -20,23 +20,23 @@ if (!session_id()) {
  */
 function is_initial_load() {
 	if (isset($_SESSION['not_initial_load']) && $_SESSION['not_initial_load'] == true) {
-			
+
 		echo '<!-- ALREADY SET ';
 		print_r($_SESSION);
 		echo '-->';
 		return false;
 	}
 
-	
+
 	echo '<!-- NOT SET';
 	print_r($_SESSION);
 	echo '-->';
-	
+
 	$_SESSION['not_initial_load'] = true;
 	return true;
 }
 
- 
+
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
 	define( '_S_VERSION', time() );
@@ -207,3 +207,4 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 }
 
 include 'custom.functions.php';
+

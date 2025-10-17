@@ -1,5 +1,5 @@
 <?php
-	/* Template Name: Notification */
+	/* Template Name: Notifications */
 ?>
 
 <?php get_header(); ?>
@@ -14,8 +14,8 @@
 </style>
 
 <div class="text-white py-5">
-	<div id="js-notification" class="w-full grid grid-cols-1 lg:grid-cols-3 gap-x-14 gap-y-3">
-        <!-- Content will come from app.js fetchNotifications function -->
+	<div id="js-notifications-list" class="w-full grid grid-cols-1 lg:grid-cols-3 gap-x-14 gap-y-3">
+        <!-- Content will come from notifications.js -->
     </div>
 </div>
 

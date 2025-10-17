@@ -163,8 +163,9 @@
 				<?php endif; ?>
 			</a>
 			<div class="header-right-content flex items-center gap-[20px]">
-				<a id="notification-icon" href="/notifications" class="notifications-header">
+				<a id="notification-icon" href="/notifications" class="notifications-header relative">
 					<img src="<?php echo get_template_directory_uri(); ?>/assets/icons/bell.svg" class="bell-icon opacity-70" />
+					<div id="notification-sign" class="notification-sign hidden absolute top-[-5px] right-[-5px] bg-[#FAB400] w-[6px] h-[6px] rounded-full"></div>
 				</a>
 				<a href="/business-card" class="business-card-icon-wrapper opacity-70">
 					<div class="business-card hidden">
