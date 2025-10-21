@@ -147,12 +147,12 @@
                 'core/link',
                 'core/underline',
                 'core/strikethrough',
-                'core/code'
+                'core/code',
+                'core/list',
+                'core/ordered-list'
               ],
-              placeholder: __('Paste or type your rich text here (bold, italic, lists, etc.)', 'tile-rich-text'),
-              style: {
-                margin: 0
-              }
+              placeholder: __('Paste or type your rich text here (bold, italic, link, etc.)', 'tile-rich-text'),
+              style: { margin: 0 }
             })
           )
         )
@@ -166,7 +166,7 @@
         React.createElement(
           'style',
           null,
-          bulletColor ? `.tile-rich-text ul li::marker { color: ${bulletColor}; }` : ''
+          bulletColor ? `.tile-rich-text ul li::marker, .tile-rich-text ol li::marker { color: ${bulletColor}; }` : ''
         ),
         React.createElement(
           'div',
