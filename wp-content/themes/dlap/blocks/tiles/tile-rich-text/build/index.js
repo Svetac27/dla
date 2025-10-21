@@ -7,29 +7,26 @@
     window.wp.blockEditor;
   const { PanelBody, Button, TextControl } = window.wp.components;
 
+  const bulletColors = [
+    { name: 'Yellow', color: '#fcbe04' },
+    { name: 'Green', color: '#d9dc42' },
+    { name: 'Red', color: '#e62a4f' },
+    { name: 'Blue', color: '#144774' },
+    { name: 'Gray', color: '#333333' }
+  ];
+
   registerBlockType('create-block/tile-rich-text', {
     attributes: {
       image: { type: 'string', default: '' },
+      media: { type: 'object', default: {} },
       title: { type: 'string', default: '' },
       bulletColor: { type: 'string', default: '' },
-      richText: { type: 'string', default: '' },
-      media: { type: 'object', default: {} }
+      description: { type: 'string', default: '' }
     },
     edit: function ({ attributes, setAttributes }) {
-      const { image, title, bulletColor, richText, media } = attributes;
-
-      // Image state
+      const { image, media, title, description, bulletColor } = attributes;
       const [mediaId, setMediaId] = React.useState(media && media.id ? media.id : 0);
       const [mediaUrl, setMediaUrl] = React.useState(media && media.url ? media.url : '');
-
-      // Color options for bullet
-      const bulletColors = [
-        { name: 'Yellow', color: '#fcbe04' },
-        { name: 'Green', color: '#d9dc42' },
-        { name: 'Red', color: '#e62a4f' },
-        { name: 'Blue', color: '#144774' },
-        { name: 'Gray', color: '#333333' }
-      ];
 
       return React.createElement(
         React.Fragment,
@@ -39,7 +36,7 @@
           null,
           React.createElement(
             PanelBody,
-            { title: __('Tile M4: Tile with Image, Title and Rich Text', 'tile-rich-text') },
+            { title: __('Tile M4: Tile with Image, Title and Description', 'tile-rich-text') },
             React.createElement(
               MediaUploadCheck,
               null,
@@ -65,7 +62,7 @@
                       ? media.url
                         ? React.createElement('img', { src: media.url, style: { maxWidth: '4.5rem' } })
                         : media.title
-                      : __('Choose an image', 'awp')
+                      : __('Choose an image', 'tile-rich-text')
                   )
               }),
               media && Object.keys(media).length
@@ -80,20 +77,14 @@
                       style: { display: 'block', width: '100%', textAlign: 'right', margin: '0.5rem 0' },
                       variant: 'link'
                     },
-                    __('Remove image', 'awp')
+                    __('Remove image', 'tile-rich-text')
                   )
                 : ''
             ),
             React.createElement(TextControl, {
-              label: __('Title', 'title'),
+              label: __('Title', 'tile-rich-text'),
               value: title,
               onChange: (e) => setAttributes({ title: e })
-            }),
-            React.createElement('hr', { style: { border: '2px solid gray' } }),
-            React.createElement(TextControl, {
-              value: bulletColor || '',
-              onChange: (val) => setAttributes({ bulletColor: val }),
-              placeholder: '#333333'
             }),
             React.createElement(
               'label',
@@ -108,7 +99,7 @@
                   marginTop: '1rem'
                 }
               },
-              __('Bullet Color', 'bullet-color')
+              __('Bullet Color', 'tile-rich-text')
             ),
             React.createElement(ColorPalette, {
               value: bulletColor || '',
@@ -121,107 +112,81 @@
         ),
         React.createElement(
           'div',
-          { ...useBlockProps() },
+          useBlockProps(),
           React.createElement(
             'div',
-            { style: { padding: '1rem' } },
-            React.createElement(
-              'div',
-              {
-                style: {
-                  width: '100%',
-                  display: 'flex',
-                  justifyContent: 'flex-start',
-                  alignItems: 'center'
-                }
-              },
-              media && media.url
-                ? React.createElement('img', {
-                    style: { maxWidth: '2rem', marginRight: '1rem' },
-                    src: media.url
-                  })
-                : '',
-              React.createElement('strong', { style: { fontSize: '16px', margin: 0 } }, title)
-            ),
-            React.createElement(
-              'div',
-              { style: { marginTop: '1rem', width: '100%' } },
-              bulletColor &&
-                React.createElement('style', null, `.tile-m4-rich-text ul li::marker { color: ${bulletColor}; }`),
-              React.createElement(
-                'div',
-                {
-                  style: {
-                    border: '2px solid #007cba',
-                    borderRadius: '6px',
-                    padding: '8px',
-                    margin: '10px 0 18px 0'
-                  }
-                },
-                React.createElement(RichText, {
-                  tagName: 'div',
-                  className: 'tile-m4-rich-text',
-                  value: richText,
-                  onChange: (val) => setAttributes({ richText: val }),
-                  placeholder: __(
-                    'Paste from Word or type your rich text here (bold, italic, links, lists, headings, etc.)',
-                    'tile-rich-text'
-                  ),
-                  allowedFormats: [
-                    'core/bold',
-                    'core/italic',
-                    'core/link',
-                    'core/list',
-                    'core/underline',
-                    'core/strikethrough',
-                    'core/code',
-                    'core/headings'
-                  ]
-                })
-              )
-            )
-          )
-        )
-      );
-    },
-    save: function ({ attributes }) {
-      const { image, title, bulletColor, richText, media } = attributes;
-      return React.createElement(
-        'div',
-        null,
-        React.createElement(
-          'div',
-          { style: { padding: '1rem', width: '100%' } },
-          React.createElement(
-            'div',
-            {
-              style: {
-                width: '100%',
-                display: 'flex',
-                justifyContent: 'flex-start',
-                alignItems: 'center'
-              }
-            },
+            { style: { padding: '1rem', display: 'flex', alignItems: 'center' } },
             media && media.url
               ? React.createElement('img', {
                   style: { maxWidth: '2rem', marginRight: '1rem' },
                   src: media.url
                 })
-              : '',
+              : null,
             React.createElement('strong', { style: { fontSize: '16px', margin: 0 } }, title)
           ),
           React.createElement(
             'div',
-            { style: { marginTop: '1rem', width: '100%' } },
-            bulletColor &&
-              React.createElement('style', null, `.tile-m4-rich-text ul li::marker { color: ${bulletColor}; }`),
-            React.createElement(
-              'div',
-              { className: 'tile-m4-rich-text' },
-              React.createElement(window.wp.blockEditor.RichText.Content, { value: richText })
-            )
+            {
+              className: 'tile-rich-text',
+              style: {
+                borderRadius: '4px',
+                margin: '1rem',
+                minHeight: '6em',
+                border: '1px solid #ddd',
+                padding: '8px'
+              }
+            },
+            React.createElement(RichText, {
+              tagName: 'div',
+              className: 'tile-rich-text',
+              value: description,
+              onChange: (val) => setAttributes({ description: val }),
+              allowedFormats: [
+                'core/bold',
+                'core/italic',
+                'core/link',
+                'core/underline',
+                'core/strikethrough',
+                'core/code'
+              ],
+              placeholder: __('Paste or type your rich text here (bold, italic, lists, etc.)', 'tile-rich-text'),
+              style: {
+                margin: 0
+              }
+            })
           )
         )
+      );
+    },
+    save: function ({ attributes }) {
+      const { media, title, description, bulletColor } = attributes;
+      return React.createElement(
+        'div',
+        null,
+        React.createElement(
+          'style',
+          null,
+          bulletColor ? `.tile-rich-text ul li::marker { color: ${bulletColor}; }` : ''
+        ),
+        React.createElement(
+          'div',
+          {
+            className: 'tile-rich-header',
+            style: { padding: '1rem', width: '100%', display: 'flex', alignItems: 'center' }
+          },
+          media && media.url
+            ? React.createElement('img', {
+                style: { maxWidth: '2rem', marginRight: '1rem' },
+                src: media.url
+              })
+            : null,
+          React.createElement('strong', { style: { fontSize: '16px', margin: 0 } }, title)
+        ),
+        React.createElement(RichText.Content, {
+          tagName: 'div',
+          className: 'tile-rich-text',
+          value: description
+        })
       );
     }
   });

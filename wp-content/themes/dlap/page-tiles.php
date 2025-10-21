@@ -67,6 +67,11 @@
                     'title' => 'LAW&, PEOPLE, TECHNOLOGY, INNOVATION',
                     'image' => '/wp-content/uploads/2024/09/groups_24dp_FCBE04_FILL1_wght200_GRAD0_opsz24.png',
                     'bulletColor' => '#fcbe04',
+                    'description' => '<h3>This is a heading</h3>
+                    <p>This is some placeholder body text lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <a href="#">This is a link</a>
+                    <bold>This is bold text</bold>
+                    <italic>This is italic text</italic>',
                     'richText' => '
                     <h3>This is a heading</h3>
                     <p>This is some placeholder body text lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>

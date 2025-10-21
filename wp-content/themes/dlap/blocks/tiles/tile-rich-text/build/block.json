@@ -9,12 +9,12 @@
   "description": "Tile M4: Tile with Rich Text",
   "example": {},
   "attributes": {
+    "image": {
+      "type": "string"
+    },
     "media": {
       "type": "object",
       "default": {}
-    },
-    "image": {
-      "type": "string"
     },
     "title": {
       "type": "string"
@@ -22,7 +22,7 @@
     "bulletColor": {
       "type": "string"
     },
-    "richText": {
+    "description": {
       "type": "string"
     }
   },

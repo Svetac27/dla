@@ -21,11 +21,11 @@
                     }
                 </style>
                 <?php endif; ?>
-                    <?php
-                        if (!empty($args['richText'])) {
-                            echo $args['richText'];
+                <?php
+                    if (!empty($args['description'])) {
+                        echo $args['description'];
                     }
-                ?>
+            ?></div>
         </div>
     </div>
 </div>
