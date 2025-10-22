@@ -1,3 +1,5 @@
+const COOKIE_NAME = 'dla_notifications_seen';
+const COOKIE_DAYS = 365;
 let notifications = null;
 
 function passedTime(dateString) {
@@ -18,6 +20,45 @@ function passedTime(dateString) {
   return `${years} year${years !== 1 ? 's' : ''} ago`;
 }
 
+function readSeenIdsFromCookie() {
+  try {
+    const match = document.cookie.split('; ').find((row) => row.startsWith(COOKIE_NAME + '='));
+    if (!match) return [];
+    const raw = decodeURIComponent(match.split('=')[1] || '');
+    if (!raw) return [];
+    const parsed = JSON.parse(raw);
+    if (Array.isArray(parsed)) return parsed;
+    if (typeof parsed === 'string') return parsed.split(',').filter(Boolean);
+  } catch (e) {
+    // ignore and fallback to empty list
+  }
+  return [];
+}
+
+function writeSeenIdsToCookie(ids) {
+  try {
+    const value = encodeURIComponent(JSON.stringify(Array.from(new Set(ids))));
+    const expires = new Date(Date.now() + COOKIE_DAYS * 24 * 60 * 60 * 1000).toUTCString();
+    document.cookie = `${COOKIE_NAME}=${value}; expires=${expires}; path=/; SameSite=Lax`;
+  } catch (e) {
+    console.warn('Failed to write notification cookie', e);
+  }
+}
+
+function addIdToSeenCookie(id) {
+  if (!id) return;
+  try {
+    const ids = readSeenIdsFromCookie();
+    if (!ids.includes(id)) {
+      ids.push(id);
+      if (ids.length > 200) ids.splice(0, ids.length - 200);
+      writeSeenIdsToCookie(ids);
+    }
+  } catch (e) {
+    console.warn('Failed to update seen notification cookie', e);
+  }
+}
+
 function renderNotificationTile(args) {
   return `
     <div class="tile-block tile-notification blured-background box px-5 py-5 items-center">
@@ -27,13 +68,13 @@ function renderNotificationTile(args) {
             ${!args.readed ? `<div class="tile-unread-indicator bg-[#FAB400] w-2 h-2 rounded-[50%]"></div>` : ''}
             <h3 class="tile-title leading-[20px] ">${args.app_title ?? ''}</h3>
           </div>
-          <span class="tile-message block text-[12px] leading-[18px] whitespace-nowrap overflow-hidden text-ellipsis">${args.app_text_plain_excerpt ?? ''}</span>
+          <div class="tile-message truncate text-[12px] leading-[18px] whitespace-nowrap overflow-hidden text-ellipsis">${args.app_text ?? ''}</div>
           <span class="tile-created-at text-[12px] leading-[18px] opacity-70">${passedTime(args.created_at) ?? ''}</span>
         </div>
-        <a href="${`/overview/notifications/${args.id}` ?? '#'}" class="tile-content-link text-[12px] leading-[18px] w-[100px] h-full flex items-center justify-end">
-          <i class="tile-notification-link icon-arrow-right relative opacity-50"></i>
-        </a>
+        <i class="tile-notification-link icon-arrow-right relative opacity-50"></i>
       </div>
+      <a href="${`/overview/notifications/${args.id}` ?? '#'}" class="tile-content-link absolute w-full h-full m-[-20px]">
+      </a>
     </div>
   `;
 }
@@ -52,9 +93,17 @@ async function fetchNotifications() {
 
     if (resp.ok) {
       const data = await resp.json();
+      const seenIds = readSeenIdsFromCookie();
 
-      notifications = data.items || [];
+      notifications = [];
 
+      data.items.forEach((n) => {
+        if (!n.sent_at) return;
+        notifications.push({
+          ...n,
+          readed: seenIds.includes(n.id.toString())
+        });
+      });
       if (notifications.some((n) => !n.readed)) {
         signElement?.classList.remove('hidden');
       }
@@ -88,7 +137,10 @@ async function renderNotificationDetail(slug) {
     return;
   }
 
-  const notification = notifications.find((n) => n.id == slug);
+  const notification = notifications.find((n) => {
+    addIdToSeenCookie(slug);
+    return n.id == slug;
+  });
 
   detailContainer.innerHTML = `
     <div class="notification-header">

@@ -78,11 +78,17 @@
     }
 }
 
-.tile-notification.box .tile-notification-link {
-    position: relative;
-    bottom: 0;
-    right: 0;
-    transform: scale(1.5);
+.tile-notification.box {
+    .tile-notification-link {
+        position: relative;
+        bottom: 0;
+        right: 0;
+        transform: scale(1.5);
+    }
+    .tile-content-link {
+        margin: -20px;
+        z-index: 10;
+    }
 }
 
 body:has(#notification-detail) {
@@ -123,6 +129,21 @@ body:has(#notification-detail) {
             padding-top: 20px;
             font-size: 14px;
             line-height: 22px;
+            a {
+                color: inherit;
+                text-decoration: underline;
+            }
+            ul, ol {
+                padding-left: 20px;
+                list-style: initial;
+            }
         }
     }
+}
+
+.truncate {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
 }
