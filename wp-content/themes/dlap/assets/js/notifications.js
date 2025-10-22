@@ -1,32 +1,4 @@
-const notifications = [
-  {
-    id: 'recent_updates',
-    slug: 'recent-updates',
-    title: 'Recent Updates',
-    message:
-      'DLA Piper continues to share timely insights and updates for clients, colleagues, and partners across industries. Recent announcements highlight the firm’s work in supporting businesses navigating evolving regulations, market shifts, and global challenges.\n\nThe firm has been active in publishing quick analyses of policy changes, providing practical takeaways for businesses operating in complex legal landscapes. These updates are designed to be concise, accessible, and directly relevant to decision makers.\n\nIn addition, DLA Piper regularly announces upcoming events, client alerts, and thought leadership pieces. These resources aim to help clients anticipate and respond to developments that could impact their operations.\n\nBy using this app, readers can stay connected to the latest news and announcements in one convenient place. Each notification provides a quick entry point into the broader set of insights available through DLA Piper’s global platform.\n',
-    created_at: '2025-10-16T13:00:00Z',
-    readed: false
-  },
-  {
-    id: 'legal_brief',
-    slug: 'legal-brief',
-    title: 'Legal Brief',
-    message:
-      "A quick overview of today's most relevant legal news and updates from DLA Piper. Stay informed with concise summaries of key developments, regulatory changes, and industry insights that matter to you.",
-    created_at: '2025-10-16T08:30:00Z',
-    readed: true
-  },
-  {
-    id: 'event_recap',
-    slug: 'event-recap',
-    title: 'Event Recap',
-    message:
-      'Highlights from the recent DLA Piper hosted event, including key takeaways, speaker insights, and next steps for attendees. Stay connected with the latest from our events.',
-    created_at: '2025-10-11T12:30:00Z',
-    readed: true
-  }
-];
+let notifications = null;
 
 function passedTime(dateString) {
   const now = new Date();
@@ -53,12 +25,12 @@ function renderNotificationTile(args) {
         <div class="tile-content-info w-[calc(100%-30px)]">
           <div class="tile-title-wrapper pb-2 flex items-center gap-[10px]">
             ${!args.readed ? `<div class="tile-unread-indicator bg-[#FAB400] w-2 h-2 rounded-[50%]"></div>` : ''}
-            <h3 class="tile-title leading-[20px] ">${args.title ?? ''}</h3>
+            <h3 class="tile-title leading-[20px] ">${args.app_title ?? ''}</h3>
           </div>
-          <span class="tile-message block text-[12px] leading-[18px] whitespace-nowrap overflow-hidden text-ellipsis">${args.message ?? ''}</span>
-          <span class="tile-created-at text-[12px] leading-[18px] opacity-70">${args.created_at ?? ''}</span>
+          <span class="tile-message block text-[12px] leading-[18px] whitespace-nowrap overflow-hidden text-ellipsis">${args.app_text_plain_excerpt ?? ''}</span>
+          <span class="tile-created-at text-[12px] leading-[18px] opacity-70">${passedTime(args.created_at) ?? ''}</span>
         </div>
-        <a href="${args.link ?? '#'}" class="tile-content-link text-[12px] leading-[18px] w-[100px] h-full flex items-center justify-end">
+        <a href="${`/overview/notifications/${args.id}` ?? '#'}" class="tile-content-link text-[12px] leading-[18px] w-[100px] h-full flex items-center justify-end">
           <i class="tile-notification-link icon-arrow-right relative opacity-50"></i>
         </a>
       </div>
@@ -66,52 +38,68 @@ function renderNotificationTile(args) {
   `;
 }
 
-function fetchNotifications() {
+async function fetchNotifications() {
   const signElement = document.getElementById('notification-sign');
 
-  if (notifications.some((n) => !n.readed)) {
-    signElement?.classList.remove('hidden');
+  try {
+    const resp = await fetch('/?dla_notifications=1', {
+      method: 'GET',
+      credentials: 'same-origin',
+      headers: {
+        Accept: 'application/json'
+      }
+    });
+
+    if (resp.ok) {
+      const data = await resp.json();
+
+      notifications = data.items || [];
+
+      if (notifications.some((n) => !n.readed)) {
+        signElement?.classList.remove('hidden');
+      }
+
+      const container = document.getElementById('js-notifications-list');
+
+      if (!container) {
+        console.warn('js-notifications-list not found!');
+        return;
+      }
+
+      container.innerHTML = notifications.map((notification) => renderNotificationTile(notification)).join('');
+    } else {
+      console.warn('Failed to fetch notifications, status:', resp.status);
+    }
+  } catch (err) {
+    console.warn('Error fetching notifications:', err);
   }
-
-  const container = document.getElementById('js-notifications-list');
-
-  if (!container) {
-    console.warn('js-notifications-list not found!');
-    return;
-  }
-
-  container.innerHTML = notifications
-    .map((notification) =>
-      renderNotificationTile({
-        title: notification.title,
-        message: notification.message,
-        created_at: passedTime(notification.created_at),
-        readed: notification.readed,
-        link: `/overview/notifications/${notification.slug}`
-      })
-    )
-    .join('');
 }
 
 document.addEventListener('DOMContentLoaded', fetchNotifications);
 
-function renderNotificationDetail(slug) {
+async function renderNotificationDetail(slug) {
+  if (!notifications) {
+    await fetchNotifications();
+  }
+
   const detailContainer = document.getElementById('notification-detail');
   if (!detailContainer) {
     console.warn('notification-detail container not found!');
     return;
   }
-  const notification = notifications.find((n) => n.slug === slug);
+
+  const notification = notifications.find((n) => n.id == slug);
+
   detailContainer.innerHTML = `
     <div class="notification-header">
-      <a href="/notifications" class="notifications-link">
+      <a href="/overview/notifications" class="notifications-link">
         <i class="icon-arrow-left notification-back-icon"></i>
       </a>
-      <h1 class="notification-header-title">${notification ? notification.title : 'Notification Not Found'}</h1>
+      <h1 class="notification-header-title">${notification ? notification.app_title : 'Notification Not Found'}</h1>
     </div>
     <div class="notification-wrapper">
       <p class="notification-time" >${passedTime(notification ? notification.created_at : '')}</p>
-      <p class="notification-content">${notification ? notification.message.replace(/\n/g, '<br>') : 'The requested notification could not be found.'}</p>
+      <div class="notification-content">${notification ? notification.app_text : 'The requested notification could not be found.'}</div>
     </div>
   `;
 }
@@ -123,7 +111,6 @@ const observer = new MutationObserver(function (_mutationsList, observer) {
 
     const parts = path.split('/');
     const slug = parts[parts.length - 1] || parts[parts.length - 2];
-
     renderNotificationDetail(slug);
     observer.disconnect();
   }
