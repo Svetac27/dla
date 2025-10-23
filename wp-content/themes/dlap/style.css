@@ -137,6 +137,9 @@ body:has(#notification-detail) {
                 padding-left: 20px;
                 list-style: initial;
             }
+            ol li {
+                list-style-type: decimal;
+            }
         }
     }
 }
