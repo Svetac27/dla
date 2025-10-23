@@ -1,10 +1,10 @@
-<?php 
+<?php
 $figure = $args['figure'] ?? ($args['number'] ?? '')
 ?>
 <?php if (isset($args['link']) && !empty($args['link'])): ?>
-    <a href="<?php echo $args['link'] ?? ''; ?>" class="figure-with-title box items-center w-full flex items-center relative">
+    <a href="<?php echo $args['link'] ?? ''; ?>" class="figure-with-title box tile-background w-full flex items-center relative">
 <?php else: ?>
-    <div class="figure-with-title box items-center w-full flex items-center relative">
+    <div class="figure-with-title tile-background box w-full flex items-center relative">
 <?php endif; ?>
     <div class="w-full h-full ">
         <div class="numbers-big w-full">
@@ -16,7 +16,7 @@ $figure = $args['figure'] ?? ($args['number'] ?? '')
 
         <?php if (isset($args['link']) && !empty($args['link'])): ?>
             <span class="absolute bottom-0 right-0">
-                <i class="icon-arrow-right opacity-50"></i> 
+                <i class="icon-arrow-right opacity-50"></i>
             </span>
         <?php endif; ?>
     </div>

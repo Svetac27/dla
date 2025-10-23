@@ -49,3 +49,11 @@
     }
   }
 }
+
+.tile-background {
+  background-color: #FFFFFF0D;
+  backdrop-filter: blur(2px);
+  border-radius: 10px;
+  padding: 10px 15px;
+  overflow: hidden;
+}

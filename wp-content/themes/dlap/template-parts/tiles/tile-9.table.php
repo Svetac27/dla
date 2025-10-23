@@ -1,4 +1,4 @@
-<div class="figure-with-text-and-collapsible box tile-dropdown block <?php echo isset($args['is_opened']) && $args['is_opened'] == true ? 'opened' : 'closed'; ?>">
+<div class="figure-with-text-and-collapsible tile-background box tile-dropdown block <?php echo isset($args['is_opened']) && $args['is_opened'] == true ? 'opened' : 'closed'; ?>">
     <div class="items-center w-full min-h-17 justify-between flex cursor-pointer" onclick="toggleDropdown(event)">
         <table class="w-full">
             <tr>
@@ -6,9 +6,9 @@
 
                 <?php if (strlen($figure) > 0 || isset($args['title'])): ?>
                 <td class="<?php echo isset($args['text']) ? 'w-1/5' : 'w-full'; ?> text-left">
-                    <?php $titleClass = 'tile-title'; ?> 
+                    <?php $titleClass = 'tile-title'; ?>
                     <?php if (strlen($figure) > 0): ?>
-                        <?php $titleClass = 'tile-text'; ?> 
+                        <?php $titleClass = 'tile-text'; ?>
                         <div class="numbers-big"><?php echo $figure; ?><span class="symbols-big"><?php echo $args['symbol'] ?? ''; ?></span></div>
                     <?php endif; ?>
                     <?php if (isset($args['title'])): ?>
@@ -24,7 +24,7 @@
                 <?php if ((isset($args['items']) && !empty($args['items'])) || (isset($args['collapsible']) && !empty($args['collapsible']))) : ?>
                     <td class="w-6 pl-2">
                         <span class="toggle whitespace-nowrap">
-                            <i class="inline-block caret icon-chevron-down opacity-50"></i> 
+                            <i class="inline-block caret icon-chevron-down opacity-50"></i>
                         </span>
                     </td>
                 <?php endif; ?>
@@ -63,7 +63,7 @@
                                         <progress class="my-5px <?php echo colorClasses($item['progress_color'] ?? 'green'); ?>" value="<?php echo $item['progress'] ?? ''; ?>" max="100"></progress>
                                     </div>
                                 </div>
-                            <?php endif; ?> 
+                            <?php endif; ?>
                         </li>
                     <?php endforeach; ?>
                 </ul>

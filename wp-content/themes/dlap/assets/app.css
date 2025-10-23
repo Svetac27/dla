@@ -721,6 +721,10 @@ video {
   top: -5px;
 }
 
+.m-0{
+  margin: 0;
+}
+
 .mx-auto{
   margin-left: auto;
   margin-right: auto;
@@ -744,6 +748,11 @@ video {
 .my-5px{
   margin-top: 5px;
   margin-bottom: 5px;
+}
+
+.my-0{
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .mb-10px{
