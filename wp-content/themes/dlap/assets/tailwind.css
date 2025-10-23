@@ -62,6 +62,7 @@ ul.list-disc li {
 .box {
     @apply w-full;
     @apply flex flex-col;
+    @apply mb-[20px];
 }
 
 
@@ -217,27 +218,14 @@ nav ul.menus li i {
 nav ul.menus li.active i,nav ul.menus li.current-menu-item i,.desktop nav ul.menus li:hover i {
     @apply text-green opacity-100;
 }
-/*
 
-.page-blocks .wp-block-columns {
-    column-gap: 1rem;
-    margin-bottom: 0.5rem!important;
-    display: grid;
-} */
+.page-blocks .wp-block-columns .wp-block-column .box {
+    @apply mb-0;
+}
 
 .page-blocks h2 {
     @apply tile-heading w-full;
 }
-
-/* columns responsiveness */
-/* .page-blocks .wp-block-columns {
-    @apply my-2 !inline-flex w-full;
-}
-
-.page-blocks .box:not(.wp-block-column > .box) {
-    @apply my-2;
-} */
-
 
 
 /* ICONS OVERRIDE */
