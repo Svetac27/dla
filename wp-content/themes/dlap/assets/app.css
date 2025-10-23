@@ -721,10 +721,6 @@ video {
   top: -5px;
 }
 
-.m-0{
-  margin: 0;
-}
-
 .mx-auto{
   margin-left: auto;
   margin-right: auto;
@@ -748,11 +744,6 @@ video {
 .my-5px{
   margin-top: 5px;
   margin-bottom: 5px;
-}
-
-.my-0{
-  margin-top: 0;
-  margin-bottom: 0;
 }
 
 .mb-10px{
@@ -1078,10 +1069,6 @@ video {
   border-width: 1px;
 }
 
-.border-b-\[1px\]{
-  border-bottom-width: 1px;
-}
-
 .border-red{
   --tw-border-opacity: 1;
   border-color: rgb(230 42 79 / var(--tw-border-opacity));
@@ -1090,10 +1077,6 @@ video {
 .border-white{
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
-}
-
-.border-opacity-10{
-  --tw-border-opacity: 0.10;
 }
 
 .border-opacity-30{
@@ -1209,6 +1192,10 @@ video {
   padding-bottom: 20px;
 }
 
+.pb-3{
+  padding-bottom: 0.75rem;
+}
+
 .pb-4{
   padding-bottom: 1rem;
 }
@@ -1219,6 +1206,10 @@ video {
 
 .pb-8px{
   padding-bottom: 8px;
+}
+
+.pb-\[5px\]{
+  padding-bottom: 5px;
 }
 
 .pl-2{
@@ -1271,6 +1262,10 @@ video {
 
 .pt-5{
   padding-top: 1.25rem;
+}
+
+.pt-\[37px\]{
+  padding-top: 37px;
 }
 
 .text-left{
@@ -1410,6 +1405,7 @@ ul.list-disc li {
 
 .tile-text{
   font-size: 0.75rem;
+  line-height: 18px;
 }
 
 .numbers-big{
@@ -1417,6 +1413,7 @@ ul.list-disc li {
   font-family: "Noto Serif", serif;
   font-size: 2.25rem;
   font-weight: 200;
+  line-height: 2.7rem;
 }
 
 .numbers-small{
@@ -1458,10 +1455,6 @@ ul.list-disc li {
 }
 
 /* HEADER */
-
-header {
-  height: 3.875rem;
-}
 
 header.inner-page {
   border-bottom: 1px solid rgba(255,255,255,0.2);
@@ -1614,6 +1607,7 @@ progress.mid-blue::-moz-progress-bar{
 
 .tile-dropdown.opened .tile-dropdown-option {
   max-height: 10000px;
+  padding-top: 1rem;
 }
 
 /* navigation */
@@ -1675,8 +1669,6 @@ nav ul.menus li.active i,nav ul.menus li.current-menu-item i,.desktop nav ul.men
 
 .page-blocks h2{
   width: 100%;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
   font-size: 0.75rem;
 }
 
@@ -1693,7 +1685,7 @@ nav ul.menus li.active i,nav ul.menus li.current-menu-item i,.desktop nav ul.men
 /* ICONS OVERRIDE */
 
 .box .icon-arrow-right {
-  font-size: 9.49px;
+  font-size: 14px;
   right: 11px;
   bottom: 13px;
   position: absolute;

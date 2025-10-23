@@ -40,7 +40,7 @@
                 </ul>
             <?php endif; ?>
             <?php if (isset($args['collapsible']) && count($args['collapsible']) > 0 && !empty($args['collapsible'])) : ?>
-                <ul class="py-5 grid gap-8px">
+                <ul class="pt-5 pb-3 grid gap-8px">
                     <?php foreach ($args['collapsible'] as $item): ?>
                         <li class="">
                             <?php if (isset($item['figure_on_right']) && $item['figure_on_right'] ==  true): ?>

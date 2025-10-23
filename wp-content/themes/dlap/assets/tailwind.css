@@ -34,11 +34,11 @@ ul.list-disc li {
     @apply text-14px;
 }
 .tile-text {
-    @apply text-3;
+    @apply text-3 leading-[18px];
 }
 
 .numbers-big {
-    @apply text-9 font-light whitespace-nowrap font-noto-serif;
+    @apply text-9 leading-[2.7rem] font-light whitespace-nowrap font-noto-serif;
 }
 .numbers-small {
     @apply text-6 font-light font-noto-serif;
@@ -67,9 +67,6 @@ ul.list-disc li {
 
 
 /* HEADER */
-header {
-    height: 3.875rem;
-}
 header.inner-page {
     border-bottom: 1px solid rgba(255,255,255,0.2);
 }
@@ -192,6 +189,7 @@ progress.mid-blue::-moz-progress-bar  {
 }
 .tile-dropdown.opened .tile-dropdown-option {
 	max-height: 10000px;
+    padding-top: 1rem;
 }
 
 
@@ -228,7 +226,7 @@ nav ul.menus li.active i,nav ul.menus li.current-menu-item i,.desktop nav ul.men
 } */
 
 .page-blocks h2 {
-    @apply tile-heading w-full py-2;
+    @apply tile-heading w-full;
 }
 
 /* columns responsiveness */
@@ -244,7 +242,7 @@ nav ul.menus li.active i,nav ul.menus li.current-menu-item i,.desktop nav ul.men
 
 /* ICONS OVERRIDE */
 .box .icon-arrow-right {
-    font-size: 9.49px;
+    font-size: 14px;
     right: 11px;
     bottom: 13px;
     position: absolute;

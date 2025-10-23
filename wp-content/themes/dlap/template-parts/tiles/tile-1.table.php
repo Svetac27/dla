@@ -1,4 +1,4 @@
-<div class="figure-with-text box flex items-center <?php echo isset($args['progress']) ? 'figure-with-text' : 'figure-with-text-and-progress-bar'; ?>">
+<div class="figure-with-text box tile-background flex items-center <?php echo isset($args['progress']) ? 'figure-with-text' : 'figure-with-text-and-progress-bar'; ?>">
     <table class="w-full">
         <tr class="items-center gap-6">
             <td class="w-1/4 text-left">
@@ -17,8 +17,8 @@
                 $value = $args['progress'];
                 $color = isset($args['progress_color']) ? colorClasses($args['progress_color']) : 'green';
             } else {
-                $value = isset($progress[0]) ? $progress[0] : 0; 
-                $color = isset($progress[1]) ? $progress[1] : 'green'; 
+                $value = isset($progress[0]) ? $progress[0] : 0;
+                $color = isset($progress[1]) ? $progress[1] : 'green';
             }
         ?>
         <?php if (isset($args['progress']) && $value > 0): ?>

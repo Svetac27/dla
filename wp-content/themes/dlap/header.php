@@ -118,7 +118,7 @@
 
 	<div class="waves gradient"></div>
 	<div class="waves"></div>
-	<header class="px-page flex items-center justify-between mt-2 border-b-[1px] border-white border-opacity-10 <?php echo wp_get_post_parent_id() > 0 || $slug == 'business-card' ? 'inner-page mb-2' : ''; ?>">
+	<header class="px-page flex items-center justify-between pt-[37px] pb-[5px] <?php echo wp_get_post_parent_id() > 0 || $slug == 'business-card' ? 'inner-page mb-2' : ''; ?>">
 		<?php if (wp_get_post_parent_id() > 0 || $slug == 'business-card'): ?>
 			<div class="relative w-full">
 				<a class="btn-back absolute left-0 top-1/2 opacity-50 hover:opacity-100" href="<?php echo wp_get_post_parent_id() == 0 ? '/' : get_permalink(wp_get_post_parent_id()); ?>">
@@ -143,7 +143,7 @@
 					$height = 10.925;
 					if (isV2()) {
 						$width = false;
-						$height = 13;
+						$height = 11;
 					} ?>
 					<svg xmlns="http://www.w3.org/2000/svg" <?php echo $width ? 'width="'.$width.'"' : ''; ?> height="<?php echo $height; ?>" viewBox="0 0 93.421 10.925">
 					<g id="Group_351" data-name="Group 351" transform="translate(8487 14172.567)">
