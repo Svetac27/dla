@@ -3,11 +3,11 @@ $display = 'flex items-start';
 $liStyle = '';
 if(!isset($args['image']) && (isset($args['title']) || isset($args['text'])) && isset($args['items'])) {
     $display = 'grid items-center';
-    $liStyle = 'margin-bottom: 10px;font-size:0.9rem"';
+    $liStyle = 'margin-bottom: 10px; font-size:12px"';
 }
 ?>
 
-<div class="theicon-with-text box !py-6 gap-6  <?php echo  isset($args['is_small']) && $args['is_small'] == true ? 'items-center' : 'items-start'; ?> justify-start <?php echo $display; ?>">
+<div class="theicon-with-text tile-background box !py-6 gap-6  <?php echo  isset($args['is_small']) && $args['is_small'] == true ? 'items-center' : 'items-start'; ?> justify-start <?php echo $display; ?>">
     <div class="tile-header">
         <?php if (isset($args['image'])): ?>
             <div class="tile-icon <?php echo isset($args['is_small']) && $args['is_small'] == true ? 'flex' : 'grid'; ?> items-start text-center pt-1">
@@ -30,8 +30,8 @@ if(!isset($args['image']) && (isset($args['title']) || isset($args['text'])) && 
         <?php endif; ?>
     </div>
     <?php if (isset($args['items']) && count($args['items']) && !empty($args['items'])): ?>
-        <div class="tile-container w-full pl-4 items-center text-left">
-            <ul class="text-3 list-disc pb-8px leading-normal">
+        <div class="tile-container w-full pl-2 items-center text-left">
+            <ul class="text-3 list-disc leading-normal">
                 <?php foreach ($args['items'] as $item): ?>
                     <?php
                         $styles = 'style="'.$liStyle.'"';
