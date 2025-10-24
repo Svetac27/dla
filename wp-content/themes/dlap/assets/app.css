@@ -746,6 +746,21 @@ video {
   margin-bottom: 5px;
 }
 
+.my-\[\]{
+  margin-top: ;
+  margin-bottom: ;
+}
+
+.my-\[30px\]{
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.my-\[15px\]{
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
 .mb-10px{
   margin-bottom: 10px;
 }
@@ -780,6 +795,10 @@ video {
 
 .mb-\[5px\]{
   margin-bottom: 5px;
+}
+
+.mb-\[20px\]{
+  margin-bottom: 20px;
 }
 
 .block{
@@ -965,6 +984,10 @@ video {
 
 .grid-cols-5{
   grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.flex-row{
+  flex-direction: row;
 }
 
 .flex-wrap{
