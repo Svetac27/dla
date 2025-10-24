@@ -1,1 +1,12 @@
 .wp-block-create-block-tile-with-circle-progress{background-color:#144774;color:#fff}
+
+svg.circle-progress {
+  width: 95%;
+  path.circle-progress-value,
+  circle {
+    stroke-width: 5px;
+  }
+  .circle-progress-value {
+    font-size: 35px;
+  }
+}

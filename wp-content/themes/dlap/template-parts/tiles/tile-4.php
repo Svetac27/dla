@@ -1,4 +1,4 @@
-<?php // print_r($args); 
+<?php // print_r($args);
 
 $items = [];
 if (isset($args['items'])) {
@@ -9,15 +9,15 @@ if (isset($args['items'])) {
 ?>
 
 
-<div class="tile-with-circle-progress box px-4 py-5 items-center">
-    <div class="tile-title"><?php echo $args['title'] ?? ''; ?></div>
+<div class="tile-with-circle-progress tile-background box px-4 py-5 items-center">
+    <div class="tile-title w-full mb-[5px]"><?php echo $args['title'] ?? ''; ?></div>
     <?php $subTitle = $args['sub-title'] ?? ($args['sub_title'] ?? false); ?>
     <?php if ($subTitle !== false): ?>
-        <div class="text-10px"><?php echo $subTitle; ?></div>
+        <div class="text-10px w-full opacity-60"><?php echo $subTitle; ?></div>
     <?php endif; ?>
 
     <?php if (isset($items) && count($items)): ?>
-        <div class="grid grid-cols-3 gap-x-4 gap-y-4 pt-5">
+        <div class="grid grid-cols-3 gap-x-4 gap-y-4 pt-4">
             <?php foreach ($items as $index => $item): ?>
                 <?php
                     $donut = $item;
