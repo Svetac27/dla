@@ -98,7 +98,7 @@
 
 	<?php wp_head(); ?>
 	<!--<script src="https://cdn.jsdelivr.net/npm/js-circle-progress/dist/circle-progress.min.js" type="module"></script>-->
-	<script src="https://tigrr.github.io/circle-progress/js/circle-progress.js"></script>
+	<script src="/wp-includes/js/circle-progress.js"></script>
 
 
 	<style>
