@@ -62,7 +62,7 @@ ul.list-disc li {
 .box {
     @apply w-full;
     @apply flex flex-col;
-    @apply mb-[20px];
+    @apply mb-[10px];
 }
 
 

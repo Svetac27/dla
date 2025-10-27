@@ -56,7 +56,7 @@
                             <?php else : ?>
                                 <div class="flex">
                                     <div class="numbers-small min-w-21 w-1/4 text-right pr-4">
-                                        <?php echo $item['figure'] ?? ''; ?>
+                                        <?php echo $item['figure'] ?? ''; ?><span class="symbols-small"><?php echo $item['symbol'] ?? ''; ?></span>
                                     </div>
                                     <div class="leading-loose w-3/4">
                                         <div class="tile-text"><?php echo $item['text'] ?? ''; ?> <span class="currency"><?php echo $item['small_text'] ?? ''; ?></span></div>

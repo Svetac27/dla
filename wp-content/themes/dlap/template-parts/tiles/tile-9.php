@@ -15,7 +15,7 @@
         <?php endif; ?>
         <?php if (isset($args['items']) || isset($args['collapsible'])) : ?>
             <button class="toggle whitespace-nowrap pl-2" onclick="toggleDropdown(event)">
-                <i class="inline-block caret icon-chevron-down opacity-50"></i> 
+                <i class="inline-block caret icon-chevron-down opacity-50"></i>
             </button>
         <?php endif; ?>
     </div>
@@ -51,7 +51,7 @@
                                         <progress class="<?php echo colorClasses($item['progress_color'] ?? 'green'); ?>" value="<?php echo $item['progress'] ?? ''; ?>" max="100"></progress>
                                     </div>
                                 </div>
-                            <?php endif; ?> 
+                            <?php endif; ?>
                         </li>
                     <?php endforeach; ?>
                 </ul>

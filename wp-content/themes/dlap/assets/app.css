@@ -746,16 +746,6 @@ video {
   margin-bottom: 5px;
 }
 
-.my-\[\]{
-  margin-top: ;
-  margin-bottom: ;
-}
-
-.my-\[30px\]{
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
-
 .my-\[15px\]{
   margin-top: 15px;
   margin-bottom: 15px;
@@ -777,6 +767,14 @@ video {
   margin-bottom: 0.75rem;
 }
 
+.mb-\[10px\]{
+  margin-bottom: 10px;
+}
+
+.mb-\[5px\]{
+  margin-bottom: 5px;
+}
+
 .mr-10px{
   margin-right: 10px;
 }
@@ -791,14 +789,6 @@ video {
 
 .mt-\[30px\]{
   margin-top: 30px;
-}
-
-.mb-\[5px\]{
-  margin-bottom: 5px;
-}
-
-.mb-\[20px\]{
-  margin-bottom: 20px;
 }
 
 .block{
@@ -1022,6 +1012,10 @@ video {
   justify-content: space-between;
 }
 
+.gap-5{
+  gap: 1.25rem;
+}
+
 .gap-6{
   gap: 1.5rem;
 }
@@ -1036,14 +1030,6 @@ video {
 
 .gap-\[20px\]{
   gap: 20px;
-}
-
-.gap-4{
-  gap: 1rem;
-}
-
-.gap-5{
-  gap: 1.25rem;
 }
 
 .gap-x-14{
@@ -1112,11 +1098,6 @@ video {
 .border-white{
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
-}
-
-.border-red-mid{
-  --tw-border-opacity: 1;
-  border-color: rgb(249 201 211 / var(--tw-border-opacity));
 }
 
 .border-opacity-30{
@@ -1244,10 +1225,6 @@ video {
   padding-bottom: 6px;
 }
 
-.pb-8px{
-  padding-bottom: 8px;
-}
-
 .pb-\[5px\]{
   padding-bottom: 5px;
 }
@@ -1296,20 +1273,16 @@ video {
   padding-top: 0.75rem;
 }
 
+.pt-4{
+  padding-top: 1rem;
+}
+
 .pt-4px{
   padding-top: 4px;
 }
 
 .pt-5{
   padding-top: 1.25rem;
-}
-
-.pt-\[37px\]{
-  padding-top: 37px;
-}
-
-.pt-4{
-  padding-top: 1rem;
 }
 
 .pt-\[30px\]{
@@ -1376,10 +1349,6 @@ video {
   font-size: 16px;
 }
 
-.text-\[18px\]{
-  font-size: 18px;
-}
-
 .font-\[400\]{
   font-weight: 400;
 }
@@ -1413,11 +1382,6 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.text-red{
-  --tw-text-opacity: 1;
-  color: rgb(230 42 79 / var(--tw-text-opacity));
-}
-
 .underline{
   text-decoration-line: underline;
 }
@@ -1426,12 +1390,12 @@ video {
   opacity: 0.5;
 }
 
-.opacity-70{
-  opacity: 0.70;
-}
-
 .opacity-60{
   opacity: 0.60;
+}
+
+.opacity-70{
+  opacity: 0.70;
 }
 
 html{
@@ -1513,7 +1477,7 @@ ul.list-disc li {
   width: 100%;
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 /* HEADER */

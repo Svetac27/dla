@@ -275,18 +275,28 @@
                                     ? ''
                                     : (0, t.createElement)(
                                         'div',
+                                        {
+                                          style: {
+                                            display: 'flex',
+                                            alignItems: 'baseline'
+                                          }
+                                        },
                                         null,
                                         (0, t.createElement)(
                                           'h2',
                                           {
                                             style: {
                                               textAlign: 'right',
-                                              paddingRight: '1.25rem',
                                               minWidth: '15%',
                                               whiteSpace: 'nowrap'
                                             }
                                           },
                                           v && v[l] && v && v[l].figure ? v[l].figure : ''
+                                        ),
+                                        (0, t.createElement)(
+                                          'small',
+                                          null,
+                                          v && v[l] && v && v[l].symbol ? v[l].symbol : ''
                                         )
                                       ),
                                   (0, t.createElement)(
