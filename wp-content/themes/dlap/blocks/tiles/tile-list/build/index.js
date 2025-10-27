@@ -240,6 +240,7 @@
                               style: {
                                 display: 'inline-block',
                                 width: '0.7em',
+                                minWidth: '0.7em',
                                 height: '0.7em',
                                 borderRadius: '50%',
                                 backgroundColor: bulletColor || '#fff',
