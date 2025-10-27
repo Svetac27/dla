@@ -39,8 +39,8 @@ if ($bottomLink != true && $isExternalLink != true) {
                 <i class="icon-link-external opacity-50"></i>
             </span>
         <?php elseif ($bottomLink != false): ?>
-            <span class="absolute bottom-0 right-0">
-                <i class="icon-arrow-right opacity-50"></i>
+            <span class="absolute bottom-[10px] right-[10px]">
+                <i class="icon-arrow-right opacity-50 text-[12px]"></i>
             </span>
         <?php endif; ?>
     <?php endif; ?>

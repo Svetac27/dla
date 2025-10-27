@@ -24,7 +24,7 @@
                 <?php if ((isset($args['items']) && !empty($args['items'])) || (isset($args['collapsible']) && !empty($args['collapsible']))) : ?>
                     <td class="w-6 pl-2">
                         <span class="toggle whitespace-nowrap">
-                            <i class="inline-block caret icon-chevron-down opacity-50"></i>
+                            <i class="inline-block caret icon-chevron-down opacity-50 mr-[-5px]"></i>
                         </span>
                     </td>
                 <?php endif; ?>
