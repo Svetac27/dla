@@ -697,6 +697,10 @@ video {
   bottom: 0;
 }
 
+.bottom-\[10px\]{
+  bottom: 10px;
+}
+
 .left-0{
   left: 0;
 }
@@ -713,24 +717,16 @@ video {
   right: -5px;
 }
 
+.right-\[10px\]{
+  right: 10px;
+}
+
 .top-1\/2{
   top: 50%;
 }
 
 .top-\[-5px\]{
   top: -5px;
-}
-
-.bottom-\[\]{
-  bottom: ;
-}
-
-.bottom-\[10px\]{
-  bottom: 10px;
-}
-
-.right-\[10px\]{
-  right: 10px;
 }
 
 .mx-auto{
@@ -791,6 +787,10 @@ video {
   margin-right: 10px;
 }
 
+.mr-\[-5px\]{
+  margin-right: -5px;
+}
+
 .mt-2{
   margin-top: 0.5rem;
 }
@@ -801,14 +801,6 @@ video {
 
 .mt-\[30px\]{
   margin-top: 30px;
-}
-
-.mr-\[-7px\]{
-  margin-right: -7px;
-}
-
-.mr-\[-5px\]{
-  margin-right: -5px;
 }
 
 .block{
@@ -1120,11 +1112,6 @@ video {
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
 
-.border-\[red\]{
-  --tw-border-opacity: 1;
-  border-color: rgb(255 0 0 / var(--tw-border-opacity));
-}
-
 .border-opacity-30{
   --tw-border-opacity: 0.30;
 }
@@ -1378,10 +1365,6 @@ video {
   font-weight: 400;
 }
 
-.font-\[12px\]{
-  font-weight: 12px;
-}
-
 .uppercase{
   text-transform: uppercase;
 }
@@ -1513,6 +1496,9 @@ ul.list-disc li {
 
 header.inner-page {
   border-bottom: 1px solid rgba(255,255,255,0.2);
+  margin-bottom: 1rem;
+  padding-top: 18px;
+  padding-bottom: 18px;
 }
 
 header .btn-back {

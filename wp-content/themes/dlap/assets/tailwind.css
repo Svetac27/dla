@@ -70,6 +70,9 @@ ul.list-disc li {
 /* HEADER */
 header.inner-page {
     border-bottom: 1px solid rgba(255,255,255,0.2);
+    margin-bottom: 1rem;
+    padding-top: 18px;
+    padding-bottom: 18px;
 }
 header .btn-back {
     transform: translateY(-50%);
