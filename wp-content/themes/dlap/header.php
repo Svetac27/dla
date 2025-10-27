@@ -179,4 +179,7 @@
 		<?php endif; ?>
 	</header>
 
-	<div class="px-page <?php echo !is_front_page() ? 'inner-page' : ''; ?>">
+	<div class="px-page
+	<?php echo wp_get_post_parent_id() > 0 || $slug == 'business-card' ? 'inner-page' : ''; ?>
+	">
+	<!-- <?php echo !is_front_page() ? 'inner-page' : ''; ?> -->

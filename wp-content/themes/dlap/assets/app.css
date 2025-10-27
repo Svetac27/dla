@@ -1745,6 +1745,20 @@ form label, form input{
   color: rgb(230 42 79 / var(--tw-text-opacity));
 }
 
+.inner-page {
+  article:has(.tile-list) {
+    .entry-content {
+      gap: 1.2rem;
+      h2.wp-block-heading {
+        padding: 0;
+      }
+    }
+  }
+  .tile-with-link {
+    margin-bottom: 0;
+  }
+}
+
 .hover\:opacity-100:hover{
   opacity: 1;
 }

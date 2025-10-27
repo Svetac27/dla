@@ -81,8 +81,7 @@
     .tile-notification-link {
         position: relative;
         bottom: 0;
-        right: 1.25rem;
-        transform: scale(1.2);
+        right: 0;
     }
     .tile-content-link {
         margin: -20px;
