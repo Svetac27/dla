@@ -24,7 +24,7 @@ if ($bottomLink != true && $isExternalLink != true) {
 
         <?php if (isset($args['text']) && !empty($args['text'])): ?>
             <div class="tile-text w-full <?php echo $middleClass; echo isset($args['title']) && !empty($args['title']) ? 'mt-5px' : ''; ?>">
-                <span class="leading-[18px]"><?php echo $args['text'] ?? ''; ?></span>
+                <span class="leading-[18px] opacity-70"><?php echo $args['text'] ?? ''; ?></span>
                 <?php if ($bottomLink == false && $isExternalLink == false): ?>
                     <span>
                         <i style="position: initial;" class="icon-arrow-right opacity-50"></i>
