@@ -98,7 +98,7 @@ async function fetchNotifications() {
       notifications = [];
 
       data.items.forEach((n) => {
-        if (!n.sent_at) return;
+        // if (!n.sent_at) return;
         notifications.push({
           ...n,
           readed: seenIds.includes(n.id.toString())

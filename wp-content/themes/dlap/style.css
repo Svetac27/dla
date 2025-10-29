@@ -127,6 +127,12 @@ body:has(#notification-detail) {
             padding-top: 20px;
             font-size: 14px;
             line-height: 22px;
+            p, ul, ol {
+                margin-bottom: 1rem;
+                li {
+                    margin-bottom: 0.5rem;
+                }
+            }
             a {
                 color: inherit;
                 text-decoration: underline;
