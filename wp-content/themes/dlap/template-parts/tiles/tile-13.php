@@ -9,7 +9,7 @@ if ($bottomLink != true && $isExternalLink != true) {
 ?>
 
 <a href="<?php echo $args['link'] ?? ''; ?>" <?php if ($isExternalLink): ?>target="_blank"<?php endif; ?> class="tile-with-link <?php echo $isExternalLink ? 'external-link' : 'internal-link'; ?> tile-background flex flex-row items-center relative mb-[10px]">
-    <div class="w-full my-[15px] ">
+    <div class="w-full mt-[17px] mb-[15px] ">
         <?php if (isset($args['title']) && !empty($args['title'])): ?>
             <div class="tile-title w-full <?php echo $middleClass; ?>">
                 <span class="leading-[20px]"><?php echo $args['title'] ?? ''; ?></span>

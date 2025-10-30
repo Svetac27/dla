@@ -43,6 +43,7 @@
 
 .icon-arrow-right:before {
   content: "\e904";
+  font-size: 12px;
 }
 
 .icon-link-external:before {
@@ -779,10 +780,6 @@ video {
   margin-bottom: 10px;
 }
 
-.mb-\[5px\]{
-  margin-bottom: 5px;
-}
-
 .mr-10px{
   margin-right: 10px;
 }
@@ -801,6 +798,18 @@ video {
 
 .mt-\[30px\]{
   margin-top: 30px;
+}
+
+.mt-\[5px\]{
+  margin-top: 5px;
+}
+
+.mb-\[15px\]{
+  margin-bottom: 15px;
+}
+
+.mt-\[17px\]{
+  margin-top: 17px;
 }
 
 .block{
@@ -1289,10 +1298,6 @@ video {
   padding-top: 0.75rem;
 }
 
-.pt-4{
-  padding-top: 1rem;
-}
-
 .pt-4px{
   padding-top: 4px;
 }
@@ -1301,8 +1306,16 @@ video {
   padding-top: 1.25rem;
 }
 
+.pt-\[10px\]{
+  padding-top: 10px;
+}
+
 .pt-\[23px\]{
   padding-top: 23px;
+}
+
+.pt-\[5px\]{
+  padding-top: 5px;
 }
 
 .text-left{
