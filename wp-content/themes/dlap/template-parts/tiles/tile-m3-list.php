@@ -7,7 +7,7 @@
         <h3 class="tile-title"><?php echo $args['title'] ?? ''; ?></h3>
     </div>
     <div class="blured-background px-4 py-5">
-        <ul class="blured-content">
+        <ul class="blured-content ml-[-5px]">
             <?php
                 if( !empty($args['list']) ){
                     foreach( $args['list'] as $item ){

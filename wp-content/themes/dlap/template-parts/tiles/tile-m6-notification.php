@@ -1,10 +1,10 @@
 <?php // print_r($args); ?>
 
 
-<div class="tile-block tile-notification blured-background box px-5 py-5 items-center" >
+<div class="tile-block tile-notification blured-background box p-[20px] items-center" >
     <div class="blured-content flex items-center justify-between w-full">
         <div class="tile-content-info w-[calc(100%-30px)]">
-            <div class="tile-title-wrapper pb-2 flex items-center gap-[10px]" >
+            <div class="tile-title-wrapper pb-[5px] flex items-center gap-[10px]" >
                 <?php if (!$args['readed']): ?>
                     <div class="tile-unread-indicator bg-[#FAB400] w-2 h-2 rounded-[50%]"></div>
                 <?php endif; ?>

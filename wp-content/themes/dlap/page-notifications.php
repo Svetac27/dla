@@ -13,8 +13,8 @@
 
 </style>
 
-<div class="text-white py-5">
-	<div id="js-notifications-list" class="w-full grid grid-cols-1 lg:grid-cols-3 gap-x-14 gap-y-3">
+<div class="text-white pt-[2px] pb-[20px]">
+	<div id="js-notifications-list" class="w-full grid grid-cols-1 lg:grid-cols-3 gap-x-14">
         <!-- Content will come from notifications.js -->
     </div>
 </div>
