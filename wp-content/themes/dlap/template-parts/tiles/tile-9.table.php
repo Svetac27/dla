@@ -5,7 +5,7 @@
                 <?php $figure = $args['figure'] ?? ($args['number'] ?? ''); ?>
 
                 <?php if (strlen($figure) > 0 || isset($args['title'])): ?>
-                <td class="<?php echo isset($args['text']) ? 'w-1/5' : 'w-full'; ?> text-left">
+                <td class="tile-main-content flex flex-col <?php echo isset($args['text']) ? 'w-1/5' : 'w-full'; ?> text-left">
                     <?php $titleClass = 'tile-title'; ?>
                     <?php if (strlen($figure) > 0): ?>
                         <?php $titleClass = 'tile-text'; ?>

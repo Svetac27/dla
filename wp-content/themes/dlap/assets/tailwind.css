@@ -130,7 +130,7 @@ progress.mid-blue::-moz-progress-bar  {
 }
 
 .circle-progress-text {
-    @apply text-30px font-light font-noto-serif;
+    @apply text-36px font-light font-noto-serif;
 }
 
 .circle-progress {
@@ -227,16 +227,13 @@ nav ul.menus li.active i,nav ul.menus li.current-menu-item i,.desktop nav ul.men
 }
 
 .page-blocks h2 {
-    @apply tile-heading w-full;
+    @apply tile-heading w-full text-[12px] leading-[17px] py-[10px];
 }
 
 
 /* ICONS OVERRIDE */
 .box .icon-arrow-right {
-    font-size: 14px;
-    right: 11px;
-    bottom: 13px;
-    position: absolute;
+    @apply text-[12px] right-[11px] bottom-[17px] absolute;
 }
 .box .icon-link-external {
     font-size: 17px;

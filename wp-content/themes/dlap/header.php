@@ -118,7 +118,7 @@
 
 	<div class="waves gradient"></div>
 	<div class="waves"></div>
-	<header class="px-page flex items-center justify-between pt-[30px] pb-[5px] <?php echo wp_get_post_parent_id() > 0 || $slug == 'business-card' ? 'inner-page' : ''; ?>">
+	<header class="px-page flex items-center justify-between pt-[23px] pb-[5px] <?php echo wp_get_post_parent_id() > 0 || $slug == 'business-card' ? 'inner-page' : ''; ?>">
 		<?php if (wp_get_post_parent_id() > 0 || $slug == 'business-card'): ?>
 			<div class="relative w-full">
 				<a class="btn-back absolute left-0 top-1/2 opacity-50 hover:opacity-100" href="<?php echo wp_get_post_parent_id() == 0 ? '/' : get_permalink(wp_get_post_parent_id()); ?>">
@@ -162,12 +162,12 @@
 					</svg>
 				<?php endif; ?>
 			</a>
-			<div class="header-right-content flex items-center gap-[20px]">
+			<div class="header-right-content flex items-center gap-[25px]">
 				<a id="notification-icon" href="/overview/notifications" class="notifications-header relative">
 					<img src="<?php echo get_template_directory_uri(); ?>/assets/icons/bell.svg" class="bell-icon opacity-70" />
-					<div id="notification-sign" class="notification-sign hidden absolute top-[-5px] right-[-5px] bg-[#FAB400] w-[6px] h-[6px] rounded-full"></div>
+					<div id="notification-sign" class="notification-sign hidden absolute top-[-2px] right-[-7px] bg-[#FAB400] w-[6px] h-[6px] rounded-full"></div>
 				</a>
-				<a href="/business-card" class="business-card-icon-wrapper opacity-70">
+				<a href="/business-card" class="business-card-icon-wrapper">
 					<div class="business-card hidden">
 						<?php get_template_part( 'icons/business', 'card'); ?>
 					</div>
