@@ -186,6 +186,8 @@
       );
     },
     save: function ({ attributes }) {
+      // Don't render image/title here - let the PHP template handle it
+      // Only save the InnerBlocks content
       return React.createElement(InnerBlocks.Content);
     }
   });

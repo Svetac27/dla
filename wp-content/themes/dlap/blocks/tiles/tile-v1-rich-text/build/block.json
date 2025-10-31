@@ -3,10 +3,10 @@
   "apiVersion": 3,
   "name": "create-block/tile-v1-rich-text",
   "version": "0.1.0",
-  "title": "Tile V1: Tile with Rich Text",
+  "title": "Tile M4: Tile with Rich Text",
   "category": "DLAP",
   "icon": "star-empty",
-  "description": "Tile V1: Tile with Rich Text",
+  "description": "Tile M4: Tile with Rich Text",
   "example": {},
   "attributes": {
     "media": {
