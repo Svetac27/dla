@@ -30,7 +30,7 @@
         { name: 'Gray', color: '#333333' }
       ];
 
-      // Define allowed blocks (you can customize this list)
+      // Define allowed blocks
       const ALLOWED_BLOCKS = [
         'core/paragraph',
         'core/heading',
@@ -43,7 +43,7 @@
         'core/spacer'
       ];
 
-      // Optional: Define a template for initial blocks
+      // Template for initial blocks
       const TEMPLATE = [['core/paragraph', { placeholder: 'Add your content here...' }]];
 
       return React.createElement(
@@ -186,40 +186,7 @@
       );
     },
     save: function ({ attributes }) {
-      const { image, title, bulletColor, media } = attributes;
-      return React.createElement(
-        'div',
-        null,
-        React.createElement(
-          'div',
-          { style: { padding: '1rem', width: '100%' } },
-          React.createElement(
-            'div',
-            {
-              style: {
-                width: '100%',
-                display: 'flex',
-                justifyContent: 'flex-start',
-                alignItems: 'center'
-              }
-            },
-            media && media.url
-              ? React.createElement('img', {
-                  style: { maxWidth: '2rem', marginRight: '1rem' },
-                  src: media.url
-                })
-              : '',
-            React.createElement('strong', { style: { fontSize: '16px', margin: 0 } }, title)
-          ),
-          React.createElement(
-            'div',
-            { style: { marginTop: '1rem', width: '100%' } },
-            bulletColor &&
-              React.createElement('style', null, `.tile-v1-rich-text ul li::marker { color: ${bulletColor}; }`),
-            React.createElement('div', { className: 'tile-v1-rich-text' }, React.createElement(InnerBlocks.Content))
-          )
-        )
-      );
+      return React.createElement(InnerBlocks.Content);
     }
   });
 })();

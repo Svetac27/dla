@@ -21,11 +21,9 @@
                 </style>
             <?php endif; ?>
             <?php
-                // Display InnerBlocks content instead of richText
                 if (!empty($args['content'])) {
                     echo $args['content'];
                 } elseif (!empty($args['innerBlocks'])) {
-                    // Alternative: if content is passed as innerBlocks
                     echo $args['innerBlocks'];
                 }
             ?>
