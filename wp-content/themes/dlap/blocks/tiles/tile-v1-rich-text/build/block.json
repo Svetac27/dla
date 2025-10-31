@@ -1,0 +1,32 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "create-block/tile-v1-rich-text",
+  "version": "0.1.0",
+  "title": "Tile V1: Tile with Rich Text",
+  "category": "DLAP",
+  "icon": "star-empty",
+  "description": "Tile V1: Tile with Rich Text",
+  "example": {},
+  "attributes": {
+    "media": {
+      "type": "object",
+      "default": {}
+    },
+    "image": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "bulletColor": {
+      "type": "string"
+    }
+  },
+  "textdomain": "tile-v1-rich-text",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php",
+  "viewScript": "file:./view.js"
+}

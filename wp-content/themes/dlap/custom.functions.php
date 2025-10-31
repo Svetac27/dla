@@ -86,6 +86,7 @@ function dlap_blocks() {
     register_block_type( __DIR__ . '/blocks/tiles/tile-campaign/build' );
     register_block_type( __DIR__ . '/blocks/tiles/tile-list/build' );
     register_block_type( __DIR__ . '/blocks/tiles/tile-rich-text/build' );
+    register_block_type( __DIR__ . '/blocks/tiles/tile-v1-rich-text/build' );
     register_block_type( __DIR__ . '/blocks/tiles/tile-simple-text/build' );
 	register_block_type( __DIR__ . '/blocks/tiles/figure-with-text/build' );
 	register_block_type( __DIR__ . '/blocks/tiles/progress-bar-with-figure/build' );
