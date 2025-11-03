@@ -82,19 +82,13 @@ add_action( 'wp_enqueue_scripts', 'smartwp_remove_wp_block_library_css', 100 );
 
 
 function dlap_blocks() {
-    register_block_type( __DIR__ . '/blocks/tiles/tile-info/build' );
-    register_block_type( __DIR__ . '/blocks/tiles/tile-campaign/build' );
-    register_block_type( __DIR__ . '/blocks/tiles/tile-list/build' );
-    register_block_type( __DIR__ . '/blocks/tiles/tile-rich-text/build' );
-    register_block_type( __DIR__ . '/blocks/tiles/tile-simple-text/build' );
-	register_block_type( __DIR__ . '/blocks/tiles/figure-with-text/build' );
-	register_block_type( __DIR__ . '/blocks/tiles/progress-bar-with-figure/build' );
-	register_block_type( __DIR__ . '/blocks/tiles/tile-with-circle-progress/build' );
-	register_block_type( __DIR__ . '/blocks/tiles/icon-with-text/build' );
-	register_block_type( __DIR__ . '/blocks/tiles/figure-with-title/build' );
-	register_block_type( __DIR__ . '/blocks/tiles/figure-with-text-and-collapsible/build' );
-	register_block_type( __DIR__ . '/blocks/tiles/tile-with-link/build' );
+    $tiles = require __DIR__ . '/active-tile-list.php';
+
+    foreach ($tiles as $tile) {
+        register_block_type(__DIR__ . '/blocks/tiles/' . $tile['tile'] . '/build');
+    }
 }
+
 add_action( 'init', 'dlap_blocks' );
 
 
