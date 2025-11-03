@@ -1,5 +1,4 @@
-<?php // print_r($args); ?>
-
+<?php // Updated to use InnerBlocks content ?>
 
 <div class="tile-block tile-rich-text box items-center">
     <div class="tile-header">
@@ -17,15 +16,17 @@
             <?php if (!empty($args['bulletColor'])): ?>
                 <style>
                     .blured-content ul li::before {
-                    color: <?php echo esc_attr($args['bulletColor']); ?>;
+                        color: <?php echo esc_attr($args['bulletColor']); ?>;
                     }
                 </style>
-                <?php endif; ?>
-                    <?php
-                        if (!empty($args['richText'])) {
-                            echo $args['richText'];
-                    }
-                ?>
+            <?php endif; ?>
+            <?php
+                if (!empty($args['content'])) {
+                    echo $args['content'];
+                } elseif (!empty($args['innerBlocks'])) {
+                    echo $args['innerBlocks'];
+                }
+            ?>
         </div>
     </div>
 </div>

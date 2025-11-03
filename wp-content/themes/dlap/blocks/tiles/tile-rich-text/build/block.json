@@ -21,10 +21,11 @@
     },
     "bulletColor": {
       "type": "string"
-    },
-    "richText": {
-      "type": "string"
     }
+  },
+  "supports": {
+    "html": false,
+    "anchor": true
   },
   "textdomain": "tile-rich-text",
   "editorScript": "file:./index.js",
