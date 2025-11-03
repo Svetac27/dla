@@ -154,3 +154,14 @@ body:has(#notification-detail) {
     -webkit-line-clamp: 1;
     overflow: hidden;
 }
+
+.tile-example {
+    padding: 3rem 0;
+    border-bottom: 1px solid #FFFFFF33;
+    &.inactive-tile {
+        opacity: 0.5;
+        h2 {
+            text-decoration: line-through;
+        }
+    }
+}

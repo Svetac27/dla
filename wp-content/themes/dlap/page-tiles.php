@@ -1,6 +1,14 @@
 <?php
-	/* Template Name: Tiles */
     $tiles = require __DIR__ . '/active-tile-list.php';
+    function is_active_tile($tile_file) {
+        global $tiles;
+        foreach ($tiles as $tile) {
+            if ($tile['file'] === $tile_file) {
+                return true;
+            }
+        }
+        return false;
+    }
 ?>
 
 <?php get_header(); ?>
@@ -8,15 +16,15 @@
 <style>
 /* for this page only */
 .tile-heading.w-full {
-    margin-bottom: 5.25rem;
+    margin-bottom: 3rem;
     font-size: 12px;
 }
 
 </style>
 
 <div class="text-white">
-	<div class="w-full grid grid-cols-1 lg:grid-cols-3 gap-x-14 gap-y-20">
-        <div class="w-full">
+	<div class="tile-example w-full grid grid-cols-1 lg:grid-cols-3 gap-x-14 p-0">
+        <div class="tile-example w-full <?php echo is_active_tile('tile-m1-info') ? 'active-tile' : 'inactive-tile'; ?>">
             <h2 class="header-text w-full">Tile M1</h2>
             <div class="tile-heading w-full">Tile with Icon and List</div>
 
@@ -29,20 +37,22 @@
                 ]);
             ?>
         </div>
-        <div class="w-full">
-        <h2 class="header-text w-full">Tile M2</h2>
-        <div class="tile-heading w-full">Tile Campaign</div>
 
-        <?php
-            get_template_part( 'template-parts/tiles/tile-m2-campaign', null, [
-                'title' => 'DLA Piper and UN AI for Good',
-                'description' => 'DLA Piper is proud to be the founding law firm of the United Nations’ AI for Good Law Track',
-                'link' => '/dla-piper-and-un',
-                'backgroundUrl' => '../wp-content/uploads/2025/10/image.jpg'
-            ]);
-        ?>
+        <div class="tile-example w-full <?php echo is_active_tile('tile-m2-campaign') ? 'active-tile' : 'inactive-tile'; ?>">
+            <h2 class="header-text w-full">Tile M2</h2>
+            <div class="tile-heading w-full">Tile Campaign</div>
+
+            <?php
+                get_template_part( 'template-parts/tiles/tile-m2-campaign', null, [
+                    'title' => 'DLA Piper and UN AI for Good',
+                    'description' => 'DLA Piper is proud to be the founding law firm of the United Nations’ AI for Good Law Track',
+                    'link' => '/dla-piper-and-un',
+                    'backgroundUrl' => '../wp-content/uploads/2025/10/image.jpg'
+                ]);
+            ?>
         </div>
-        <div class="w-full">
+
+        <div class="tile-example w-full <?php echo is_active_tile('tile-m3-list') ? 'active-tile' : 'inactive-tile'; ?>">
             <h2 class="header-text w-full">Tile M3</h2>
             <div class="tile-heading w-full">Tile with Icon, Title and List</div>
 
@@ -59,7 +69,8 @@
                 ]);
             ?>
         </div>
-        <div class="w-full">
+
+        <div class="tile-example w-full <?php echo is_active_tile('tile-m4-rich-text') ? 'active-tile' : 'inactive-tile'; ?>">
             <h2 class="header-text w-full">Tile M4</h2>
             <div class="tile-heading w-full">Tile with Rich Text</div>
 
@@ -89,7 +100,8 @@
                 ]);
             ?>
         </div>
-        <div class="w-full">
+
+        <div class="tile-example w-full <?php echo is_active_tile('tile-m5-simple') ? 'active-tile' : 'inactive-tile'; ?>">
             <h2 class="header-text w-full">Tile M5</h2>
             <div class="tile-heading w-full">Tile with Text</div>
 
@@ -100,7 +112,8 @@
                 ]);
             ?>
         </div>
-        <div class="w-full">
+
+        <div class="tile-example w-full <?php echo is_active_tile('tile-m6-notification') ? 'active-tile' : 'inactive-tile'; ?>">
             <h2 class="header-text w-full">Tile M6</h2>
             <div class="tile-heading w-full">Tile with Notification</div>
 
@@ -114,7 +127,8 @@
                 ]);
             ?>
         </div>
-        <div class="w-full">
+
+        <div class="tile-example w-full <?php echo is_active_tile('tile-1.table') ? 'active-tile' : 'inactive-tile'; ?>">
             <h2 class="header-text w-full">Tile 1</h2>
             <div class="tile-heading w-full">Figure with Text</div>
 
@@ -127,8 +141,8 @@
             ?>
         </div>
 
-        <div class="w-full">
-            <h2 class="header-text w-full">Tile 2</h2>
+        <div class="tile-example w-full <?php echo is_active_tile('tile-1.table') ? 'active-tile' : 'inactive-tile'; ?>">
+            <h2 class="header-text w-full">Tile 1</h2>
             <div class="tile-heading w-full">Figure with Text and Progress Bar</div>
             <?php $value = rand(0, 100);
                 $colors = availableColors();
@@ -142,7 +156,7 @@
             ]); ?>
         </div>
 
-        <div class="w-full">
+        <div class="tile-example w-full <?php echo is_active_tile('tile-3.table') ? 'active-tile' : 'inactive-tile'; ?>">
             <h2 class="header-text w-full">Tile 3</h2>
             <div class="tile-heading w-full">Progress Bar with Figure</div>
 
@@ -158,7 +172,7 @@
             ]); ?>
         </div>
 
-        <div class="w-full">
+        <div class="tile-example w-full <?php echo is_active_tile('tile-4') ? 'active-tile' : 'inactive-tile'; ?>">
             <h2 class="header-text w-full">Tile 4</h2>
             <div class="tile-heading w-full">Tile with Donut Graphs</div>
 
@@ -180,8 +194,9 @@
                 ]
             ]); ?>
         </div>
-        <div class="w-full">
-            <h2 class="header-text w-full">Tile 5</h2>
+
+        <div class="tile-example w-full <?php echo is_active_tile('tile-4') ? 'active-tile' : 'inactive-tile'; ?>">
+            <h2 class="header-text w-full">Tile 4</h2>
             <div class="tile-heading w-full">Tile with donut graphs and additional text</div>
 
             <?php get_template_part( 'template-parts/tiles/tile-4', null, [
@@ -204,7 +219,8 @@
                 ]
             ]); ?>
         </div>
-        <div class="w-full">
+
+        <div class="tile-example w-full <?php echo is_active_tile('tile-6') ? 'active-tile' : 'inactive-tile'; ?>">
             <h2 class="header-text w-full">Tile 6</h2>
             <div class="tile-heading w-full">Icon with bullet points</div>
 
@@ -218,12 +234,13 @@
                     ],
                 ]); ?>
         </div>
-        <div class="w-full">
-            <h2 class="header-text w-full">Tile 7</h2>
-            <div class="tile-heading w-full">Figure with title</div>
+
+        <div class="tile-example w-full <?php echo is_active_tile('tile-13') ? 'active-tile' : 'inactive-tile'; ?>">
+            <h2 class="header-text w-full">Tile 13</h2>
+            <div class="tile-heading w-full">Tile with Link</div>
 
             <div class="max-w-40">
-                <?php get_template_part( 'template-parts/tiles/tile-7', null, [
+                <?php get_template_part( 'template-parts/tiles/tile-13', null, [
                     'figure' => '00',
                     'symbol' => '+',
                     'title' => 'Lorem'
@@ -231,8 +248,8 @@
             </div>
         </div>
 
-        <div class="w-full">
-            <h2 class="header-text w-full">Tile 8</h2>
+        <div class="tile-example w-full <?php echo is_active_tile('tile-7') ? 'active-tile' : 'inactive-tile'; ?>">
+            <h2 class="header-text w-full">Tile 7</h2>
             <div class="tile-heading w-full">Figure with title and link</div>
 
             <div class="max-w-40">
@@ -245,8 +262,7 @@
             </div>
         </div>
 
-
-        <div class="w-full">
+        <div class="tile-example w-full <?php echo is_active_tile('tile-9') ? 'active-tile' : 'inactive-tile'; ?>">
             <h2 class="header-text w-full">Tile 9</h2>
             <div class="tile-heading w-full">Figure with title and collapsible</div>
 
@@ -259,14 +275,15 @@
                         'Item 2',
                         'Item 3',
                         'Item 4',
-                        'Item 5',
+                        'Item 5'
                     ]
-            ]); ?>
+                ]);
+            ?>
+
         </div>
 
-
-        <div class="w-full">
-            <h2 class="header-text w-full">Tile 10</h2>
+        <div class="tile-example w-full <?php echo is_active_tile('tile-9') ? 'active-tile' : 'inactive-tile'; ?>">
+            <h2 class="header-text w-full">Tile 9</h2>
             <div class="tile-heading w-full">Figure with text and collapsible</div>
 
             <?php get_template_part( 'template-parts/tiles/tile-9.table', null, [
@@ -283,8 +300,8 @@
             ]); ?>
         </div>
 
-        <div class="w-full">
-            <h2 class="header-text w-full">Tile 11</h2>
+        <div class="tile-example w-full <?php echo is_active_tile('tile-9') ? 'active-tile' : 'inactive-tile'; ?>">
+            <h2 class="header-text w-full">Tile 9</h2>
             <div class="tile-heading w-full">Open collapsible with figures and progress bars</div>
             <?php
                 $colors = availableColors();
@@ -312,7 +329,7 @@
             ]); ?>
         </div>
 
-        <div class="w-full">
+        <div class="tile-example w-full <?php echo is_active_tile('tile-9') ? 'active-tile' : 'inactive-tile'; ?>">
             <h2 class="header-text w-full">Tile 12</h2>
             <div class="tile-heading w-full">Open collapsible with progress bars and figures</div>
             <?php
@@ -344,8 +361,7 @@
             ]); ?>
         </div>
 
-
-        <div class="w-full">
+        <div class="tile-example w-full <?php echo is_active_tile('tile-13') ? 'active-tile' : 'inactive-tile'; ?>">
             <h2 class="header-text w-full">Tile 13</h2>
             <div class="tile-heading w-full">Title, sub-title and link</div>
 
@@ -358,7 +374,7 @@
         </div>
         </div>
 
-        <div class="w-full">
+        <div class="tile-example w-full <?php echo is_active_tile('tile-14') ? 'active-tile' : 'inactive-tile'; ?>">
             <h2 class="header-text w-full">Tile 14</h2>
             <div class="tile-heading w-full">Title with external link</div>
 
@@ -369,8 +385,8 @@
             ]); ?>
         </div>
 
-        <div class="w-full">
-            <h2 class="header-text w-full">Tile 15</h2>
+        <div class="tile-example w-full <?php echo is_active_tile('tile-9') ? 'active-tile' : 'inactive-tile'; ?>">
+            <h2 class="header-text w-full">Tile 9</h2>
             <div class="tile-heading w-full">Title with collapsible</div>
 
             <?php get_template_part( 'template-parts/tiles/tile-9.table', null, [
@@ -385,8 +401,8 @@
             ]); ?>
         </div>
 
-        <div class="w-full">
-            <h2 class="header-text w-full">Tile 16</h2>
+        <div class="tile-example w-full <?php echo is_active_tile('tile-9') ? 'active-tile' : 'inactive-tile'; ?>">
+            <h2 class="header-text w-full">Tile 9</h2>
             <div class="tile-heading w-full">Open collapsible with bullet point list</div>
 
             <?php get_template_part( 'template-parts/tiles/tile-9.table', null, [
@@ -402,8 +418,7 @@
             ]); ?>
         </div>
 
-
-        <div class="w-full">
+        <div class="tile-example w-full <?php echo is_active_tile('tile-6') ? 'active-tile' : 'inactive-tile'; ?>">
             <h2 class="header-text w-full">Tile 17</h2>
             <div class="tile-heading w-full">Icon with Title and text</div>
 
