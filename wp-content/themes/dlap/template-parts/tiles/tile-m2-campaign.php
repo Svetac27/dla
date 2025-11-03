@@ -7,7 +7,7 @@
         <span class="tile-description"><?php echo $args['description'] ?? ''; ?></span>
         <?php
             $link = $args['link'] ?? '';
-            $is_external = preg_match('#^https?://#', $link);
+            $is_external = preg_match('#^(https?://|www\.)#', $link);
             if (!$is_external) {
                 $link = '/' . ltrim($link, '/');
             }
