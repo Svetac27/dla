@@ -11,7 +11,7 @@
     padding-left: 1rem;
   }
 
-  li {
+  ul li {
     display: flex;
   }
 }
@@ -102,11 +102,13 @@
     li {
       &::before {
         content: "• ";
-        font-size: 18px;
-        font-weight: bold;
         display: inline-block;
         width: 0.8rem;
+        position: relative;
+        top: 2px;
         margin-left: -0.8rem;
+        font-size: 18px;
+        font-weight: bold;
       }
     }
   }

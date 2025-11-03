@@ -54,7 +54,7 @@
           null,
           React.createElement(
             PanelBody,
-            { title: __('Tile M4: Tile with Image, Title and Content', 'tile-rich-text') },
+            { title: __('Tile V1: Tile with Image, Title and Content', 'tile-rich-text') },
             React.createElement(
               MediaUploadCheck,
               null,
@@ -161,8 +161,14 @@
             React.createElement(
               'div',
               { style: { marginTop: '1rem', width: '100%' } },
-              bulletColor &&
-                React.createElement('style', null, `.tile-rich-text ul li::marker { color: ${bulletColor}; }`),
+              React.createElement(
+                'style',
+                null,
+                '.tile-rich-text ul { list-style-type: disc; } ' +
+                  '.tile-rich-text ol { list-style-type: decimal; } ' +
+                  (bulletColor ? '.tile-rich-text ul li::marker { color: ' + bulletColor + '; } ' : '') +
+                  (bulletColor ? '.tile-rich-text ul li::before { color: ' + bulletColor + '; } ' : '')
+              ),
               React.createElement(
                 'div',
                 {
