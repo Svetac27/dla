@@ -80,21 +80,20 @@
                     'image' => '/wp-content/uploads/2024/09/groups_24dp_FCBE04_FILL1_wght200_GRAD0_opsz24.png',
                     'bulletColor' => '#fcbe04',
                     'content' => '
-                    <h3>This is a heading</h3>
+                    <h3 class="wp-block-heading">This is a heading</h3>
                     <p>This is some placeholder body text lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <a href="#">This is a link</a>
-                    <bold>This is bold text</bold>
-                    <italic>This is italic text</italic>
-                    <ol>
-                        <li>This is an order list item</li>
-                        <li>This is an order list item</li>
-                        <li>This is an order list item</li>
+                    <p><a href="http://google.com">This is link</a></p>
+                    <p><strong>This is bold text</strong></p>
+                    <p><em>This is italic text</em></p>
+                    <ol class="wp-block-list">
+                        <li>This is an ordered list item</li>
+                        <li>This is an ordered list item</li>
+                        <li>This is an ordered list item</li>
                     </ol>
-                    <ul>
-                        <li>This is an unordered list item</li>
-                        <li>This is an unordered list item</li>
-                        <li>This is an unordered list item</li>
-                        <li>This is an unordered list item</li>
+                    <ul class="wp-block-list">
+                        <li>This is an unordered list item – the bullet point colour matches the icon colour used with this box</li>
+                        <li>This is an unordered list item – the bullet point colour matches the icon colour used with this box</li>
+                        <li>This is an unordered list item – the bullet point colour matches the icon colour used with this box</li>
                     </ul>
                     ',
                 ]);
