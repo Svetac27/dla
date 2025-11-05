@@ -1,1 +1,410 @@
-(()=>{"use strict";var e,t={914:()=>{const e=window.wp.blocks,t=window.React,l=window.wp.i18n,r=window.wp.blockEditor,n=window.wp.components,o=JSON.parse('{"UU":"create-block/figure-with-text-and-collapsible"}');(0,e.registerBlockType)(o.UU,{edit:function({attributes:e,setAttributes:o,getAttribute:a}){const{figure:i,symbol:s,title:c,text:m,collapsible:g,items:u}=e,[d,p]=(0,t.useState)(g?g.length:0),[h,E]=(0,t.useState)(u?u.length:0),[v,y]=(0,t.useState)(g)||[],[b,f]=(0,t.useState)(u||[]),[x,C]=(0,t.useState)("#D9DC42"),_=[{name:"Red",color:"#E62A4F"},{name:"Mid Red",color:"#F9C9D3"},{name:"Green",color:"#D9DC42"},{name:"Yellow",color:"#FCBE04"},{name:"Mid Blue",color:"#D9EAF3"}],w={"#E62A4F":"red","#F9C9D3":"mid-red","#D9DC42":"green","#FCBE04":"yellow","#D9EAF3":"mid-blue"},k=()=>{p(d+1)},T=()=>{E(h+1)},A=(e,t,l)=>{const r=v&&v.length?[...v]:[];r[e]||(r[e]={}),r[e][t]=l,y(r),o({collapsible:r})};return(0,t.createElement)(t.Fragment,null,(0,t.createElement)(r.InspectorControls,null,(0,t.createElement)(n.PanelBody,{title:(0,l.__)("Tile 6: Collapsibles","figure-with-text-and-collapsible")},(0,t.createElement)(n.TextControl,{label:(0,l.__)("Figure","figure"),value:i,onChange:e=>o({figure:e})}),(0,t.createElement)(n.TextControl,{label:(0,l.__)("Symbol","symbol"),value:s,onChange:e=>o({symbol:e})}),(0,t.createElement)(n.TextControl,{label:(0,l.__)("Title","title"),value:c,onChange:e=>o({title:e})}),(0,t.createElement)(n.TextControl,{label:(0,l.__)("Text","text"),value:m,onChange:e=>o({text:e})}),(0,t.createElement)("hr",{style:{border:"2px solid gray"}}),(0,t.createElement)(n.Button,{variant:"secondary",onClick:T},"Add List Item"),[...Array(h)].map(((e,r)=>(0,t.createElement)("div",{key:r},(0,t.createElement)("div",{style:{display:"flex"}},(0,t.createElement)("div",null,(0,t.createElement)(n.TextControl,{key:`item-${r}`,label:(0,l.__)(`Text (${r+1})`),value:b&&b[r]?b[r]:void 0,onChange:e=>{((e,t)=>{const l=b?[...b]:[];l[e]=t,f(l),console.log("setOfItems",b),o({items:l})})(r,e)}})),(0,t.createElement)("a",{onClick:()=>{(e=>{let t=[];if(b&&b.length)for(let l=0;l<b.length;l++)e!==l&&t.push(b[l]);y(t),o({items:t}),E(h-1)})(r)},style:{color:"red",cursor:"pointer"}},"Remove Item"))))),h>0?(0,t.createElement)(n.Button,{variant:"secondary",onClick:T},"Add List Item"):"",(0,t.createElement)("hr",{style:{border:"2px solid gray"}}),(0,t.createElement)(n.Button,{variant:"secondary",onClick:k},"Add Figure with Progress"),[...Array(d)].map(((e,r)=>(0,t.createElement)("div",{key:r},(0,t.createElement)("div",{style:{display:"flex",justifyContent:"space-between",fontSize:"1rem",lineHeight:3}},(0,t.createElement)("strong",null,"Figure #",r+1),(0,t.createElement)("a",{onClick:()=>{(e=>{let t=[];if(v&&v.length)for(let l=0;l<v.length;l++)e!==l&&t.push(v[l]);y(t),o({collapsible:t}),p(d-1)})(r)},style:{color:"red",cursor:"pointer"}},"Remove Item")),(0,t.createElement)(n.TextControl,{key:`figure-${r}`,label:(0,l.__)(`Figure (${r+1})`),value:v&&v[r]&&v[r]&&v[r].figure?v[r].figure:void 0,onChange:e=>{A(r,"figure",e)}}),(0,t.createElement)(n.TextControl,{key:`symbol-${r}`,label:(0,l.__)(`Symbol (${r+1})`),value:v&&v[r]&&v[r]&&v[r].symbol?v[r].symbol:void 0,onChange:e=>{A(r,"symbol",e)}}),(0,t.createElement)(n.CheckboxControl,{label:"Check to show figure on the right side",checked:!!(v&&v[r]&&v[r]&&v[r].figure_on_right)&&v[r].figure_on_right,onChange:e=>{A(r,"figure_on_right",e)}}),(0,t.createElement)(n.TextControl,{key:`text-${r}`,label:(0,l.__)(`Text (${r+1})`),value:v&&v[r]&&v[r]&&v[r].text?v[r].text:void 0,onChange:e=>{A(r,"text",e)}}),(0,t.createElement)(n.TextControl,{key:`small-text-${r}`,label:(0,l.__)(`Small Text (${r+1})`),value:v&&v[r]&&v[r]&&v[r].small_text?v[r].small_text:void 0,onChange:e=>{A(r,"small_text",e)}}),(0,t.createElement)(n.TextControl,{label:(0,l.__)(`Progress (${r+1})`),value:v&&v[r]&&v[r]&&v[r].progress?v[r].progress:void 0,onChange:e=>{A(r,"progress",e)}}),(0,t.createElement)("label",{style:{fontSize:"11px",fontWeight:500,lineHeight:1.4,textTransform:"uppercase",display:"inline-block",marginBottom:"calc(8px)",padding:"0px"}},"PROGRESS COLOR (",r+1,")"),(0,t.createElement)(n.ColorPalette,{colors:_,value:v&&v[r]&&v[r]&&v[r].progress_color?v[r].progress_color:x,onChange:e=>{A(r,"progress_color",e)}}),(0,t.createElement)("hr",null)))),d>0?(0,t.createElement)(n.Button,{variant:"secondary",onClick:k},"Add Figure with Progress"):"",(0,t.createElement)("hr",{style:{border:"2px solid gray"}}))),(0,t.createElement)("div",{...(0,r.useBlockProps)()},(0,t.createElement)("div",{style:{padding:"1rem",position:"relative"}},(0,t.createElement)("div",{style:{display:"flex",alignItems:"center",justifyContent:"space-between"}},(0,t.createElement)("div",null,(0,t.createElement)("h2",null,i," ",(0,t.createElement)("small",null,s)),(0,t.createElement)("p",null,c)),(0,t.createElement)("div",{style:{padding:"1rem"}},m),(0,t.createElement)("div",null,h>0||d>0?(0,t.createElement)("svg",{xmlns:"http://www.w3.org/2000/svg",width:18,height:"9.302"},(0,t.createElement)("path",{d:"M.519.491.003.975l.081.08c.045.045 2.085 1.918 4.535 4.163L9.073 9.3l.136-.131c.075-.072 2.039-1.903 4.366-4.069 2.326-2.166 4.274-3.98 4.327-4.032L18 .974l-.525-.488-.524-.487-3.803 3.545a2224.23 2224.23 0 0 0-3.943 3.679l-.14.135-3.954-3.627A1758.712 1758.712 0 0 0 1.096.056C1.037.01 1.015.026.519.491",fill:"currentColor",fillRule:"evenodd"})):"")),h>0||d>0?(0,t.createElement)("div",null,(0,t.createElement)("em",null,(0,t.createElement)("small",null,"/* collapsible part */")),h>0?(0,t.createElement)("ul",null,[...Array(h)].map(((e,l)=>(0,t.createElement)("li",null,b&&b[l]?b[l]:"")))):"",d>0?(0,t.createElement)("div",null,[...Array(d)].map(((e,l)=>{var r;return(0,t.createElement)("div",{style:{display:"flex",alignItems:"center",justifyContent:"space-between"}},v&&v[l]&&v&&v[l].figure_on_right&&!0===v[l].figure_on_right?"":(0,t.createElement)("div",null,(0,t.createElement)("h2",{style:{textAlign:"right",paddingRight:"1.25rem",minWidth:"15%",whiteSpace:"nowrap"}},v&&v[l]&&v&&v[l].figure?v[l].figure:"")),(0,t.createElement)("div",{style:{width:"85%"}},(0,t.createElement)("p",{style:{lineHeight:1,margin:0}},v&&v[l]&&v&&v[l].text?v[l].text:"",(0,t.createElement)("em",{style:{paddingLeft:"1rem"}},v&&v[l]&&v&&v[l].small_text?v[l].small_text:"")),v&&v[l]&&v&&v[l].progress?(0,t.createElement)("progress",{style:{width:"100%",height:"4px"},class:null!==(r=w[v[l].progress_color])&&void 0!==r?r:"green",value:v[l].progress,max:"100"}):""),v&&v[l]&&v&&v[l].figure_on_right&&!0===v[l].figure_on_right?(0,t.createElement)("div",null,(0,t.createElement)("h2",{style:{textAlign:"right",paddingRight:"1.25rem",minWidth:"15%",whiteSpace:"nowrap"}},v&&v[l]&&v&&v[l].figure?v[l].figure:"",(0,t.createElement)("small",null,v&&v[l]&&v&&v[l].symbol?v[l].symbol:""))):"")}))):""):"")))}})}},l={};function r(e){var n=l[e];if(void 0!==n)return n.exports;var o=l[e]={exports:{}};return t[e](o,o.exports,r),o.exports}r.m=t,e=[],r.O=(t,l,n,o)=>{if(!l){var a=1/0;for(m=0;m<e.length;m++){for(var[l,n,o]=e[m],i=!0,s=0;s<l.length;s++)(!1&o||a>=o)&&Object.keys(r.O).every((e=>r.O[e](l[s])))?l.splice(s--,1):(i=!1,o<a&&(a=o));if(i){e.splice(m--,1);var c=n();void 0!==c&&(t=c)}}return t}o=o||0;for(var m=e.length;m>0&&e[m-1][2]>o;m--)e[m]=e[m-1];e[m]=[l,n,o]},r.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t),(()=>{var e={57:0,350:0};r.O.j=t=>0===e[t];var t=(t,l)=>{var n,o,[a,i,s]=l,c=0;if(a.some((t=>0!==e[t]))){for(n in i)r.o(i,n)&&(r.m[n]=i[n]);if(s)var m=s(r)}for(t&&t(l);c<a.length;c++)o=a[c],r.o(e,o)&&e[o]&&e[o][0](),e[o]=0;return r.O(m)},l=globalThis.webpackChunkjeck_test_block=globalThis.webpackChunkjeck_test_block||[];l.forEach(t.bind(null,0)),l.push=t.bind(null,l.push.bind(l))})();var n=r.O(void 0,[350],(()=>r(914)));n=r.O(n)})();
+(() => {
+  'use strict';
+  var e,
+    t = {
+      914: () => {
+        const e = window.wp.blocks,
+          t = window.React,
+          l = window.wp.i18n,
+          r = window.wp.blockEditor,
+          n = window.wp.components,
+          o = JSON.parse('{"UU":"create-block/figure-with-text-and-collapsible"}');
+        (0, e.registerBlockType)(o.UU, {
+          edit: function ({ attributes: e, setAttributes: o, getAttribute: a }) {
+            const { figure: i, symbol: s, title: c, text: m, collapsible: g, items: u } = e,
+              [d, p] = (0, t.useState)(g ? g.length : 0),
+              [h, E] = (0, t.useState)(u ? u.length : 0),
+              [v, y] = (0, t.useState)(g) || [],
+              [b, f] = (0, t.useState)(u || []),
+              [x, C] = (0, t.useState)('#D9DC42'),
+              _ = [
+                { name: 'Red', color: '#E62A4F' },
+                { name: 'Mid Red', color: '#F9C9D3' },
+                { name: 'Green', color: '#D9DC42' },
+                { name: 'Yellow', color: '#FCBE04' },
+                { name: 'Mid Blue', color: '#D9EAF3' }
+              ],
+              w = {
+                '#E62A4F': 'red',
+                '#F9C9D3': 'mid-red',
+                '#D9DC42': 'green',
+                '#FCBE04': 'yellow',
+                '#D9EAF3': 'mid-blue'
+              },
+              k = () => {
+                p(d + 1);
+              },
+              T = () => {
+                E(h + 1);
+              },
+              A = (e, t, l) => {
+                const r = v && v.length ? [...v] : [];
+                (r[e] || (r[e] = {}), (r[e][t] = l), y(r), o({ collapsible: r }));
+              };
+            return (0, t.createElement)(
+              t.Fragment,
+              null,
+              (0, t.createElement)(
+                r.InspectorControls,
+                null,
+                (0, t.createElement)(
+                  n.PanelBody,
+                  { title: (0, l.__)('Tile 6: Collapsibles', 'figure-with-text-and-collapsible') },
+                  (0, t.createElement)(n.TextControl, {
+                    label: (0, l.__)('Figure', 'figure'),
+                    value: i,
+                    onChange: (e) => o({ figure: e })
+                  }),
+                  (0, t.createElement)(n.TextControl, {
+                    label: (0, l.__)('Symbol', 'symbol'),
+                    value: s,
+                    onChange: (e) => o({ symbol: e })
+                  }),
+                  (0, t.createElement)(n.TextControl, {
+                    label: (0, l.__)('Title', 'title'),
+                    value: c,
+                    onChange: (e) => o({ title: e })
+                  }),
+                  (0, t.createElement)(n.TextControl, {
+                    label: (0, l.__)('Text', 'text'),
+                    value: m,
+                    onChange: (e) => o({ text: e })
+                  }),
+                  (0, t.createElement)('hr', { style: { border: '2px solid gray' } }),
+                  (0, t.createElement)(n.Button, { variant: 'secondary', onClick: T }, 'Add List Item'),
+                  [...Array(h)].map((e, r) =>
+                    (0, t.createElement)(
+                      'div',
+                      { key: r },
+                      (0, t.createElement)(
+                        'div',
+                        { style: { display: 'flex' } },
+                        (0, t.createElement)(
+                          'div',
+                          null,
+                          (0, t.createElement)(n.TextControl, {
+                            key: `item-${r}`,
+                            label: (0, l.__)(`Text (${r + 1})`),
+                            value: b && b[r] ? b[r] : void 0,
+                            onChange: (e) => {
+                              ((e, t) => {
+                                const l = b ? [...b] : [];
+                                ((l[e] = t), f(l), console.log('setOfItems', b), o({ items: l }));
+                              })(r, e);
+                            }
+                          })
+                        ),
+                        (0, t.createElement)(
+                          'a',
+                          {
+                            onClick: () => {
+                              ((e) => {
+                                let t = [];
+                                if (b && b.length) for (let l = 0; l < b.length; l++) e !== l && t.push(b[l]);
+                                (y(t), o({ items: t }), E(h - 1));
+                              })(r);
+                            },
+                            style: { color: 'red', cursor: 'pointer' }
+                          },
+                          'Remove Item'
+                        )
+                      )
+                    )
+                  ),
+                  h > 0 ? (0, t.createElement)(n.Button, { variant: 'secondary', onClick: T }, 'Add List Item') : '',
+                  (0, t.createElement)('hr', { style: { border: '2px solid gray' } }),
+                  (0, t.createElement)(n.Button, { variant: 'secondary', onClick: k }, 'Add Figure with Progress'),
+                  [...Array(d)].map((e, r) =>
+                    (0, t.createElement)(
+                      'div',
+                      { key: r },
+                      (0, t.createElement)(
+                        'div',
+                        {
+                          style: { display: 'flex', justifyContent: 'space-between', fontSize: '1rem', lineHeight: 3 }
+                        },
+                        (0, t.createElement)('strong', null, 'Figure #', r + 1),
+                        (0, t.createElement)(
+                          'a',
+                          {
+                            onClick: () => {
+                              ((e) => {
+                                let t = [];
+                                if (v && v.length) for (let l = 0; l < v.length; l++) e !== l && t.push(v[l]);
+                                (y(t), o({ collapsible: t }), p(d - 1));
+                              })(r);
+                            },
+                            style: { color: 'red', cursor: 'pointer' }
+                          },
+                          'Remove Item'
+                        )
+                      ),
+                      (0, t.createElement)(n.TextControl, {
+                        key: `figure-${r}`,
+                        label: (0, l.__)(`Figure (${r + 1})`),
+                        value: v && v[r] && v[r] && v[r].figure ? v[r].figure : void 0,
+                        onChange: (e) => {
+                          A(r, 'figure', e);
+                        }
+                      }),
+                      (0, t.createElement)(n.TextControl, {
+                        key: `symbol-${r}`,
+                        label: (0, l.__)(`Symbol (${r + 1})`),
+                        value: v && v[r] && v[r] && v[r].symbol ? v[r].symbol : void 0,
+                        onChange: (e) => {
+                          A(r, 'symbol', e);
+                        }
+                      }),
+                      (0, t.createElement)(n.CheckboxControl, {
+                        label: 'Check to show figure on the right side',
+                        checked: !!(v && v[r] && v[r] && v[r].figure_on_right) && v[r].figure_on_right,
+                        onChange: (e) => {
+                          A(r, 'figure_on_right', e);
+                        }
+                      }),
+                      (0, t.createElement)(n.TextControl, {
+                        key: `text-${r}`,
+                        label: (0, l.__)(`Text (${r + 1})`),
+                        value: v && v[r] && v[r] && v[r].text ? v[r].text : void 0,
+                        onChange: (e) => {
+                          A(r, 'text', e);
+                        }
+                      }),
+                      (0, t.createElement)(n.TextControl, {
+                        key: `small-text-${r}`,
+                        label: (0, l.__)(`Small Text (${r + 1})`),
+                        value: v && v[r] && v[r] && v[r].small_text ? v[r].small_text : void 0,
+                        onChange: (e) => {
+                          A(r, 'small_text', e);
+                        }
+                      }),
+                      (0, t.createElement)(n.TextControl, {
+                        label: (0, l.__)(`Progress (${r + 1})`),
+                        value: v && v[r] && v[r] && v[r].progress ? v[r].progress : void 0,
+                        onChange: (e) => {
+                          A(r, 'progress', e);
+                        }
+                      }),
+                      (0, t.createElement)(
+                        'label',
+                        {
+                          style: {
+                            fontSize: '11px',
+                            fontWeight: 500,
+                            lineHeight: 1.4,
+                            textTransform: 'uppercase',
+                            display: 'inline-block',
+                            marginBottom: 'calc(8px)',
+                            padding: '0px'
+                          }
+                        },
+                        'PROGRESS COLOR (',
+                        r + 1,
+                        ')'
+                      ),
+                      (0, t.createElement)(n.ColorPalette, {
+                        colors: _,
+                        value: v && v[r] && v[r] && v[r].progress_color ? v[r].progress_color : x,
+                        onChange: (e) => {
+                          A(r, 'progress_color', e);
+                        }
+                      }),
+                      (0, t.createElement)('hr', null)
+                    )
+                  ),
+                  d > 0
+                    ? (0, t.createElement)(n.Button, { variant: 'secondary', onClick: k }, 'Add Figure with Progress')
+                    : '',
+                  (0, t.createElement)('hr', { style: { border: '2px solid gray' } })
+                )
+              ),
+              (0, t.createElement)(
+                'div',
+                { ...(0, r.useBlockProps)() },
+                (0, t.createElement)(
+                  'div',
+                  { style: { padding: '1rem', position: 'relative' } },
+                  (0, t.createElement)(
+                    'div',
+                    { style: { display: 'flex', alignItems: 'center', justifyContent: 'space-between' } },
+                    (0, t.createElement)(
+                      'div',
+                      null,
+                      (0, t.createElement)('h2', null, i, ' ', (0, t.createElement)('small', null, s)),
+                      (0, t.createElement)('p', null, c)
+                    ),
+                    (0, t.createElement)('div', { style: { padding: '1rem' } }, m),
+                    (0, t.createElement)(
+                      'div',
+                      null,
+                      h > 0 || d > 0
+                        ? (0, t.createElement)(
+                            'svg',
+                            { xmlns: 'http://www.w3.org/2000/svg', width: 18, height: '9.302' },
+                            (0, t.createElement)('path', {
+                              d: 'M.519.491.003.975l.081.08c.045.045 2.085 1.918 4.535 4.163L9.073 9.3l.136-.131c.075-.072 2.039-1.903 4.366-4.069 2.326-2.166 4.274-3.98 4.327-4.032L18 .974l-.525-.488-.524-.487-3.803 3.545a2224.23 2224.23 0 0 0-3.943 3.679l-.14.135-3.954-3.627A1758.712 1758.712 0 0 0 1.096.056C1.037.01 1.015.026.519.491',
+                              fill: 'currentColor',
+                              fillRule: 'evenodd'
+                            })
+                          )
+                        : ''
+                    )
+                  ),
+                  h > 0 || d > 0
+                    ? (0, t.createElement)(
+                        'div',
+                        null,
+                        (0, t.createElement)('em', null, (0, t.createElement)('small', null, '/* collapsible part */')),
+                        h > 0
+                          ? (0, t.createElement)(
+                              'ul',
+                              null,
+                              [...Array(h)].map((e, l) => (0, t.createElement)('li', null, b && b[l] ? b[l] : ''))
+                            )
+                          : '',
+                        d > 0
+                          ? (0, t.createElement)(
+                              'div',
+                              null,
+                              [...Array(d)].map((e, l) => {
+                                var r;
+                                return (0, t.createElement)(
+                                  'div',
+                                  { style: { display: 'flex', alignItems: 'center', justifyContent: 'space-between' } },
+                                  v && v[l] && v && v[l].figure_on_right && !0 === v[l].figure_on_right
+                                    ? ''
+                                    : (0, t.createElement)(
+                                        'div',
+                                        {
+                                          style: {
+                                            display: 'flex',
+                                            alignItems: 'baseline'
+                                          }
+                                        },
+                                        null,
+                                        (0, t.createElement)(
+                                          'h2',
+                                          {
+                                            style: {
+                                              textAlign: 'right',
+                                              minWidth: '15%',
+                                              whiteSpace: 'nowrap'
+                                            }
+                                          },
+                                          v && v[l] && v && v[l].figure ? v[l].figure : ''
+                                        ),
+                                        (0, t.createElement)(
+                                          'small',
+                                          null,
+                                          v && v[l] && v && v[l].symbol ? v[l].symbol : ''
+                                        )
+                                      ),
+                                  (0, t.createElement)(
+                                    'div',
+                                    { style: { width: '85%' } },
+                                    (0, t.createElement)(
+                                      'p',
+                                      { style: { lineHeight: 1, margin: 0 } },
+                                      v && v[l] && v && v[l].text ? v[l].text : '',
+                                      (0, t.createElement)(
+                                        'em',
+                                        { style: { paddingLeft: '1rem' } },
+                                        v && v[l] && v && v[l].small_text ? v[l].small_text : ''
+                                      )
+                                    ),
+                                    v && v[l] && v && v[l].progress
+                                      ? (0, t.createElement)('progress', {
+                                          style: { width: '100%', height: '4px' },
+                                          class: null !== (r = w[v[l].progress_color]) && void 0 !== r ? r : 'green',
+                                          value: v[l].progress,
+                                          max: '100'
+                                        })
+                                      : ''
+                                  ),
+                                  v && v[l] && v && v[l].figure_on_right && !0 === v[l].figure_on_right
+                                    ? (0, t.createElement)(
+                                        'div',
+                                        null,
+                                        (0, t.createElement)(
+                                          'h2',
+                                          {
+                                            style: {
+                                              textAlign: 'right',
+                                              paddingRight: '1.25rem',
+                                              minWidth: '15%',
+                                              whiteSpace: 'nowrap'
+                                            }
+                                          },
+                                          v && v[l] && v && v[l].figure ? v[l].figure : '',
+                                          (0, t.createElement)(
+                                            'small',
+                                            null,
+                                            v && v[l] && v && v[l].symbol ? v[l].symbol : ''
+                                          )
+                                        )
+                                      )
+                                    : ''
+                                );
+                              })
+                            )
+                          : ''
+                      )
+                    : ''
+                )
+              )
+            );
+          }
+        });
+      }
+    },
+    l = {};
+  function r(e) {
+    var n = l[e];
+    if (void 0 !== n) return n.exports;
+    var o = (l[e] = { exports: {} });
+    return (t[e](o, o.exports, r), o.exports);
+  }
+  ((r.m = t),
+    (e = []),
+    (r.O = (t, l, n, o) => {
+      if (!l) {
+        var a = 1 / 0;
+        for (m = 0; m < e.length; m++) {
+          for (var [l, n, o] = e[m], i = !0, s = 0; s < l.length; s++)
+            (!1 & o || a >= o) && Object.keys(r.O).every((e) => r.O[e](l[s]))
+              ? l.splice(s--, 1)
+              : ((i = !1), o < a && (a = o));
+          if (i) {
+            e.splice(m--, 1);
+            var c = n();
+            void 0 !== c && (t = c);
+          }
+        }
+        return t;
+      }
+      o = o || 0;
+      for (var m = e.length; m > 0 && e[m - 1][2] > o; m--) e[m] = e[m - 1];
+      e[m] = [l, n, o];
+    }),
+    (r.o = (e, t) => Object.prototype.hasOwnProperty.call(e, t)),
+    (() => {
+      var e = { 57: 0, 350: 0 };
+      r.O.j = (t) => 0 === e[t];
+      var t = (t, l) => {
+          var n,
+            o,
+            [a, i, s] = l,
+            c = 0;
+          if (a.some((t) => 0 !== e[t])) {
+            for (n in i) r.o(i, n) && (r.m[n] = i[n]);
+            if (s) var m = s(r);
+          }
+          for (t && t(l); c < a.length; c++) ((o = a[c]), r.o(e, o) && e[o] && e[o][0](), (e[o] = 0));
+          return r.O(m);
+        },
+        l = (globalThis.webpackChunkjeck_test_block = globalThis.webpackChunkjeck_test_block || []);
+      (l.forEach(t.bind(null, 0)), (l.push = t.bind(null, l.push.bind(l))));
+    })());
+  var n = r.O(void 0, [350], () => r(914));
+  n = r.O(n);
+})();

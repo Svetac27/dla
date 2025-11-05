@@ -1,0 +1,37 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "create-block/tile-campaign",
+  "version": "0.1.0",
+  "title": "Tile M2: Tile Campaign",
+  "category": "DLAP",
+  "icon": "star-empty",
+  "description": "Tile M2: Tile Campaign",
+  "example": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    },
+    "external": {
+      "type": "boolean"
+    },
+    "background": {
+      "type": "string"
+    }
+  },
+  "supports": {
+    "html": false
+  },
+  "textdomain": "figure-with-title",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php",
+  "viewScript": "file:./view.js"
+}

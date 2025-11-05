@@ -1,0 +1,45 @@
+.wp-block-create-block-tile-list {
+  background-color:#144774;
+  color:#fff;
+}
+
+.tile-list-item-input {
+  margin-bottom: 0 !important;
+  width: 100%;
+}
+
+.tile-block.tile-list {
+  .tile-header {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    img {
+      max-width: 32px;
+      max-height: 23px;
+    }
+    .tile-title {
+      font-size: 12px;
+      line-height: 17px;
+      letter-spacing: 1.2px;
+      opacity: 0.7;
+      text-transform: uppercase;
+    }
+  }
+  .tile-item {
+    display: flex;
+    gap: 10px;
+    .tile-bullet {
+      width: 6px;
+      height: 6px;
+      min-width: 6px;
+      border-radius: 50%;
+      margin-top: 5px;
+    }
+    .tile-item-text {
+      font-size: 12px;
+      line-height: 18px;
+    }
+  }
+}

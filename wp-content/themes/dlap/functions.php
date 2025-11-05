@@ -20,23 +20,23 @@ if (!session_id()) {
  */
 function is_initial_load() {
 	if (isset($_SESSION['not_initial_load']) && $_SESSION['not_initial_load'] == true) {
-			
+
 		echo '<!-- ALREADY SET ';
 		print_r($_SESSION);
 		echo '-->';
 		return false;
 	}
 
-	
+
 	echo '<!-- NOT SET';
 	print_r($_SESSION);
 	echo '-->';
-	
+
 	$_SESSION['not_initial_load'] = true;
 	return true;
 }
 
- 
+
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
 	define( '_S_VERSION', time() );
@@ -207,3 +207,27 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 }
 
 include 'custom.functions.php';
+
+
+function notifications_rewrite_rule() {
+    add_rewrite_rule(
+        '^overview/notifications/([^/]*)/?$',
+        'index.php?notification_slug=$matches[1]',
+        'top'
+    );
+}
+add_action('init', 'notifications_rewrite_rule');
+
+function notifications_query_vars($vars) {
+    $vars[] = 'notification_slug';
+    return $vars;
+}
+add_filter('query_vars', 'notifications_query_vars');
+
+function notifications_template_include($template) {
+    if (get_query_var('notification_slug')) {
+        return get_template_directory() . '/notification-detail.php';
+    }
+    return $template;
+}
+add_filter('template_include', 'notifications_template_include');

@@ -27,9 +27,6 @@ ul.list-disc li {
     background: transparent linear-gradient(180deg, #16253F 0%, #144774 100%) 0% 0% no-repeat padding-box;
 }
 
-.header-text {
-    @apply text-18px;
-}
 .tile-heading {
     @apply text-3;
 }
@@ -37,10 +34,11 @@ ul.list-disc li {
     @apply text-14px;
 }
 .tile-text {
-    @apply text-3;
+    @apply text-3 leading-[18px];
 }
+
 .numbers-big {
-    @apply text-9 font-light whitespace-nowrap font-noto-serif;
+    @apply text-9 leading-[2.7rem] font-light whitespace-nowrap font-noto-serif;
 }
 .numbers-small {
     @apply text-6 font-light font-noto-serif;
@@ -59,19 +57,22 @@ ul.list-disc li {
 }
 .tile-text-small {
     @apply text-10px;
-}   
+}
 
 .box {
-    @apply bg-white w-full px-4 py-2 min-h-20;
-    --tw-bg-opacity: 0.02;
+    @apply w-full;
+    @apply flex flex-col;
+    @apply mb-[10px];
 }
 
+
+
 /* HEADER */
-header {
-    height: 3.875rem;
-}
 header.inner-page {
     border-bottom: 1px solid rgba(255,255,255,0.2);
+    margin-bottom: 1rem;
+    padding-top: 18px;
+    padding-bottom: 18px;
 }
 header .btn-back {
     transform: translateY(-50%);
@@ -129,7 +130,7 @@ progress.mid-blue::-moz-progress-bar  {
 }
 
 .circle-progress-text {
-    @apply text-30px font-light font-noto-serif;
+    @apply text-36px font-light font-noto-serif;
 }
 
 .circle-progress {
@@ -192,18 +193,19 @@ progress.mid-blue::-moz-progress-bar  {
 }
 .tile-dropdown.opened .tile-dropdown-option {
 	max-height: 10000px;
+    padding-top: 1rem;
 }
 
 
 /* navigation */
 nav {
-    @apply fixed bottom-0 left-0 w-full;
+    @apply fixed bottom-0 left-0 w-full z-[1000];
     backdrop-filter: blur(8px) saturate(100%);
 }
 nav ul.menus {
     @apply justify-between;
     background: rgba(255,255,255,0.2);
-}   
+}
 nav ul.menus li {
     @apply items-center text-center border-b-4px border-b-transparent h-full;
 }
@@ -219,35 +221,19 @@ nav ul.menus li i {
 nav ul.menus li.active i,nav ul.menus li.current-menu-item i,.desktop nav ul.menus li:hover i {
     @apply text-green opacity-100;
 }
-/* 
 
-.page-blocks .wp-block-columns {
-    column-gap: 1rem;
-    margin-bottom: 0.5rem!important;
-    display: grid;
-} */
+.page-blocks .wp-block-columns .wp-block-column .box {
+    @apply mb-0;
+}
 
 .page-blocks h2 {
-    @apply tile-heading w-full py-2;
+    @apply tile-heading w-full text-[12px] leading-[17px] py-[10px];
 }
-
-/* columns responsiveness */
-/* .page-blocks .wp-block-columns {
-    @apply my-2 !inline-flex w-full;
-}
-
-.page-blocks .box:not(.wp-block-column > .box) { 
-    @apply my-2;
-} */
-
 
 
 /* ICONS OVERRIDE */
 .box .icon-arrow-right {
-    font-size: 9.49px;
-    right: 11px;
-    bottom: 13px;
-    position: absolute;
+    @apply text-[12px] right-[11px] bottom-[17px] absolute;
 }
 .box .icon-link-external {
     font-size: 17px;
@@ -271,4 +257,18 @@ form label, form input {
 
 .error {
     @apply text-12px text-red;
+}
+
+.inner-page {
+    article:has(.tile-list) {
+        .entry-content {
+            gap: 1.2rem;
+            h2.wp-block-heading {
+                padding: 0;
+            }
+        }
+    }
+    .tile-with-link {
+        margin-bottom: 0;
+    }
 }

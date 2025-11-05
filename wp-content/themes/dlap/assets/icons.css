@@ -33,6 +33,7 @@
 }
 .icon-arrow-right:before {
   content: "\e904";
+  font-size: 12px;
 }
 .icon-link-external:before {
   content: "\e906";

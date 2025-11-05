@@ -8,11 +8,11 @@ if ($bottomLink != true && $isExternalLink != true) {
 }
 ?>
 
-<a href="<?php echo $args['link'] ?? ''; ?>" <?php if ($isExternalLink): ?>target="_blank"<?php endif; ?> class="tile-with-link <?php echo $isExternalLink ? 'external-link' : 'internal-link'; ?> box items-center flex items-center relative">
-    <div class="w-full">
+<a href="<?php echo $args['link'] ?? ''; ?>" <?php if ($isExternalLink): ?>target="_blank"<?php endif; ?> class="tile-with-link <?php echo $isExternalLink ? 'external-link' : 'internal-link'; ?> tile-background flex flex-row items-center relative mb-[10px]">
+    <div class="w-full mt-[17px] mb-[15px] ">
         <?php if (isset($args['title']) && !empty($args['title'])): ?>
             <div class="tile-title w-full <?php echo $middleClass; ?>">
-                <span class="leading-[20px]"><?php echo $args['title'] ?? ''; ?></span> 
+                <span class="leading-[20px]"><?php echo $args['title'] ?? ''; ?></span>
 
                 <?php if ($bottomLink == false && $isExternalLink == false): ?>
                     <span>
@@ -24,7 +24,7 @@ if ($bottomLink != true && $isExternalLink != true) {
 
         <?php if (isset($args['text']) && !empty($args['text'])): ?>
             <div class="tile-text w-full <?php echo $middleClass; echo isset($args['title']) && !empty($args['title']) ? 'mt-5px' : ''; ?>">
-                <span class="leading-[18px]"><?php echo $args['text'] ?? ''; ?></span> 
+                <span class="leading-[18px] opacity-70"><?php echo $args['text'] ?? ''; ?></span>
                 <?php if ($bottomLink == false && $isExternalLink == false): ?>
                     <span>
                         <i style="position: initial;" class="icon-arrow-right opacity-50"></i>
@@ -39,8 +39,8 @@ if ($bottomLink != true && $isExternalLink != true) {
                 <i class="icon-link-external opacity-50"></i>
             </span>
         <?php elseif ($bottomLink != false): ?>
-            <span class="absolute bottom-0 right-0">
-                <i class="icon-arrow-right opacity-50"></i> 
+            <span class="absolute bottom-[10px] right-[10px]">
+                <i class="icon-arrow-right opacity-50 text-[12px]"></i>
             </span>
         <?php endif; ?>
     <?php endif; ?>

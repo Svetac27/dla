@@ -30,7 +30,15 @@ $class = 'class="'.colorClasses($color).' '.$id.'"';
 new CircleProgress(".<?php echo $id; ?>", {
 	max: 100,
 	value: <?php echo $value; ?>,
-	// textFormat: donutPercentage, // need to fix display
-	textFormat: 'percent',
+	textFormat: function(value, max) {
+		return value + '<tspan class="circle-progress-percent">%</tspan>';
+	}
 });
+
 </script>
+
+<style>
+	.circle-progress-percent {
+		font-size: 1rem;
+	}
+</style>

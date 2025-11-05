@@ -1,71 +1,71 @@
-const remSizes = {}
-const pxSizes = {}
-const percentSizes = {}
-const fontSizes = {}
-const vhSizes = {}
-const vwSizes = {}
-const twoCol = {}
-const threeCol = {}
-const fourCol = {}
-const fiveCol = {}
-const sixCol = {}
-const sevenCol = {}
-const eightCol = {}
-const nineCol = {}
-const tenCol = {}
-const elevenCol = {}
-const twelveCol = {}
+const remSizes = {};
+const pxSizes = {};
+const percentSizes = {};
+const fontSizes = {};
+const vhSizes = {};
+const vwSizes = {};
+const twoCol = {};
+const threeCol = {};
+const fourCol = {};
+const fiveCol = {};
+const sixCol = {};
+const sevenCol = {};
+const eightCol = {};
+const nineCol = {};
+const tenCol = {};
+const elevenCol = {};
+const twelveCol = {};
 for (let i = 1; i <= 200; i++) {
-  remSizes[i] = `${i * 0.25}rem`
+  remSizes[i] = `${i * 0.25}rem`;
 
-    pxSizes[`${i}px`] = `${i}px`
+  pxSizes[`${i}px`] = `${i}px`;
 
   if (i <= 20) {
-    fontSizes[i] = `${i * 0.25}rem`
+    fontSizes[i] = `${i * 0.25}rem`;
   }
 
   if (i <= 10) {
-    percentSizes[`${i * 10}%`] = `${i * 10}%`
+    percentSizes[`${i * 10}%`] = `${i * 10}%`;
 
     // viewport sizes
-    vhSizes[`${i * 10}vh`] = `${i * 10}vh`
-    vwSizes[`${i * 10}vw`] = `${i * 10}vw`
+    vhSizes[`${i * 10}vh`] = `${i * 10}vh`;
+    vwSizes[`${i * 10}vw`] = `${i * 10}vw`;
   }
 
   // grid system
   if (i < 12) {
     if (i < 2) {
-      twoCol[`${i}/2`] = `${(i / 2) * 100}%`
+      twoCol[`${i}/2`] = `${(i / 2) * 100}%`;
     }
     if (i < 3) {
-      threeCol[`${i}/3`] = `${(i / 3) * 100}%`
+      threeCol[`${i}/3`] = `${(i / 3) * 100}%`;
     }
     if (i < 4) {
-      fourCol[`${i}/4`] = `${(i / 4) * 100}%`
+      fourCol[`${i}/4`] = `${(i / 4) * 100}%`;
     }
     if (i < 5) {
-      fiveCol[`${i}/5`] = `${(i / 5) * 100}%`
+      fiveCol[`${i}/5`] = `${(i / 5) * 100}%`;
     }
     if (i < 6) {
-      sixCol[`${i}/6`] = `${(i / 6) * 100}%`
+      sixCol[`${i}/6`] = `${(i / 6) * 100}%`;
     }
     if (i < 7) {
-      sevenCol[`${i}/7`] = `${(i / 7) * 100}%`
+      sevenCol[`${i}/7`] = `${(i / 7) * 100}%`;
     }
     if (i < 8) {
-      eightCol[`${i}/8`] = `${(i / 8) * 100}%`
+      eightCol[`${i}/8`] = `${(i / 8) * 100}%`;
     }
     if (i < 9) {
-      nineCol[`${i}/9`] = `${(i / 9) * 100}%`
+      nineCol[`${i}/9`] = `${(i / 9) * 100}%`;
     }
     if (i < 10) {
-      tenCol[`${i}/10`] = `${(i / 10) * 100}%`
+      tenCol[`${i}/10`] = `${(i / 10) * 100}%`;
     }
     if (i < 11) {
-      elevenCol[`${i}/11`] = `${(i / 11) * 100}%`
+      elevenCol[`${i}/11`] = `${(i / 11) * 100}%`;
     }
     if (i < 12) {
-      twelveCol[`${i}/12`] = `${(i / 12) * 100}%`
+      twelveCol[`${i}/12`] = `${(i / 12) * 100}%`;
     }
   }
 }
@@ -82,18 +82,15 @@ const gridColumns = {
   ...tenCol,
   ...elevenCol,
   ...twelveCol
-}
+};
 
 module.exports = {
-  content: [
-  './**/*.{html,php}',
-  './*.{html,php}'
-  ],
+  content: ['./**/*.{html,php}', './*.{html,php}'],
   prefix: '',
   important: false,
   separator: ':',
   mode: 'jit',
-  
+
   variants: {
     appearance: ['responsive'],
     alignContent: ['responsive', 'hover', 'focus'],
@@ -264,7 +261,7 @@ module.exports = {
       0: '0',
       ...pxSizes
     },
-    borderColor: theme => ({
+    borderColor: (theme) => ({
       ...theme('colors'),
       DEFAULT: theme('colors.green', 'currentColor')
     }),
@@ -284,7 +281,7 @@ module.exports = {
       move: 'move',
       'not-allowed': 'not-allowed'
     },
-    width: theme => ({
+    width: (theme) => ({
       auto: 'auto',
       ...theme('spacing'),
       ...gridColumns,
@@ -293,7 +290,7 @@ module.exports = {
       screen: '100vw',
       unset: 'unset'
     }),
-    height: theme => ({
+    height: (theme) => ({
       auto: 'auto',
       ...theme('spacing'),
       ...gridColumns,
@@ -318,7 +315,7 @@ module.exports = {
       full: '100%',
       screen: '100vh'
     },
-    maxWidth: theme => ({
+    maxWidth: (theme) => ({
       ...theme('spacing'),
       ...gridColumns,
       ...vwSizes,
@@ -339,7 +336,7 @@ module.exports = {
       ...vhSizes,
       ...pxSizes
     },
-    padding: theme => ({
+    padding: (theme) => ({
       page: '1.25rem',
       ...theme('spacing')
     }),
@@ -472,7 +469,7 @@ module.exports = {
       disc: 'disc',
       decimal: 'decimal'
     },
-    inset: theme => ({
+    inset: (theme) => ({
       ...theme('spacing'),
       0: '0',
       '1/2': '50%',
@@ -582,17 +579,17 @@ module.exports = {
     function ({ addVariant, e }) {
       addVariant('important', ({ container }) => {
         container.walkRules((rule) => {
-          rule.selector = `.\\!${rule.selector.slice(1)}`
+          rule.selector = `.\\!${rule.selector.slice(1)}`;
           rule.walkDecls((decl) => {
-            decl.important = true
-          })
-        })
-      })
+            decl.important = true;
+          });
+        });
+      });
       addVariant('placeholder', ({ modifySelectors, separator }) => {
         modifySelectors(({ className }) => {
-          return `.${e(`placeholder${separator}${className}`)}:placeholder`
-        })
-      })
+          return `.${e(`placeholder${separator}${className}`)}:placeholder`;
+        });
+      });
     }
   ]
-}
+};

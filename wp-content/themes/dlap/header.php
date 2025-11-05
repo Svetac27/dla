@@ -18,7 +18,7 @@
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
 	<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/assets/app-icon/v2/36.png">
-    
+
     <!-- Add to home screen for Android -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="DLA Quick Facts">
@@ -98,8 +98,8 @@
 
 	<?php wp_head(); ?>
 	<!--<script src="https://cdn.jsdelivr.net/npm/js-circle-progress/dist/circle-progress.min.js" type="module"></script>-->
-	<script src="https://tigrr.github.io/circle-progress/js/circle-progress.js"></script>
-	
+	<script src="/wp-includes/js/circle-progress.js"></script>
+
 
 	<style>
 		/* remove this after development */
@@ -118,22 +118,22 @@
 
 	<div class="waves gradient"></div>
 	<div class="waves"></div>
-	<header class="px-page flex items-center justify-between <?php echo wp_get_post_parent_id() > 0 || $slug == 'business-card' ? 'inner-page mb-2' : ''; ?>">
+	<header class="px-page flex items-center justify-between pt-[23px] pb-[5px] <?php echo wp_get_post_parent_id() > 0 || $slug == 'business-card' ? 'inner-page' : ''; ?>">
 		<?php if (wp_get_post_parent_id() > 0 || $slug == 'business-card'): ?>
 			<div class="relative w-full">
 				<a class="btn-back absolute left-0 top-1/2 opacity-50 hover:opacity-100" href="<?php echo wp_get_post_parent_id() == 0 ? '/' : get_permalink(wp_get_post_parent_id()); ?>">
 					<i class="text-12px icon-arrow-left"></i>
 				</a>
-				<h1 class="<?php echo $slug; ?> header-text w-full px-6 text-center font-noto-serif"><?php the_title(); ?></h1>
+				<h1 class="<?php echo $slug; ?> header-text text-[16px] w-full px-6 text-center font-noto-serif"><?php the_title(); ?></h1>
 			</div>
 		<?php else: ?>
-			<?php 
+			<?php
 				$custom_logo_id = (int)get_theme_mod( 'custom_logo' );
 				?>
 			<a href="/" <?php echo $custom_logo_id > 0 ? '' : 'style="height:12px;"'; ?>>
 				<?php
 
-				if ($custom_logo_id > 0): 
+				if ($custom_logo_id > 0):
 					$logo_url = wp_get_attachment_image_url( $custom_logo_id , 'full' ); // Get the logo URL
 					?>
 					<img class="max-h-10 w-auto" src="<?php echo $logo_url; ?>" />
@@ -143,7 +143,7 @@
 					$height = 10.925;
 					if (isV2()) {
 						$width = false;
-						$height = 13;
+						$height = 11;
 					} ?>
 					<svg xmlns="http://www.w3.org/2000/svg" <?php echo $width ? 'width="'.$width.'"' : ''; ?> height="<?php echo $height; ?>" viewBox="0 0 93.421 10.925">
 					<g id="Group_351" data-name="Group 351" transform="translate(8487 14172.567)">
@@ -162,16 +162,24 @@
 					</svg>
 				<?php endif; ?>
 			</a>
-
-			<a href="/business-card" class="business-card-icon-wrapper opacity-70">
-				<div class="business-card hidden">
-					<?php get_template_part( 'icons/business', 'card'); ?>
-				</div>
-				<div class="error-icon hidden">
-					<?php get_template_part( 'icons/error'); ?>
-				</div>
-			</a>
+			<div class="header-right-content flex items-center gap-[25px]">
+				<a id="notification-icon" href="/overview/notifications" class="notifications-header relative">
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/icons/bell.svg" class="bell-icon opacity-70" />
+					<div id="notification-sign" class="notification-sign hidden absolute top-[-2px] right-[-7px] bg-[#FAB400] w-[6px] h-[6px] rounded-full"></div>
+				</a>
+				<a href="/business-card" class="business-card-icon-wrapper">
+					<div class="business-card hidden">
+						<?php get_template_part( 'icons/business', 'card'); ?>
+					</div>
+					<div class="error-icon hidden">
+						<?php get_template_part( 'icons/error'); ?>
+					</div>
+				</a>
+			</div>
 		<?php endif; ?>
 	</header>
 
-	<div class="px-page <?php echo !is_front_page() ? 'inner-page' : ''; ?>">
+	<div class="px-page
+	<?php echo wp_get_post_parent_id() > 0 || $slug == 'business-card' ? 'inner-page' : ''; ?>
+	">
+	<!-- <?php echo !is_front_page() ? 'inner-page' : ''; ?> -->

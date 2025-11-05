@@ -1,0 +1,23 @@
+<?php
+	/* Template Name: Notifications */
+?>
+
+<?php get_header(); ?>
+
+<style>
+/* for this page only */
+.tile-heading.w-full {
+    margin-bottom: 5.25rem;
+    font-size: 12px;
+}
+
+</style>
+
+<div class="text-white pt-[2px] pb-[20px]">
+	<div id="js-notifications-list" class="w-full grid grid-cols-1 lg:grid-cols-3 gap-x-14">
+        <!-- Content will come from notifications.js -->
+    </div>
+</div>
+
+
+<?php get_footer(); ?>

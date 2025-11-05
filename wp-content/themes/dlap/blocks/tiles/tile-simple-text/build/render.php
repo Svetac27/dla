@@ -1,0 +1,1 @@
+<?php get_template_part( 'template-parts/tiles/tile-m5-simple', null, $attributes); ?>

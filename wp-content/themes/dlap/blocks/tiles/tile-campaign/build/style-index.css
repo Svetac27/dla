@@ -1,0 +1,59 @@
+.wp-block-create-block-tile-campaign {
+  background-color:#144774;
+  color:#fff;
+}
+
+.tile-campaign {
+  align-items: flex-start;
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 18px;
+  padding-right: 18px;
+  &:before {
+    position: absolute;
+    --tw-content: "";
+    content: var(--tw-content);
+    background: linear-gradient(to bottom, #16253F8F, #16253F8F);
+    top: 0;
+    left: 0;
+    z-index: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+  }
+  .blured-content {
+    position: relative;
+    z-index: 10;
+    .tile-title {
+      font-family: "Noto Serif", serif;
+      font-size: 24px;
+      font-weight: 200;
+      line-height: 28px;
+    }
+    .tile-description {
+      font-size: 12px;
+      line-height: 18px;
+    }
+    .tile-link {
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+      line-height: 17px;
+    }
+  }
+}
+
+.tile-background {
+  background-color: #FFFFFF0D;
+  backdrop-filter: blur(2px);
+  border-radius: 10px;
+  padding: 10px 15px;
+  overflow: hidden;
+}
