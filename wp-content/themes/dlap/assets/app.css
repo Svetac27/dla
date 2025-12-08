@@ -1746,11 +1746,8 @@ nav ul.menus li.active i,nav ul.menus li.current-menu-item i,.desktop nav ul.men
 }
 
 .box li::marker {
-  width: 6px;
-  height: 6px;
-  min-width: 6px;
-  border-radius: 50%;
-  margin-top: 5px;
+  font-size: 8px;
+  line-height: 0;
 }
 
 form label, form input{
