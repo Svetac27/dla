@@ -1,0 +1,37 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "create-block/tile-with-icon-and-list",
+  "version": "0.1.0",
+  "title": "Tile M1: Tile with Icon and List",
+  "category": "DLAP",
+  "icon": "star-empty",
+  "description": "Tile M1: Tile with Icon and List",
+  "example": {},
+  "attributes": {
+    "figure": {
+      "type": "string"
+    },
+    "symbol": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string"
+    },
+    "progress": {
+      "type": "string"
+    },
+    "progress_color": {
+      "type": "string"
+    }
+  },
+  "supports": {
+    "html": false
+  },
+  "textdomain": "tile-with-icon-and-list",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php",
+  "viewScript": "file:./view.js"
+}
