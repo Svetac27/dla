@@ -783,8 +783,8 @@ video {
   margin-left: -5px;
 }
 
-.ml-\[10px\]{
-  margin-left: 10px;
+.ml-\[15px\]{
+  margin-left: 15px;
 }
 
 .mr-10px{
@@ -813,10 +813,6 @@ video {
 
 .mt-\[5px\]{
   margin-top: 5px;
-}
-
-.ml-\[15px\]{
-  margin-left: 15px;
 }
 
 .block{
