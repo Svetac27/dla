@@ -6,11 +6,11 @@
 
 .wp-block-group.is-layout-grid:has(.tile-info) {
   margin-top: 0.5rem;
+  .box.tile-info {
+    margin: 0;
+  }
 }
 
-.page-blocks .box.tile-info {
-  margin: 0;
-}
 
 
 .tile-info {
