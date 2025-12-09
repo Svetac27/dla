@@ -1384,6 +1384,10 @@ video {
   font-size: 16px;
 }
 
+.text-\[36px\]{
+  font-size: 36px;
+}
+
 .font-\[400\]{
   font-weight: 400;
 }

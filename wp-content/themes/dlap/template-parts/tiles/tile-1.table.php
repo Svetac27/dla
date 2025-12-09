@@ -4,7 +4,7 @@
             <td class="w-1/4 text-left">
                 <?php $number = isset($args['number']) ? $args['number'] : (isset($args['figure']) ? $args['figure'] : ''); ?>
                 <div class="numbers-big w-auto inline-block <?php echo $args['symbol'] ? 'number' : 'text'; ?>">
-                    <span><?php echo $number; ?></span><span class="symbols-small"><?php echo $args['symbol'] ?? 'K'; ?></span>
+                    <span class="number-data text-[36px]" ><?php echo $number; ?></span><span class="symbols-small"><?php echo $args['symbol'] ?? 'K'; ?></span>
                 </div>
             </td>
             <td class="w-3/4 text-left">
