@@ -30,7 +30,7 @@ if(!isset($args['image']) && (isset($args['title']) || isset($args['text'])) && 
         <?php endif; ?>
     </div>
     <?php if (isset($args['items']) && count($args['items']) && !empty($args['items'])): ?>
-        <div class="tile-container w-full pl-2 items-center text-left ml-[10px]">
+        <div class="tile-container w-full pl-2 items-center text-left ml-[15px]">
             <ul class="text-3 list-disc leading-normal">
                 <?php foreach ($args['items'] as $item): ?>
                     <?php

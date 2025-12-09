@@ -815,6 +815,10 @@ video {
   margin-top: 5px;
 }
 
+.ml-\[15px\]{
+  margin-left: 15px;
+}
+
 .block{
   display: block;
 }
@@ -1750,14 +1754,7 @@ nav ul.menus li.active i,nav ul.menus li.current-menu-item i,.desktop nav ul.men
 }
 
 .box li::marker {
-  /* font-size: 8px;
-line-height: 0; */
-  font-size: 14px;
-  width: 6px;
-  height: 6px;
-  min-width: 6px;
-  border-radius: 50%;
-  margin-top: 5px;
+  font-size: 16px;
 }
 
 form label, form input{
