@@ -38,7 +38,7 @@ ul.list-disc li {
 }
 
 .numbers-big {
-    @apply text-9 leading-[2.7rem] font-light whitespace-nowrap font-noto-serif;
+    @apply text-[38px] leading-[2.7rem] font-[300] whitespace-nowrap font-noto-serif;
 }
 .numbers-small {
     @apply text-6 font-light font-noto-serif;
