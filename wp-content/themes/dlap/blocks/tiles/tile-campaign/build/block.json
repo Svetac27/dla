@@ -21,8 +21,17 @@
     "external": {
       "type": "boolean"
     },
-    "background": {
-      "type": "string"
+    "backgroundUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "backgroundId": {
+      "type": "number",
+      "default": 0
+    },
+    "backgroundMask": {
+      "type": "boolean",
+      "default": false
     }
   },
   "supports": {

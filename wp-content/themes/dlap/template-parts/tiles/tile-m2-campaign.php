@@ -1,7 +1,8 @@
 <?php // print_r($args); ?>
 
 
-<div class="tile-block tile-campaign box px-4 py-5 items-center" style="background-image: url('<?php echo $args['backgroundUrl'] ?? ''; ?>');">
+<div class="tile-block tile-campaign box px-4 py-5 items-center<?php echo $args['backgroundMask'] ? ' before:h-full' : ''; ?>"
+    style="background-image: url('<?php echo $args['backgroundUrl'] ?? ''; ?>');">
     <div class="blured-content">
         <h2 class="tile-title"><?php echo $args['title'] ?? ''; ?></h2>
         <span class="tile-description"><?php echo $args['description'] ?? ''; ?></span>

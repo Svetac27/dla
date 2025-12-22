@@ -15,10 +15,167 @@
             description: { type: 'string', default: '' },
             link: { type: 'string', default: '' },
             backgroundUrl: { type: 'string', default: '' },
-            backgroundId: { type: 'number', default: 0 }
+            backgroundId: { type: 'number', default: 0 },
+            backgroundMask: { type: 'boolean', default: false }
           },
+          deprecated: [
+            {
+              attributes: {
+                title: { type: 'string', default: '' },
+                description: { type: 'string', default: '' },
+                link: { type: 'string', default: '' },
+                backgroundUrl: { type: 'string', default: '' },
+                backgroundId: { type: 'number', default: 0 },
+                backgroundMask: { type: 'boolean', default: false }
+              },
+              save: function ({ attributes: e }) {
+                const { title: c, description: d, link: s, backgroundUrl: i } = e;
+                const bgStyle = {
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'flex-start',
+                  padding: '1rem',
+                  position: 'relative',
+                  gap: '10px',
+                  backgroundImage: i ? `url(${i})` : undefined,
+                  backgroundSize: i ? 'cover' : undefined,
+                  backgroundPosition: i ? 'center' : undefined,
+                  minHeight: '200px'
+                };
+                return window.React.createElement(
+                  'div',
+                  { style: bgStyle },
+                  window.React.createElement(
+                    'h2',
+                    { style: { fontSize: '24px', opacity: c ? 1 : 0.5 } },
+                    c || 'Lorem Ipsum'
+                  ),
+                  window.React.createElement(
+                    'span',
+                    { style: { fontSize: '12px', opacity: d ? 1 : 0.5 } },
+                    d || 'Description here'
+                  ),
+                  s
+                    ? window.React.createElement(
+                        'a',
+                        {
+                          href: s,
+                          style: {
+                            color: 'white',
+                            textDecoration: 'none',
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '10px'
+                          }
+                        },
+                        window.React.createElement('span', { style: { fontSize: '12px' } }, 'Read more'),
+                        window.React.createElement(
+                          'svg',
+                          { xmlns: 'http://www.w3.org/2000/svg', width: 19.28, height: 19.271 },
+                          window.React.createElement('path', {
+                            d: 'M0 9.624v9.624h19.248V10.54H17.77v7.262H1.478V1.478H8.74V0H0v9.624M11.439.739v.739H16.982l-4.868 4.868-4.868 4.868.522.523.522.522 4.74-4.74 4.74-4.739v5.061h1.478V0H11.439v.739',
+                            fill: 'currentColor',
+                            'fill-rule': 'evenodd'
+                          })
+                        )
+                      )
+                    : null,
+                  window.React.createElement('div', {
+                    style: {
+                      position: 'absolute',
+                      content: "''",
+                      background: 'linear-gradient(to bottom, rgba(22, 37, 63, 0.56), rgba(22, 37, 63, 0.56))',
+                      top: 0,
+                      left: 0,
+                      zIndex: 0,
+                      height: '100%',
+                      width: '100%',
+                      borderRadius: '10px'
+                    }
+                  })
+                );
+              }
+            },
+            {
+              attributes: {
+                title: { type: 'string', default: '' },
+                description: { type: 'string', default: '' },
+                link: { type: 'string', default: '' },
+                backgroundUrl: { type: 'string', default: '' },
+                backgroundId: { type: 'number', default: 0 },
+                backgroundMask: { type: 'boolean', default: false }
+              },
+              save: function ({ attributes: e }) {
+                const { title: c, description: d, link: s, backgroundUrl: i, backgroundMask: m } = e;
+                const bgStyle = {
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'flex-start',
+                  padding: '1rem',
+                  position: 'relative',
+                  gap: '10px',
+                  backgroundImage: i ? `url(${i})` : undefined,
+                  backgroundSize: i ? 'cover' : undefined,
+                  backgroundPosition: i ? 'center' : undefined,
+                  minHeight: '200px'
+                };
+                return window.React.createElement(
+                  'div',
+                  { style: bgStyle },
+                  window.React.createElement(
+                    'h2',
+                    { style: { fontSize: '24px', opacity: c ? 1 : 0.5 } },
+                    c || 'Lorem Ipsum'
+                  ),
+                  window.React.createElement(
+                    'span',
+                    { style: { fontSize: '12px', opacity: d ? 1 : 0.5 } },
+                    d || 'Description here'
+                  ),
+                  s
+                    ? window.React.createElement(
+                        'a',
+                        {
+                          href: s,
+                          style: {
+                            color: 'white',
+                            textDecoration: 'none',
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '10px'
+                          }
+                        },
+                        window.React.createElement('span', { style: { fontSize: '12px' } }, 'Read more'),
+                        window.React.createElement(
+                          'svg',
+                          { xmlns: 'http://www.w3.org/2000/svg', width: 19.28, height: 19.271 },
+                          window.React.createElement('path', {
+                            d: 'M0 9.624v9.624h19.248V10.54H17.77v7.262H1.478V1.478H8.74V0H0v9.624M11.439.739v.739H16.982l-4.868 4.868-4.868 4.868.522.523.522.522 4.74-4.74 4.74-4.739v5.061h1.478V0H11.439v.739',
+                            fill: 'currentColor',
+                            'fill-rule': 'evenodd'
+                          })
+                        )
+                      )
+                    : null,
+                  window.React.createElement('div', {
+                    style: {
+                      position: 'absolute',
+                      content: '',
+                      background: 'linear-gradient(to bottom, rgba(22, 37, 63, 0.56), rgba(22, 37, 63, 0.56))',
+                      top: 0,
+                      left: 0,
+                      zIndex: 0,
+                      height: '100%',
+                      width: '100%',
+                      borderRadius: '10px'
+                    }
+                  })
+                );
+              }
+            }
+          ],
           edit: function ({ attributes: e, setAttributes: o }) {
-            const { title: c, description: d, link: s, backgroundUrl: i, backgroundId: a } = e;
+            const { title: c, description: d, link: s, backgroundUrl: i, backgroundId: a, backgroundMask: m } = e;
             return (0, t.createElement)(
               t.Fragment,
               null,
@@ -45,6 +202,7 @@
                   }),
                   (0, t.createElement)(
                     'div',
+                    { style: { marginBottom: '15px' } },
                     null,
                     (0, t.createElement)(
                       'label',
@@ -54,8 +212,7 @@
                           fontSize: '11px',
                           fontWeight: '500',
                           lineHeight: '1.4',
-                          textTransform: 'uppercase',
-                          marginBottom: '8px'
+                          textTransform: 'uppercase'
                         }
                       },
                       (0, l.__)('Background image', 'background-image')
@@ -96,7 +253,12 @@
                               )
                       })
                     )
-                  )
+                  ),
+                  (0, t.createElement)(n.ToggleControl, {
+                    label: (0, l.__)('Background Mask', 'background-mask'),
+                    checked: m,
+                    onChange: (v) => o({ backgroundMask: v })
+                  })
                 )
               ),
               (0, t.createElement)(
@@ -153,60 +315,8 @@
               )
             );
           },
-          save: function ({ attributes: e }) {
-            const { title: c, description: d, link: s, external: x, backgroundUrl: i } = e;
-            // Only use attributes, not any variables or components!
-            const bgStyle = {
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'flex-start',
-              padding: '1rem',
-              position: 'relative',
-              gap: '10px',
-              backgroundImage: i ? `url(${i})` : undefined,
-              backgroundSize: i ? 'cover' : undefined,
-              backgroundPosition: i ? 'center' : undefined,
-              minHeight: '200px'
-            };
-            return window.React.createElement(
-              'div',
-              { style: bgStyle },
-              window.React.createElement(
-                'h2',
-                { style: { fontSize: '24px', opacity: c ? 1 : 0.5 } },
-                c || 'Lorem Ipsum'
-              ),
-              window.React.createElement(
-                'span',
-                { style: { fontSize: '12px', opacity: d ? 1 : 0.5 } },
-                d || 'Description here'
-              ),
-              s
-                ? window.React.createElement(
-                    'a',
-                    {
-                      href: s,
-                      style: {
-                        color: 'white',
-                        textDecoration: 'none',
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '10px'
-                      }
-                    },
-                    window.React.createElement('span', { style: { fontSize: '12px' } }, 'Read more'),
-                    window.React.createElement(
-                      'svg',
-                      { xmlns: 'http://www.w3.org/2000/svg', width: 19.28, height: 19.271 },
-                      window.React.createElement('path', {
-                        d: 'M0 9.624v9.624h19.248V10.54H17.77v7.262H1.478V1.478H8.74V0H0v9.624M11.439.739v.739H16.982l-4.868 4.868-4.868 4.868.522.523.522.522 4.74-4.74 4.74-4.739v5.061h1.478V0H11.439v.739',
-                        fill: 'currentColor',
-                        'fill-rule': 'evenodd'
-                      })
-                    )
-                  )
-                : null
-            );
+          save: function () {
+            return null;
           }
         });
       }

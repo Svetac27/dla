@@ -47,7 +47,8 @@
                     'title' => 'DLA Piper and UN AI for Good',
                     'description' => 'DLA Piper is proud to be the founding law firm of the United Nations’ AI for Good Law Track',
                     'link' => '/dla-piper-and-un',
-                    'backgroundUrl' => '../wp-content/uploads/2025/10/image.jpg'
+                    'backgroundUrl' => '../wp-content/uploads/2025/10/image.jpg',
+                    'backgroundMask' => true,
                 ]);
             ?>
         </div>
