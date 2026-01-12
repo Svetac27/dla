@@ -1812,3 +1812,12 @@ form label, form input{
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
+
+.ios-device.curved-screen {
+  padding-bottom: 90px;
+
+  nav ul li {
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-bottom: max(15px, env(safe-area-inset-bottom));
+  }
+}
