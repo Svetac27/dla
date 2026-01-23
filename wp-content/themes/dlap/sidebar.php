@@ -23,8 +23,8 @@ $menus = getMenus();
                             &nbsp;
                         <?php endif; ?>
                     </span>
-                    <span class="w-full block text-[0.8rem] font-[400]"><?php echo $menu->title; ?></span>
-                </a>        
+                    <span class="w-full block font-[400]"><?php echo $menu->title; ?></span>
+                </a>
             </li>
         <?php endforeach; ?>
     </ul>

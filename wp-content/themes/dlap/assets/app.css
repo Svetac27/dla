@@ -1833,6 +1833,9 @@ form label, form input{
       &.current-menu-item {
         border-top: 2px solid rgb(217 220 66 / var(--tw-border-opacity));
       }
+      span {
+        font-size: 11px;
+      }
     }
   }
 }
