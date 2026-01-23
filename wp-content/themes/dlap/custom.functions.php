@@ -110,7 +110,8 @@ function register_service_worker() {
       echo '
       <script>
         if (typeof navigator.serviceWorker !== "undefined") {
-            navigator.serviceWorker.register("'.get_template_directory_uri().'/serviceWorker.js?'.APP_VERSION.'")
+            // navigator.serviceWorker.register("'.get_template_directory_uri().'/serviceWorker.js?'.APP_VERSION.'");
+            navigator.serviceWorker.register("/sw.js", { scope: "/" });
         }
     </script>';
     }
